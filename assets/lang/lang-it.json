@@ -1,0 +1,26 @@
+{
+  "hero_subtitle": "Benvenuto nel sito di",
+  "hero_title": "Michele Rinaldi",
+  "hero_span": "Studente IIS Marconi Pieralisi | Informatica e Telecomunicazioni",
+  "hero_text": "Mi appassiona tutto ciò che riguarda il mondo informatico: dalla programmazione allo sviluppo web, fino alla progettazione grafica. Allo stesso tempo, credo che anche le discipline umanistiche abbiano un ruolo fondamentale nella mia crescita.",
+  "hero_button": "Scopri i miei lavori",
+
+  "about_sub_title": "Chi sono",
+  "about_main_title": "Studente, creativo e appassionato di tecnologia",
+  "about_paragraph": "Da sempre ho una grande passione per il design, la grafica digitale e l'interazione uomo-macchina. Mi piace unire l'aspetto tecnico della programmazione alla creatività visiva, sviluppando progetti che siano funzionali ma anche esteticamente curati.",
+
+  "portfolio_subtitle": "Portfolio",
+  "portfolio_title": "Categorie dei progetti",
+
+  "cat_arte_title": "Arte e Comunicazione Visiva",
+  "cat_arte_desc": "Progetti creativi ed espressivi che comunicano idee o messaggi sociali e raccontano storie attraverso il linguaggio visivo.",
+
+  "cat_branding_title": "Branding e Identità Visiva",
+  "cat_branding_desc": "Sviluppo dell’immagine coordinata di aziende o progetti, con particolare attenzione a logo, palette, tipografia e coerenza comunicativa.",
+
+  "cat_industrial_title": "Industrial Design",
+  "cat_industrial_desc": "Concept e redesign di oggetti d’uso quotidiano o elettronici, unendo estetica, ergonomia e funzionalità tramite modellazione 3D e prototipazione.",
+
+  "cat_adv_title": "Grafica Pubblicitaria",
+  "cat_adv_desc": "Manifesti, locandine ed elaborati promozionali pensati per eventi, aziende o iniziative culturali, con forte impatto visivo e comunicazione efficace."
+}

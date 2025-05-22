@@ -1,0 +1,609 @@
+﻿<!DOCTYPE html>
+<html class="no-js" lang="it">
+<head>
+    <meta charset="utf-8" />
+    <!--====== Title ======-->
+    <title data-i18n="site_title">Michele Rinaldi</title>
+    <meta content="Portfolio scolastico di Michele Rinaldi: progetti, esperienze formative e crescita personale." name="description" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <!--====== Favicon Icon ======-->
+    <link href="assets/images/favicon.png" rel="shortcut icon" type="image/png" />
+    <!--====== Animate CSS ======-->
+    <link href="assets/css/animate.css" rel="stylesheet" />
+    <!--====== LineIcons CSS ======-->
+    <link href="assets/css/lineicons.css" rel="stylesheet" />
+    <!--====== Bootstrap CSS ======-->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <!--====== Default CSS ======-->
+    <link href="assets/css/default.css" rel="stylesheet" />
+    <!--====== Style CSS ======-->
+    <link href="assets/css/style.css" rel="stylesheet" />
+</head>
+<body>
+    <!--[if IE]>
+            <p class="browserupgrade">
+                You are using an <strong>outdated</strong> browser. Please
+                <a href="https://browsehappy.com/">upgrade your browser</a>
+                to improve your experience and security.
+            </p>
+        <![endif]-->
+    <!--====== PRELOADER PART START ======-->
+    <div class="preloader">
+        <div class="loader">
+            <div class="ytp-spinner">
+                <div class="ytp-spinner-container">
+                    <div class="ytp-spinner-rotator">
+                        <div class="ytp-spinner-left">
+                            <div class="ytp-spinner-circle"></div>
+                        </div>
+                        <div class="ytp-spinner-right">
+                            <div class="ytp-spinner-circle"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--====== PRELOADER PART ENDS ======-->
+    <!--====== HEADER PART START ======-->
+    <section class="header_area">
+        <!--====== NAVBAR START ======-->
+        <style>
+
+            .header_navbar {
+                background-color: #224870; /* Sfondo */
+                box-shadow: 0 1px 8px rgba(0, 0, 0, 0.05);
+                padding: 8px 0;
+                transition: all 0.3s ease-in-out;
+            }
+
+            .navbar {
+                padding: 0;
+            }
+
+            .navbar-toggler {
+                border: none;
+                outline: none;
+            }
+
+            .navbar-toggler-icon {
+                background-image: none;
+                width: 25px;
+                height: 3px;
+                background-color: #fff;
+                display: block;
+                margin: 5px 0;
+                border-radius: 2px;
+            }
+
+            .navbar-nav {
+                /* Centra orizzontalmente gli elementi */
+                margin: 0 auto;
+                text-align: center;
+            }
+
+                .navbar-nav .nav-item {
+                    margin: 0 15px;
+                    position: relative;
+                }
+
+                .navbar-nav .nav-link {
+                    font-weight: 500;
+                    font-size: 0.95rem;
+                    color: #fff !important; /* testo bianco */
+                    padding: 8px 6px;
+                    transition: all 0.2s ease;
+                }
+                /* "Home" sottolineata */
+                .navbar-nav .nav-item.home .nav-link {
+                    text-decoration: underline !important;
+                }
+                /* Hover con leggero bagliore */
+                .navbar-nav .nav-link:hover {
+                    text-shadow: 0 0 20px rgba(255, 255, 255, 1);
+                }
+            /* Dropdown lingue */
+            .dropdown-toggle::after {
+                display: none; /* rimuove freccina standard di bootstrap */
+            }
+
+            .dropdown-menu {
+                background-color: #fff;
+                min-width: 140px;
+                border-radius: 4px;
+                border: none;
+                margin-top: 0.5rem;
+                padding: 0;
+            }
+
+            .dropdown-item {
+                color: #333;
+                font-size: 0.9rem;
+                padding: 8px 12px;
+            }
+
+                .dropdown-item:hover {
+                    background-color: #f7f7f7;
+                    color: #007bff;
+                }
+
+                .dropdown-item img {
+                    width: 20px;
+                    margin-right: 6px;
+                }
+        </style>
+        <div class="header_navbar">
+            <div class="container">
+                <nav class="navbar navbar-expand-lg">
+                    <!-- Se non vuoi alcun logo, lascialo vuoto o commenta questa parte -->
+                    <!-- <a class="navbar-brand" href="#">
+                                            <img src="assets/images/logo.svg" alt="Logo">
+                                        </a> -->
+                    <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
+                        <span class="navbar-toggler-icon"></span>
+                        <span class="navbar-toggler-icon"></span>
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                        <ul class="navbar-nav">
+                            <!-- HOME sottolineata sempre -->
+                            <li class="nav-item home">
+                                <a class="nav-link page-scroll" data-i18n="nav_home" href="#home">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link page-scroll" data-i18n="nav_pcto" href="#pcto">PCTO</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link page-scroll" data-i18n="nav_umanistica" href="#areaumanistica">Area Umanistica</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link page-scroll" data-i18n="nav_tecnica" href="#areatecnica">Area Tecnica</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link page-scroll" data-i18n="nav_civica" href="#educazionecivica">Educazione Civica</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link page-scroll" data-i18n="nav_portfolio" href="#portfolio">Portfolio</a>
+                            </li>
+                            <!-- Dropdown Lingua (solo bandiera) -->
+                            <li class="nav-item lang-switcher">
+                                <a class="nav-link" href="#" id="langToggle">
+                                    <img alt="IT" class="flag-img" id="langCurrentFlag" src="assets/images/flag-it.png" />
+                                    <span class="lang-label" id="langHoverLabel">Passa a English</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <!-- SCRIPT GESTIONE LINGUA -->
+        <script>
+            // Esempio di funzioni, se non le hai già in main.js
+            function loadLanguage(lang) {
+                fetch('assets/lang/lang-' + lang + '.json')
+                    .then(response => response.json())
+                    .then(data => {
+                        document.querySelectorAll('[data-i18n]').forEach(el => {
+                            const key = el.getAttribute('data-i18n');
+                            if (data[key]) {
+                                el.textContent = data[key];
+                            }
+                        });
+                    });
+            }
+
+            // Settiamo la lingua dall'archivio
+            const savedLang = localStorage.getItem('lang') || 'it';
+            setFlag(savedLang);
+            loadLanguage(savedLang);
+
+            document.addEventListener('click', function (e) {
+                // Trova se clicco una voce del menu .dropdown-item
+                const langItem = e.target.closest('.dropdown-item[data-lang]');
+                if (langItem) {
+                    e.preventDefault();
+                    const chosenLang = langItem.getAttribute('data-lang');
+                    localStorage.setItem('lang', chosenLang);
+                    setFlag(chosenLang);
+                    loadLanguage(chosenLang);
+                }
+            });
+
+            function setFlag(lang) {
+                const flagEl = document.getElementById('langCurrentFlag');
+                if (lang === 'it') {
+                    flagEl.src = 'assets/images/flag-it.png';
+                } else {
+                    flagEl.src = 'assets/images/flag-en.png';
+                }
+            }
+        </script>
+        <!--====== NAVBAR END ======-->
+    </section>
+    <!--====== HEADER PART ENDS ======-->
+    <!--====== HERO PART START ======-->
+    <div class="header_hero" id="home">
+        <div class="container">
+            <div class="row align-items-center justify-content-center justify-content-lg-between">
+                <div class="col-lg-6">
+                    <div class="header_hero_content mt-45">
+                        <h5 class="header_sub_title" data-i18n="hero_subtitle">Benvenuto nel sito di</h5>
+                        <h1 class="header_title" data-i18n="hero_title">Michele Rinaldi</h1>
+                        <span data-i18n="hero_span">Studente IIS Marconi Pieralisi | Informatica e Telecomunicazioni</span>
+                        <p data-i18n="hero_text">
+                            Mi appassiona tutto ciò che riguarda il mondo informatico: dalla programmazione allo sviluppo web,
+                            fino alla progettazione grafica. Allo stesso tempo, credo che anche le discipline umanistiche
+                            abbiano un ruolo fondamentale nella mia crescita.
+                        </p>
+                        <a class="main-btn" data-i18n="hero_button" href="#portfolio">Scopri i miei lavori</a>
+                    </div> <!-- header hero content -->
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-7">
+                    <div class="header_hero_image mt-50">
+                        <img alt="Immagine Michele Rinaldi" src="assets/images/hero.png" />
+                    </div> <!-- header hero image -->
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+        <div class="header_hero_shape d-none d-lg-block"></div> <!-- shape -->
+    </div>
+    <!--====== HERO PART ENDS ======-->
+    <!--====== ABOUT PART START ======-->
+    <section class="about_area section" id="about">
+        <div class="container">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-lg-6 col-md-9">
+                    <div class="about_image mt-50">
+                        <img alt="Immagine About" src="assets/images/about_hero.png" />
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="about_content mt-45">
+                        <div class="section_title">
+                            <h5 class="sub_title" data-i18n="about_sub_title">Chi sono</h5>
+                            <h3 class="main_title" data-i18n="about_main_title">Studente, creativo e appassionato di tecnologia</h3>
+                            <ul class="line">
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </div> <!-- section title -->
+                        <p data-i18n="about_paragraph">
+                            Da sempre ho una grande passione per il design, la grafica digitale e
+                            l'interazione uomo-macchina. Mi piace unire l'aspetto tecnico della programmazione
+                            alla creatività visiva, sviluppando progetti che siano funzionali ma anche esteticamente curati.
+                        </p>
+                        <!-- about skill -->
+                    </div> <!-- about content -->
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+    </section>
+    <section class="skills_area section" id="skills">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="section_title text-center pb-30">
+                        <h5 class="sub_title" data-i18n="skills_subtitle">Competenze Software</h5>
+                        <h3 class="main_title" data-i18n="skills_title">I programmi che utilizzo</h3>
+                        <ul class="line">
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="about_skills pt-15">
+                        <!-- Photoshops -->
+                        <div class="skill_item mt-20">
+                            <div class="skill_header">
+                                <h6 class="skill_title" data-i18n="skill_photoshop">Photoshop</h6>
+                                <div class="skill_percentage">
+                                    <p><span class="counter" data-i18n="skill_photoshop_value">90</span>%</p>
+                                </div>
+                            </div>
+                            <div class="skill_bar">
+                                <div class="bar_inner">
+                                    <div class="bar progress_line" data-width="90"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Illustrator -->
+                        <div class="skill_item mt-20">
+                            <div class="skill_header">
+                                <h6 class="skill_title" data-i18n="skill_illustrator">Illustrator</h6>
+                                <div class="skill_percentage">
+                                    <p><span class="counter" data-i18n="skill_illustrator_value">65</span>%</p>
+                                </div>
+                            </div>
+                            <div class="skill_bar">
+                                <div class="bar_inner">
+                                    <div class="bar progress_line" data-width="65"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Figma -->
+                        <div class="skill_item mt-20">
+                            <div class="skill_header">
+                                <h6 class="skill_title" data-i18n="skill_figma">Figma</h6>
+                                <div class="skill_percentage">
+                                    <p><span class="counter" data-i18n="skill_figma_value">90</span>%</p>
+                                </div>
+                            </div>
+                            <div class="skill_bar">
+                                <div class="bar_inner">
+                                    <div class="bar progress_line" data-width="90"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Fusion 360 -->
+                        <div class="skill_item mt-20">
+                            <div class="skill_header">
+                                <h6 class="skill_title" data-i18n="skill_fusion">Fusion 360</h6>
+                                <div class="skill_percentage">
+                                    <p><span class="counter" data-i18n="skill_fusion_value">75</span>%</p>
+                                </div>
+                            </div>
+                            <div class="skill_bar">
+                                <div class="bar_inner">
+                                    <div class="bar progress_line" data-width="75"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skill_item mt-20">
+                            <div class="skill_header">
+                                <h6 class="skill_title" data-i18n="skill_office">Pacchetto Office</h6>
+                                <div class="skill_percentage">
+                                    <p><span class="counter" data-i18n="skill_office_value">95</span>%</p>
+                                </div>
+                            </div>
+                            <div class="skill_bar">
+                                <div class="bar_inner">
+                                    <div class="bar progress_line" data-width="95"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--====== ABOUT PART ENDS ======-->
+    <!--====== SERVICES (PORTFOLIO PREVIEW) START ======-->
+    <section class="services_area section" id="services">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="section_title text-center pb-30">
+                        <h5 class="sub_title" data-i18n="portfolio_subtitle">Portfolio</h5>
+                        <h3 class="main_title" data-i18n="portfolio_title">Categorie dei progetti</h3>
+                        <ul class="line">
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </div> <!-- section title -->
+                </div>
+            </div> <!-- row -->
+            <div class="row justify-content-center">
+                <!-- Arte -->
+                <div class="col-lg-6 col-md-6">
+                    <div class="single_service mt-30">
+                        <div class="service_icon">
+                            <i class="lni lni-pencil-alt"></i>
+                        </div>
+                        <div class="service_content">
+                            <h4 class="service_title">
+                                <a data-i18n="cat_arte_title" href="portfolio.php#arte">Arte e Comunicazione</a>
+                            </h4>
+                            <p class="portfolio-description" data-i18n="cat_arte_desc">
+                                Progetti creativi ed espressivi che comunicano idee o messaggi sociali e raccontano storie attraverso il linguaggio visivo.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Branding -->
+                <div class="col-lg-6 col-md-6">
+                    <div class="single_service mt-30">
+                        <div class="service_icon">
+                            <i class="lni lni-briefcase"></i>
+                        </div>
+                        <div class="service_content">
+                            <h4 class="service_title">
+                                <a data-i18n="cat_branding_title" href="portfolio.php#branding">Branding e Identità Visiva</a>
+                            </h4>
+                            <p class="portfolio-description" data-i18n="cat_branding_desc">
+                                Sviluppo dell’immagine coordinata di aziende o progetti, con particolare attenzione a logo, palette, tipografia e coerenza comunicativa.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Industrial Design -->
+                <div class="col-lg-6 col-md-6">
+                    <div class="single_service mt-30">
+                        <div class="service_icon">
+                            <i class="lni lni-cog"></i>
+                        </div>
+                        <div class="service_content">
+                            <h4 class="service_title">
+                                <a data-i18n="cat_industrial_title" href="portfolio.php#industrial">Industrial Design</a>
+                            </h4>
+                            <p class="portfolio-description" data-i18n="cat_industrial_desc">
+                                Concept e redesign di oggetti d’uso quotidiano o elettronici, unendo estetica, ergonomia e funzionalità tramite modellazione 3D e prototipazione.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Grafica Pubblicitaria -->
+                <div class="col-lg-6 col-md-6">
+                    <div class="single_service mt-30">
+                        <div class="service_icon">
+                            <i class="lni lni-printer"></i>
+                        </div>
+                        <div class="service_content">
+                            <h4 class="service_title">
+                                <a data-i18n="cat_adv_title" href="portfolio.php#adv">Grafica Pubblicitaria</a>
+                            </h4>
+                            <p class="portfolio-description" data-i18n="cat_adv_desc">
+                                Manifesti, locandine ed elaborati promozionali pensati per eventi, aziende o iniziative culturali, con forte impatto visivo e comunicazione efficace.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+    </section>
+    <!--====== SERVICES (PORTFOLIO PREVIEW) ENDS ======-->
+    <!--====== CALL TO ACTION PART START ======-->
+    <section class="call_to_action_area section" id="contact">
+        <div class="container">
+            <div class="call_to_action_wrapper">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="call_to_action_box d-md-flex justify-content-between align-items-center">
+                            <div class="call_to_action_content">
+                                <h3 class="action_title" data-i18n="contact_cta_title">Hai un progetto in mente?</h3>
+                                <ul class="line"><li></li><li></li><li></li></ul>
+                                <p data-i18n="contact_cta_text">Parliamone! Sono sempre aperto a nuove collaborazioni, idee creative e sfide stimolanti.</p>
+                            </div>
+                            <div class="call_to_action_btn">
+                                <a class="main-btn" data-i18n="contact_cta_btn" href="mailto:tuamail@example.com">Contattami ora</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--====== CALL TO ACTION PART ENDS ======-->
+    <!--====== FOOTER PART START ======-->
+    <footer class="footer_area gray-bg section" id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="footer_content text-center">
+                        <a href="#"><img alt="Logo" src="assets/images/logo.svg" /></a>
+                        <ul class="footer_social">
+                            <li><a href="#"><i class="lni lni-facebook"></i></a></li>
+                            <li><a href="#"><i class="lni lni-twitter"></i></a></li>
+                            <li><a href="#"><i class="lni lni-instagram"></i></a></li>
+                            <li><a href="#"><i class="lni lni-linkedin"></i></a></li>
+                        </ul>
+                        <span class="email" data-i18n="footer_email">michelerinaldi.info@gmail.com</span>
+                        <ul class="footer_menu">
+                            <li><a data-i18n="nav_home" href="#">Home</a></li>
+                            <li><a data-i18n="nav_pcto" href="#">PCTO</a></li>
+                            <li><a data-i18n="nav_umanistica" href="#">Area Umanistica</a></li>
+                            <li><a data-i18n="nav_tecnica" href="#">Area Tecnica</a></li>
+                            <li><a data-i18n="nav_civica" href="#">Educazione Civica</a></li>
+                            <li><a data-i18n="nav_portfolio" href="#">Portfolio</a></li>
+                        </ul>
+                    </div> <!-- footer content -->
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--====== FOOTER PART ENDS ======-->
+    <!--====== Jquery js ======-->
+    <script src="assets/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="assets/js/vendor/modernizr-3.7.1.min.js"></script>
+    <!--====== Bootstrap js ======-->
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!--====== Appear js ======-->
+    <script src="assets/js/jquery.appear.min.js"></script>
+    <!--====== Scrolling Nav js ======-->
+    <script src="assets/js/jquery.easing.min.js"></script>
+    <script src="assets/js/scrolling-nav.js"></script>
+    <!--====== Main js ======-->
+    <script src="assets/js/main.js"></script>
+    <!--====== MULTILANGUAGE SCRIPT ======-->
+    <script>
+        function loadLanguage(lang) {
+            fetch('assets/lang/lang-' + lang + '.json')
+                .then(response => response.json())
+                .then(data => {
+                    document.querySelectorAll('[data-i18n]').forEach(el => {
+                        const key = el.getAttribute('data-i18n');
+                        if (data[key]) {
+                            el.textContent = data[key];
+                        }
+                    });
+                });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('lang') || 'it';
+            document.getElementById('language-switcher').value = savedLang;
+            loadLanguage(savedLang);
+        });
+
+        document.getElementById('language-switcher').addEventListener('change', function () {
+            const lang = this.value;
+            localStorage.setItem('lang', lang);
+            loadLanguage(lang);
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const langToggle = document.getElementById("langToggle");
+            const langFlag = document.getElementById("langCurrentFlag");
+            const langLabel = document.getElementById("langHoverLabel");
+
+            let currentLang = localStorage.getItem("lang") || "it";
+            updateUI(currentLang);
+
+            langToggle.addEventListener("mouseover", function () {
+                if (currentLang === "it") {
+                    langFlag.src = "assets/images/flag-en.png";
+                    langLabel.style.opacity = 1;
+                } else {
+                    langFlag.src = "assets/images/flag-it.png";
+                    langLabel.textContent = "Turn to Italiano";
+                    langLabel.style.opacity = 1;
+                }
+            });
+
+            langToggle.addEventListener("mouseout", function () {
+                updateUI(currentLang);
+                langLabel.style.opacity = 0;
+            });
+
+            langToggle.addEventListener("click", function (e) {
+                e.preventDefault();
+                currentLang = (currentLang === "it") ? "en" : "it";
+                localStorage.setItem("lang", currentLang);
+                updateUI(currentLang);
+                loadLanguage(currentLang);
+            });
+
+            function updateUI(lang) {
+                if (lang === "it") {
+                    langFlag.src = "assets/images/flag-it.png";
+                    langLabel.textContent = "Passa a English";
+                } else {
+                    langFlag.src = "assets/images/flag-en.png";
+                    langLabel.textContent = "Turn to Italiano";
+                }
+            }
+
+            function loadLanguage(lang) {
+                fetch('assets/lang/lang-' + lang + '.json')
+                    .then(response => response.json())
+                    .then(data => {
+                        document.querySelectorAll('[data-i18n]').forEach(el => {
+                            const key = el.getAttribute('data-i18n');
+                            if (data[key]) {
+                                el.textContent = data[key];
+                            }
+                        });
+                    });
+            }
+        });
+    </script>
+</body>
+</html>

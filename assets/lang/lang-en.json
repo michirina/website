@@ -1,0 +1,26 @@
+{
+  "hero_subtitle": "Welcome to the website of",
+  "hero_title": "Michele Rinaldi",
+  "hero_span": "Student at IIS Marconi Pieralisi | Computer Science and Telecommunications",
+  "hero_text": "I'm passionate about everything related to computer science: from programming to web development and graphic design. At the same time, I believe that humanities play a key role in developing critical thinking, awareness, and a more complete approach to technology.",
+  "hero_button": "Explore my work",
+
+  "about_sub_title": "About Me",
+  "about_main_title": "A student, creative mind, and technophile",
+  "about_paragraph": "I have always had a passion for design, digital graphics, and human-computer interaction. I enjoy combining the technical aspects of programming with visual creativity, developing projects that are both functional and aesthetically refined.",
+
+  "portfolio_subtitle": "Portfolio",
+  "portfolio_title": "Project Categories",
+
+  "cat_arte_title": "Art and Visual Communication",
+  "cat_arte_desc": "Creative and expressive projects that convey ideas or social messages, telling stories through visual language.",
+
+  "cat_branding_title": "Branding and Visual Identity",
+  "cat_branding_desc": "Development of coordinated brand identities for companies or projects, with a focus on logos, color palettes, typography, and communication consistency.",
+
+  "cat_industrial_title": "Industrial Design",
+  "cat_industrial_desc": "Concepts and redesigns of everyday or electronic objects, combining aesthetics, ergonomics, and functionality through 3D modeling and prototyping.",
+
+  "cat_adv_title": "Advertising Graphics",
+  "cat_adv_desc": "Posters, flyers and promotional materials created for events, businesses or cultural initiatives, with strong visual impact and effective communication."
+}

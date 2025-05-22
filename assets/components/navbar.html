@@ -1,0 +1,92 @@
+// NON USATO PERCHE' FUNZIONANTE
+
+<section class="header_area">
+    <style>
+        .header_navbar { background-color: #224870; box-shadow: 0 1px 8px rgba(0,0,0,0.05); padding:8px 0; transition:all 0.3s ease-in-out; }
+        .navbar { padding:0; }
+        .navbar-toggler { border:none; outline:none; }
+        .navbar-toggler-icon { background-image:none; width:25px; height:3px; background-color:#fff; display:block; margin:5px 0; border-radius:2px; }
+        .navbar-nav { margin:0 auto; text-align:center; }
+        .navbar-nav .nav-item { margin:0 15px; position:relative; }
+        .navbar-nav .nav-link { font-weight:500; font-size:0.95rem; color:#fff!important; padding:8px 6px; transition:all 0.2s ease; }
+        .navbar-nav .nav-item.home .nav-link { text-decoration:underline!important; }
+        .navbar-nav .nav-link:hover { text-shadow:0 0 20px rgba(255,255,255,1); }
+        .dropdown-toggle::after { display:none; }
+        .dropdown-menu { background:#fff; min-width:140px; border-radius:4px; border:none; margin-top:.5rem; padding:0; }
+        .dropdown-item { color:#333; font-size:.9rem; padding:8px 12px; }
+        .dropdown-item:hover { background:#f7f7f7; color:#007bff; }
+        .dropdown-item img { width:20px; margin-right:6px; }
+    </style>
+    <div class="header_navbar">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                    <ul class="navbar-nav">
+                        <li class="nav-item home"><a class="nav-link page-scroll" data-i18n="nav_home" href="#home">Home</a></li>
+                        <li class="nav-item"><a class="nav-link page-scroll" data-i18n="nav_pcto" href="#pcto">PCTO</a></li>
+                        <li class="nav-item"><a class="nav-link page-scroll" data-i18n="nav_umanistica" href="#areaumanistica">Area Umanistica</a></li>
+                        <li class="nav-item"><a class="nav-link page-scroll" data-i18n="nav_tecnica" href="#areatecnica">Area Tecnica</a></li>
+                        <li class="nav-item"><a class="nav-link page-scroll" data-i18n="nav_civica" href="#educazionecivica">Educazione Civica</a></li>
+                        <li class="nav-item"><a class="nav-link page-scroll" data-i18n="nav_portfolio" href="#portfolio">Portfolio</a></li>
+                        <li class="nav-item lang-switcher">
+                            <a class="nav-link" href="#" id="langToggle">
+                                <img id="langCurrentFlag" class="flag-img" src="assets/images/flag-it.png" alt="IT" />
+                                <span id="langHoverLabel" class="lang-label">Passa a English</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <script>
+        // gestione multilanguage
+        function loadLanguage(lang) {
+            fetch('assets/lang/lang-' + lang + '.json')
+                .then(r => r.json())
+                .then(data => {
+                    document.querySelectorAll('[data-i18n]').forEach(el => {
+                        const key = el.getAttribute('data-i18n');
+                        if (data[key]) el.textContent = data[key];
+                    });
+                });
+        }
+        function setFlag(lang) {
+            document.getElementById('langCurrentFlag').src = lang==='it'
+                ? 'assets/images/flag-it.png'
+                : 'assets/images/flag-en.png';
+        }
+        let currentLang = localStorage.getItem('lang') || 'it';
+        setFlag(currentLang);
+        loadLanguage(currentLang);
+        document.addEventListener('click', e => {
+            const item = e.target.closest('.dropdown-item[data-lang]');
+            if (item) {
+                e.preventDefault();
+                currentLang = item.getAttribute('data-lang');
+                localStorage.setItem('lang', currentLang);
+                setFlag(currentLang);
+                loadLanguage(currentLang);
+            }
+        });
+        const langToggle = document.getElementById('langToggle');
+        langToggle.addEventListener('mouseover', () => {
+            document.getElementById('langHoverLabel').style.opacity = '1';
+        });
+        langToggle.addEventListener('mouseout', () => {
+            document.getElementById('langHoverLabel').style.opacity = '0';
+        });
+        langToggle.addEventListener('click', e => {
+            e.preventDefault();
+            currentLang = currentLang==='it' ? 'en' : 'it';
+            localStorage.setItem('lang', currentLang);
+            setFlag(currentLang);
+            loadLanguage(currentLang);
+        });
+    </script>
+</section>
