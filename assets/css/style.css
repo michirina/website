@@ -1660,3 +1660,233 @@ p {
     position: relative;
     top: 0
 }
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NavBar Bottom Migliorata</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/LineIcons/4.0.0/LineIcons.css" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #ffffff;
+            min-height: 100vh;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+/* ====== CONTENITORE NAVBAR MIGLIORATO ====== */
+.bottom-navbar-modern {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #224870 0%, #1e3f5f 100%);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 40px;
+  padding: 1em 1.5em;
+  box-shadow: 
+    0 15px 35px rgba(34, 72, 112, 0.3),
+    0 5px 15px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  width: 90%;
+  max-width: 650px;
+  z-index: 1000;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.bottom-navbar-modern:hover {
+  transform: translateX(-50%) translateY(-2px);
+  box-shadow: 
+    0 20px 40px rgba(34, 72, 112, 0.4),
+    0 8px 25px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+/* ====== UL: 7 ELEMENTI PERFETTAMENTE SPAZIATI ====== */
+.bottom-navbar-modern .navbar-items {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  gap: 0.5em;
+}
+
+.bottom-navbar-modern .navbar-items li {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+/* ====== LINK: DESIGN MODERNO E SIMMETRICO ====== */
+.bottom-navbar-modern .navbar-items a {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1em;
+  padding: 0.8em 0.5em;
+  min-height: 60px;
+  border-radius: 25px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  width: 100%;
+  max-width: 70px;
+}
+
+.bottom-navbar-modern .navbar-items a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.08));
+  border-radius: 25px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.bottom-navbar-modern .navbar-items a i {
+  font-size: 1.3em;
+  margin-bottom: 0.3em;
+  transition: all 0.3s ease;
+  z-index: 2;
+  position: relative;
+}
+
+.bottom-navbar-modern .navbar-items a span {
+  font-size: 0.7em;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+  z-index: 2;
+  position: relative;
+  text-align: center;
+}
+
+/* ====== STATO ATTIVO: DESIGN ELEGANTE ====== */
+.bottom-navbar-modern .navbar-items a.active {
+  color: #fff;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.15));
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
+  box-shadow: 
+    0 8px 25px rgba(34, 72, 112, 0.3),
+    0 4px 15px rgba(255, 255, 255, 0.1);
+}
+
+.bottom-navbar-modern .navbar-items a.active::before {
+  opacity: 1;
+}
+
+.bottom-navbar-modern .navbar-items a.active i {
+  transform: scale(1.1);
+  text-shadow: 0 2px 8px rgba(255, 255, 255, 0.3);
+}
+
+/* ====== HOVER: EFFETTI SOFISTICATI ====== */
+.bottom-navbar-modern .navbar-items a:hover:not(.active) {
+  color: #fff;
+  transform: translateY(-2px) scale(1.02);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 5px 15px rgba(34, 72, 112, 0.2);
+}
+
+.bottom-navbar-modern .navbar-items a:hover:not(.active)::before {
+  opacity: 0.5;
+}
+
+.bottom-navbar-modern .navbar-items a:hover i {
+  transform: scale(1.1);
+  text-shadow: 0 2px 8px rgba(255, 255, 255, 0.5);
+}
+
+/* ====== BANDIERA: STILE COERENTE ====== */
+.flag-icon {
+  width: 1.3em;
+  height: 1.3em;
+  border-radius: 50%;
+  margin-bottom: 0.3em;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.bottom-navbar-modern .navbar-items a:hover .flag-icon,
+.bottom-navbar-modern .navbar-items a.active .flag-icon {
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* ====== RESPONSIVE DESIGN ====== */
+@media (max-width: 768px) {
+  .bottom-navbar-modern {
+    width: 95%;
+    padding: 0.8em 1em;
+  }
+  
+  .bottom-navbar-modern .navbar-items a {
+    min-height: 55px;
+    max-width: 60px;
+    padding: 0.6em 0.3em;
+  }
+  
+  .bottom-navbar-modern .navbar-items a i {
+    font-size: 1.2em;
+  }
+  
+  .bottom-navbar-modern .navbar-items a span {
+    font-size: 0.65em;
+  }
+  
+  .flag-icon {
+    width: 1.2em;
+    height: 1.2em;
+  }
+}
+
+@media (max-width: 480px) {
+  .bottom-navbar-modern .navbar-items a span {
+    font-size: 0.6em;
+  }
+  
+  .bottom-navbar-modern .navbar-items a {
+    max-width: 50px;
+  }
+ 
+ 
+ 
+ .content {
+  padding: 2em;
+  text-align: center;
+  color: white;
+  margin-bottom: 120px;
+}
+
+/* ====== BOTTOM NAVBAR MODERNA ====== */
+.bottom-navbar-modern {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+    background: rgba(34, 72, 112, 0.85); /* Trasparente come richiesto */
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: 50px;
+
+ 
+   </style>
+
+

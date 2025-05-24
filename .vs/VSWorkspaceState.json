@@ -2,11 +2,8 @@
   "ExpandedNodes": [
     "",
     "\\assets",
-    "\\assets\\components",
-    "\\assets\\js",
-    "\\assets\\js\\vendor",
     "\\assets\\lang"
   ],
-  "SelectedNode": "\\assets\\js\\jquery.appear.min.js",
+  "SelectedNode": "\\assets\\lang\\lang-it.json",
   "PreviewInSolutionExplorer": false
 }
