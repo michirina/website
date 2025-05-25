@@ -1886,7 +1886,17 @@ p {
     -webkit-backdrop-filter: blur(15px);
     border-radius: 50px;
 
- 
-   </style>
 
+    .work-in-progress-banner {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 15px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    position: relative;
+    z-index: 2000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
 
+</style>

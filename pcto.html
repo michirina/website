@@ -13,6 +13,11 @@
     <link href="assets/css/style.css" rel="stylesheet" />
 </head>
 <body>
+
+            <!-- Banner "Work in Progress" -->
+    <div class="work-in-progress-banner">
+        🚧 Il sito è attualmente in fase di lavorazione. Alcuni contenuti potrebbero essere incompleti. 🚧
+    </div>
     <!-- PRELOADER -->
     <div class="preloader">
         <div class="loader">
@@ -30,72 +35,6 @@
             </div>
         </div>
     </div>
-
-    <!-- HEADER / NAVBAR -->
-    <section class="header_area">
-        <style>
-            /* Caricato da index.html */
-            .header_navbar { background-color: #224870; box-shadow: 0 1px 8px rgba(0,0,0,0.05); padding: 8px 0; transition: all .3s; }
-            .navbar { padding: 0; }
-            .navbar-toggler { border: none; }
-            .navbar-toggler-icon { background-color: #fff; height: 3px; margin: 5px 0; border-radius: 2px; }
-            .navbar-nav { margin: 0 auto; text-align: center; }
-            .navbar-nav .nav-link { color: #fff !important; font-weight: 500; padding: 8px 6px; transition: .2s; }
-            .navbar-nav .nav-item.home .nav-link { text-decoration: underline !important; }
-            .navbar-nav .nav-link:hover { text-shadow: 0 0 20px rgba(255,255,255,1); }
-            .dropdown-menu { background: #fff; border-radius: 4px; padding: 0; }
-            .dropdown-item { padding: 8px 12px; }
-        </style>
-        <div class="header_navbar">
-            <div class="container">
-                <nav class="navbar navbar-expand-lg">
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
-                        <span class="navbar-toggler-icon"></span>
-                        <span class="navbar-toggler-icon"></span>
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav">
-                            <li class="nav-item"><a class="nav-link page-scroll" href="index.html#home">Home</a></li>
-                            <li class="nav-item home"><a class="nav-link page-scroll" href="pcto.html#pcto">PCTO</a></li>
-                            <li class="nav-item"><a class="nav-link page-scroll" href="index.html#areaumanistica">Area Umanistica</a></li>
-                            <li class="nav-item"><a class="nav-link page-scroll" href="index.html#areatecnica">Area Tecnica</a></li>
-                            <li class="nav-item"><a class="nav-link page-scroll" href="index.html#educazionecivica">Educazione Civica</a></li>
-                            <li class="nav-item"><a class="nav-link page-scroll" href="index.html#portfolio">Portfolio</a></li>
-                            <li class="nav-item lang-switcher">
-                                <a class="nav-link" href="#" id="langToggle">
-                                    <img id="langCurrentFlag" src="assets/images/flag-it.png" alt="IT" class="flag-img" />
-                                    <span class="lang-label">Passa a English</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-            </div>
-        </div>
-        <script>
-            function loadLanguage(lang) {
-                fetch('assets/lang/lang-' + lang + '.json')
-                    .then(res => res.json())
-                    .then(data => {
-                        document.querySelectorAll('[data-i18n]').forEach(el => {
-                            const key = el.getAttribute('data-i18n');
-                            if (data[key]) el.textContent = data[key];
-                        });
-                    });
-            }
-            let savedLang = localStorage.getItem('lang') || 'it';
-            loadLanguage(savedLang);
-            document.addEventListener('click', e => {
-                const item = e.target.closest('.dropdown-item[data-lang]');
-                if (item) {
-                    savedLang = item.dataset.lang;
-                    localStorage.setItem('lang', savedLang);
-                    loadLanguage(savedLang);
-                }
-            });
-        </script>
-    </section>
 
     <!-- CONTENUTO PCTO -->
     <section class="pcto_area section" id="pcto">
@@ -371,9 +310,70 @@
                 </div>
             </div>
         </div>
+
+
+        <!-- ====== BOTTOM NAVBAR MODERNA ====== -->
+    <nav class="bottom-navbar-modern">
+        <ul class="navbar-items">
+            <li><a href="index.html#areaumanistica"><i class="lni lni-pencil-alt"></i><span data-i18n="nav_umanistica">Umanistica</span></a></li>
+            <li><a href="index.html#areatecnica"><i class="lni lni-cog"></i><span data-i18n="nav_tecnica">Tecnica</span></a></li>
+            <li><a href="index.html#educazionecivica"><i class="lni lni-graduation"></i><span data-i18n="nav_civica">Civica</span></a></li>
+            <li><a href="index.html#home"><i class="lni lni-home"></i><span data-i18n="nav_home">Home</span></a></li>
+            <li><a href="pcto.html" class="active"><i class="lni lni-briefcase"></i><span data-i18n="nav_pcto">PCTO</span></a></li>
+            <li><a href="index.html#portfolio"><i class="lni lni-layout"></i><span data-i18n="nav_portfolio">Portfolio</span></a></li>
+            <li>
+                <a href="#" id="langToggleBottom">
+                    <img src="assets/images/flag-it.png" alt="Lingua" class="flag-icon" id="bottomLangFlag" />
+                    <span class="lang-text" data-i18n="nav_lang">Lingua</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
     </footer>
 
     <!-- SCRIPTS -->
+      <!-- Gestione cambio lingua (come nella home) -->
+    <script>
+        let currentLang = 'it';
+        function updateLanguageUI(lang) {
+            const bottomFlag = document.getElementById('bottomLangFlag');
+            if (lang === 'it') {
+                if (bottomFlag) bottomFlag.src = 'assets/images/flag-it.png';
+            } else {
+                if (bottomFlag) bottomFlag.src = 'assets/images/flag-en.png';
+            }
+        }
+
+        function loadLanguage(lang) {
+            fetch(`assets/lang/lang-${lang}.json`)
+                .then(response => response.json())
+                .then(data => {
+                    document.querySelectorAll('[data-i18n]').forEach(el => {
+                        const key = el.getAttribute('data-i18n');
+                        if (data[key]) el.textContent = data[key];
+                    });
+                });
+        }
+
+        function switchLanguage() {
+            currentLang = (currentLang === 'it') ? 'en' : 'it';
+            updateLanguageUI(currentLang);
+            loadLanguage(currentLang);
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            updateLanguageUI(currentLang);
+            loadLanguage(currentLang);
+
+            const langToggleBottom = document.getElementById('langToggleBottom');
+            if (langToggleBottom) {
+                langToggleBottom.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    switchLanguage();
+                });
+            }
+        });
+    </script>
     <script src="assets/js/vendor/jquery-1.12.4.min.js"></script>
     <script src="assets/js/vendor/modernizr-3.7.1.min.js"></script>
     <script src="assets/js/popper.min.js"></script>
