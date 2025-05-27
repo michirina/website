@@ -2,97 +2,89 @@
 <html class="no-js" lang="it">
 <head>
     <meta charset="utf-8" />
-    <title data-i18n="site_title">Michele Rinaldi – PCTO</title>
-    <meta name="description" content="Pagina PCTO di Michele Rinaldi: esperienza presso SYEEW, team, attività e ringraziamenti." />
+    <title>Michele Rinaldi – PCTO SYEEW</title>
+    <meta name="description" content="Esperienza PCTO di Michele Rinaldi presso SYEEW: attività svolte, riflessioni personali, tecnologie utilizzate." />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="https://files.catbox.moe/5nm396.ico" rel="shortcut icon" type="image/png" />
+
+    <!-- Fogli di stile esistenti -->
     <link href="assets/css/animate.css" rel="stylesheet" />
     <link href="assets/css/lineicons.css" rel="stylesheet" />
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
     <link href="assets/css/default.css" rel="stylesheet" />
     <link href="assets/css/style.css" rel="stylesheet" />
+    <style>
+        /* Miglior leggibilità */
+        p { line-height: 1.65rem; }
+        .my-space { margin-top: 2rem; }
+        .carousel-item img { object-fit: cover; height: 320px; }
+    </style>
 </head>
 <body>
-
+    
     <!-- Banner "Work in Progress" -->
     <div class="work-in-progress-banner">
-        🚧 Il sito è attualmente in fase di lavorazione. Alcuni contenuti potrebbero essere incompleti. 🚧
+        🚧 Il sito è attualmente in fase di aggiornamento. Alcuni contenuti potrebbero cambiare. 🚧
     </div>
+
     <!-- PRELOADER -->
     <div class="preloader">
         <div class="loader">
             <div class="ytp-spinner">
                 <div class="ytp-spinner-container">
                     <div class="ytp-spinner-rotator">
-                        <div class="ytp-spinner-left">
-                            <div class="ytp-spinner-circle"></div>
-                        </div>
-                        <div class="ytp-spinner-right">
-                            <div class="ytp-spinner-circle"></div>
-                        </div>
+                        <div class="ytp-spinner-left"><div class="ytp-spinner-circle"></div></div>
+                        <div class="ytp-spinner-right"><div class="ytp-spinner-circle"></div></div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- CONTENUTO PCTO -->
+    <!-- ====== CONTENUTO PRINCIPALE ====== -->
     <section class="pcto_area section" id="pcto">
         <div class="container">
 
             <!-- Titolo pagina -->
             <div class="section_title text-center pb-30">
-                <h5 class="sub_title">PCTO</h5>
-                <h3 class="main_title">La mia esperienza PCTO presso SYEEW</h3>
+                <h5 class="sub_title">Percorsi per le Competenze Trasversali e l'Orientamento</h5>
+                <h3 class="main_title">La mia esperienza formativa presso <span class="text-primary">SYEEW</span></h3>
                 <ul class="line"><li></li><li></li><li></li></ul>
             </div>
 
-            <!-- Banner / Immagine iniziale -->
-            <div class="text-center mt-50 mb-50">
-                <img src="assets/images/pcto_banner.jpg" alt="Banner PCTO" class="img-fluid rounded shadow-sm">
-            </div>
-
-            <!-- Introduzione ampliata -->
-            <div class="row justify-content-center">
+            <!-- Introduzione -->
+            <div class="row justify-content-center my-space">
                 <div class="col-lg-10">
                     <p class="lead">
-                        Durante il mio periodo di PCTO in SYEEW, ho avuto l'opportunità di immergermi in un ambiente lavorativo dinamico,
-                        dove l'innovazione tecnologica si intreccia con una forte vocazione all'assistenza delle piccole imprese.
-                        Ho ricevuto brevi lezioni e consigli di vita e lavoro da parte del mio Tutor e, più in generale, da tutto il Team.
-                        Il team era di dimensioni ridotte, cosa che mi ha permesso di conoscere personalmente ogni membro e di lavorare a
-                        stretto contatto con loro. Non essendo presente un team UX/Design, ho lavorato in autonomia seguendo le indicazioni
-                        del CEO e del Tutor.
+                        Nei mesi scorsi ho avuto l'occasione di affiancare il team di <strong>SYEEW S.r.l.</strong>, una giovane realtà veronese che sviluppa una piattaforma SaaS di Business Intelligence pensata per micro e piccole imprese. L'obiettivo? Rendere i numeri aziendali chiari come semafori: verdi quando tutto fila liscio, rossi quando serve intervenire.
                     </p>
+
                     <p>
-                        L'obiettivo principale del mio tirocinio è stato comprendere come un'azienda di tecnologie emergenti possa tradurre
-                        esigenze aziendali complesse in soluzioni semplici e visivamente coinvolgenti. Questo approccio mi ha permesso di
-                        migliorare sia le mie capacità tecniche, sia le mie soft skills.
+                        La squadra era composta da cinque persone: dimensioni ridotte che mi hanno permesso di parlare con tutti, capire priorità diverse e – soprattutto – contribuire in prima persona. Non c'era un reparto UX dedicato, così ho lavorato in autonomia, confrontandomi di frequente con il CEO e con il mio Tutor tecnico.
                     </p>
                 </div>
             </div>
 
-            <!-- SYEEW: Innovazione al servizio -->
-            <div class="row align-items-center mt-80">
-                <div class="col-md-6">
-                    <h4>SYEEW: Innovazione al servizio delle piccole imprese</h4>
-                    <p>
-                        La piattaforma SYEEW è stata ideata con un focus preciso: semplificare la gestione aziendale di
-                        chi non ha risorse interne dedicate alla contabilità. Grazie al concetto "Know Numbers with No Numbers",
-                        i dati finanziari vengono tradotti in viste chiare e visivamente suggestive, permettendo decisioni rapide
-                        e informate.
-                    </p>
-                    <p>
-                        Il sistema dei <strong>Business Emojis</strong> introduce quattro icone intuitive per rappresentare metriche chiave:
-                        liquidità, fatturato, margini e proiezioni. Questo approccio gamificato aumenta il coinvolgimento,
-                        trasformando numeri spesso astratti in indicatori immediatamente interpretabili.
-                    </p>
+            <!-- Sezione: Chi è SYEEW -->
+            <section class="about_syeew section my-space">
+                <div class="row align-items-center">
+                    <div class="col-md-6 order-md-2 text-center mb-4 mb-md-0">
+                        <img src="assets/images/syeew_platform.png" alt="Mockup piattaforma SYEEW" class="img-fluid rounded shadow-sm">
+                    </div>
+                    <div class="col-md-6 order-md-1">
+                        <h4>SYEEW in breve</h4>
+                        <p>
+                            Fondata nel 2021, SYEEW mira a semplificare la vita agli imprenditori: invece di tabelle e grafici complessi, mostra <strong>Business Emoji</strong> che riassumono l'andamento aziendale a colpo d'occhio. Il motore dietro le quinte unisce data integration e moduli di Intelligenza Artificiale.
+                        </p>
+                        <p class="my-space">
+                            Trasparenza economica: nel 2022 l'azienda ha ricevuto un contributo pubblico di <strong>100 000 €</strong> (pari al 70 % dell'investimento complessivo) regolarmente registrato nel <abbr title="Registro nazionale degli aiuti di Stato">Registro Nazionale Trasparenza</abbr>.
+                        </p>
+                    </div>
                 </div>
-                <div class="col-md-6 text-center">
-                    <img src="assets/images/syeew_platform.png" alt="Piattaforma SYEEW" class="img-fluid mt-30 rounded shadow-sm">
-                </div>
-            </div>
+            </section>
 
-            <!-- Il team di SYEEW -->
+            <!-- Sezione: Il Team -->
+                        <!-- Il team di SYEEW -->
             <section class="team_area section mt-80">
                 <div class="section_title text-center pb-30">
                     <h5 class="sub_title">Team</h5>
@@ -154,129 +146,238 @@
                 </div>
             </section>
 
-            <!-- Attività durante il tirocinio (due sezioni verticali con caroselli) -->
-            <section class="experience_area section mt-80">
-                <div class="container">
-                    <div class="section_title text-center pb-30">
-                        <h5 class="sub_title">Attività</h5>
-                        <h3 class="main_title">Le mie attività durante il tirocinio</h3>
-                        <ul class="line"><li></li><li></li><li></li></ul>
-                    </div>
+            <!-- Sezione: Attività svolte -->
+            <section class="experience_area section my-space">
+                <div class="section_title text-center pb-30">
+                    <h5 class="sub_title">Cronologia</h5>
+                    <h3 class="main_title">Attività principali</h3>
+                    <ul class="line"><li></li><li></li><li></li></ul>
+                </div>
 
-                    <!-- Primo periodo con carosello -->
-                    <div class="experience_period mt-60">
-                        <h4 class="mb-3">Primo periodo: 27 maggio – 14 giugno 2024</h4>
-                        <div id="carouselFirstPeriod" class="carousel slide" data-ride="carousel">
-                            <ol class="carousel-indicators">
-                                <li data-target="#carouselFirstPeriod" data-slide-to="0" class="active"></li>
-                                <li data-target="#carouselFirstPeriod" data-slide-to="1"></li>
-                                <li data-target="#carouselFirstPeriod" data-slide-to="2"></li>
-                            </ol>
-                            <div class="carousel-inner rounded shadow-sm">
-                                <div class="carousel-item active">
-                                    <img src="assets/images/figma_redesign1.jpg" class="d-block w-100" alt="Redesign Figma 1">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="assets/images/figma_redesign2.jpg" class="d-block w-100" alt="Redesign Figma 2">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="assets/images/figma_redesign3.jpg" class="d-block w-100" alt="Redesign Figma 3">
-                                </div>
-                            </div>
-                            <a class="carousel-control-prev" href="#carouselFirstPeriod" role="button" data-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Previous</span>
-                            </a>
-                            <a class="carousel-control-next" href="#carouselFirstPeriod" role="button" data-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Next</span>
-                            </a>
+                <!-- Primo periodo -->
+                <div class="experience_period my-space">
+                    <h4 class="mb-3">27 maggio – 14 giugno 2024</h4>
+                    <div class="row">
+                        <div class="col-lg-7">
+                            <p>
+                                Durante queste tre settimane mi sono concentrato su <strong>Figma</strong>. Partendo dall'interfaccia esistente, ho ridefinito la gerarchia delle schermate, creato uno stile visivo coerente con la brand identity e preparato <em>componenti riutilizzabili</em> per velocizzare i futuri aggiornamenti.
+                            </p>
+                            <p class="my-space">
+                                Ho consegnato una <strong>libreria condivisa</strong> e prototipi interattivi utili per le presentazioni ai potenziali investitori.
+                            </p>
                         </div>
-                        <p class="mt-4">
-                            In questa fase ho lavorato a stretto contatto con il team di UI/UX per ridisegnare interamente
-                            l'app di SYEEW. Ho analizzato i feedback esistenti, creato wireframe e prototipi ad alta fedeltà
-                            su Figma, ottimizzando la navigazione e introducendo elementi grafici coerenti con l'identità aziendale.
-                        </p>
-                        <p>
-                            Non ho condotto test di usabilità né raccolto dati qualitativi, focalizzandomi invece sull'analisi
-                            dei feedback già disponibili e sulla prototipazione rapida.
-                        </p>
+                        <div class="col-lg-5">
+                            <!-- Carousel immagini periodo 1 -->
+                            <div id="carousel-period1" class="carousel slide shadow-sm" data-ride="carousel">
+                                <div class="carousel-inner rounded">
+                                    <div class="carousel-item active">
+                                        <img src="assets/images/period1_1.jpg" class="d-block w-100" alt="Wireframe in Figma" />
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="assets/images/period1_2.jpg" class="d-block w-100" alt="Componenti Figma" />
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="assets/images/period1_3.jpg" class="d-block w-100" alt="Prototype interactive" />
+                                    </div>
+                                </div>
+                                <a class="carousel-control-prev" href="#carousel-period1" role="button" data-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Precedente</span>
+                                </a>
+                                <a class="carousel-control-next" href="#carousel-period1" role="button" data-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Successivo</span>
+                                </a>
+                            </div>
+                        </div>
                     </div>
+                </div>
 
-                    <!-- Secondo periodo con carosello -->
-                    <div class="experience_period mt-80">
-                        <h4 class="mb-3">Secondo periodo: 9 – 20 settembre 2024</h4>
-                        <div id="carouselSecondPeriod" class="carousel slide" data-ride="carousel">
-                            <ol class="carousel-indicators">
-                                <li data-target="#carouselSecondPeriod" data-slide-to="0" class="active"></li>
-                                <li data-target="#carouselSecondPeriod" data-slide-to="1"></li>
-                                <li data-target="#carouselSecondPeriod" data-slide-to="2"></li>
-                            </ol>
-                            <div class="carousel-inner rounded shadow-sm">
-                                <div class="carousel-item active">
-                                    <img src="assets/images/flutter_impl1.jpg" class="d-block w-100" alt="Implementazione Flutter 1">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="assets/images/flutter_impl2.jpg" class="d-block w-100" alt="Implementazione Flutter 2">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="assets/images/flutter_impl3.jpg" class="d-block w-100" alt="Implementazione Flutter 3">
-                                </div>
-                            </div>
-                            <a class="carousel-control-prev" href="#carouselSecondPeriod" role="button" data-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Previous</span>
-                            </a>
-                            <a class="carousel-control-next" href="#carouselSecondPeriod" role="button" data-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Next</span>
-                            </a>
+                <!-- Secondo periodo -->
+                <div class="experience_period my-space">
+                    <h4 class="mb-3">9 – 20 settembre 2024</h4>
+                    <div class="row">
+                        <div class="col-lg-7">
+                            <p>
+                                Durante il secondo periodo sono passato allo sviluppo in <strong>Flutter</strong>. Ho tradotto i prototipi in codice, realizzando <strong>cinque schermate principali</strong> . L'App girava su dispositivi reali, e l'ho testata tramite il Debug USB con il mio smartphone. Non erano presenti connessioni API: i dati erano popolati localmente per dimostrare flussi e animazioni.
+                            </p>
+                            <p class="my-space">
+                                Questa fase mi ha fatto toccare con mano la differenza tra disegnare e implementare: ogni pixel conta, ma anche la logica che lo muove.
+                            </p>
                         </div>
-                        <p class="mt-4">
-                            Nel secondo periodo mi sono occupato di tradurre i prototipi in codice funzionale utilizzando Flutter.
-                            Questa è stata la parte più complessa: a causa di vincoli di tempo non sono riuscito a integrare
-                            le API, ma ho ricreato le schermate di alcune interfacce.
-                        </p>
+                        <div class="col-lg-5">
+                            <!-- Carousel immagini periodo 2 -->
+                            <div id="carousel-period2" class="carousel slide shadow-sm" data-ride="carousel">
+                                <div class="carousel-inner rounded">
+                                    <div class="carousel-item active">
+                                        <img src="assets/images/period2_1.jpg" class="d-block w-100" alt="Schermata Flutter 1" />
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="assets/images/period2_2.jpg" class="d-block w-100" alt="Schermata Flutter 2" />
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="assets/images/period2_3.jpg" class="d-block w-100" alt="Schermata Flutter 3" />
+                                    </div>
+                                </div>
+                                <a class="carousel-control-prev" href="#carousel-period2" role="button" data-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Precedente</span>
+                                </a>
+                                <a class="carousel-control-next" href="#carousel-period2" role="button" data-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Successivo</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sezione: Esperienza SMAU -->
+            <section class="smau_area section my-space bg-light">
+                <div class="section_title text-center pb-30">
+                    <h5 class="sub_title">Networking</h5>
+                    <h3 class="main_title">Osservatore a SMAU Milano 2024</h3>
+                    <ul class="line"><li></li><li></li><li></li></ul>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
                         <p>
-                            Sebbene non abbia implementato tutte le funzionalità previste, ho potenziato le mie competenze in
-                            reactive programming, rendering performante e debugging avanzato.
+                            Il <strong>29 ottobre 2024</strong> ho accompagnato SYEEW a <em>SMAU Milano</em>. Non avevamo uno stand, ma partecipare come ospite mi ha aperto gli occhi su come altri team raccontano i propri progetti e cercano partner. Ho preso appunti sui pitch e sulle tendenze del settore, utili per calibrare meglio le future presentazioni di SYEEW.
                         </p>
                     </div>
                 </div>
             </section>
 
-            <!-- L’esperienza continua -->
-            <section class="continuing_area section mt-80">
-                <div class="container">
-                    <div class="section_title text-center pb-30">
-                        <h5 class="sub_title">Prossimi passi</h5>
-                        <h3 class="main_title">L’esperienza continua</h3>
-                        <ul class="line"><li></li><li></li><li></li></ul>
-                    </div>
-                    <p class="text-center lead">
-                        Il 29 ottobre 2024 ho partecipato insieme al team a SMAU Milano come osservatore e ospite:
-                        non abbiamo tenuto una presentazione ufficiale, ma è stato estremamente formativo poter osservare
-                        progetti e strategie di altre imprese.
+                <!-- Sezione: Tecnologie e strumenti -->
+<section class="tools_area section my-space">
+  <div class="section_title text-center pb-30">
+    <h5 class="sub_title">Toolkit</h5>
+    <h3 class="main_title">Software e linguaggi utilizzati</h3>
+    <ul class="line"><li></li><li></li><li></li></ul>
+  </div>
+
+  <div class="row justify-content-center">
+    <div class="col-lg-11">
+      <div class="row">
+        
+        <!-- Adobe XD -->
+        <div class="col-lg-6 col-md-6 mb-4">
+          <div class="tool-card p-4 rounded shadow-sm h-100 bg-white">
+            <div class="d-flex align-items-center mb-3">
+              <div class="tool-icon me-3">
+                <img src="https://www.svgrepo.com/show/452151/adobe-xd.svg" width="48" height="48" alt="Adobe XD icon" loading="lazy">
+              </div>
+              <h5 class="mb-0 tool-title">Adobe XD</h5>
+            </div>
+            <p class="tool-description">
+              Punto di partenza del progetto. Ho analizzato i mockup esistenti creati dal team per comprendere la struttura iniziale dell'interfaccia e i flussi utente già definiti. Questo mi ha permesso di identificare gli elementi da mantenere e quelli da ripensare completamente durante la fase di redesign in Figma.
+            </p>
+          </div>
+        </div>
+
+        <!-- Figma -->
+        <div class="col-lg-6 col-md-6 mb-4">
+          <div class="tool-card p-4 rounded shadow-sm h-100 bg-white">
+            <div class="d-flex align-items-center mb-3">
+              <div class="tool-icon me-3">
+                <img src="https://www.svgrepo.com/show/452202/figma.svg" width="48" height="48" alt="Figma icon" loading="lazy">
+              </div>
+              <h5 class="mb-0 tool-title">Figma</h5>
+            </div>
+            <p class="tool-description">
+              Il cuore della progettazione UX/UI. Ho creato una libreria di componenti riutilizzabili, definito un design system coerente con la brand identity di SYEEW e realizzato prototipi interattivi completi. La collaborazione in tempo reale ha facilitato i feedback con il team e la condivisione dei design con potenziali investitori.
+            </p>
+          </div>
+        </div>
+
+        <!-- Flutter & Dart -->
+        <div class="col-lg-6 col-md-6 mb-4">
+          <div class="tool-card p-4 rounded shadow-sm h-100 bg-white">
+            <div class="d-flex align-items-center mb-3">
+              <div class="tool-icon me-3">
+                <img src="https://www.svgrepo.com/show/373604/flutter.svg" width="48" height="48" alt="Flutter icon" loading="lazy">
+                <img src="https://www.svgrepo.com/show/353631/dart.svg" width="44" height="44" alt="Dart icon" loading="lazy">
+              </div>
+                
+              <h5 class="mb-0 tool-title">  Flutter e Dart</h5>
+            </div>
+            <p class="tool-description">
+              Framework scelto per la sua capacità di sviluppare applicazioni native per iOS e Android con un'unica codebase. Ho implementato cinque schermate principali traducendo i design Figma in codice Dart, gestendo animazioni fluide, navigazione tra pagine e popolamento di dati mock per simulare l'esperienza utente finale.
+            </p>
+          </div>
+        </div>
+
+        <!-- Visual Studio Code -->
+        <div class="col-lg-6 col-md-6 mb-4">
+          <div class="tool-card p-4 rounded shadow-sm h-100 bg-white">
+            <div class="d-flex align-items-center mb-3">
+              <div class="tool-icon me-3">
+                <img src="https://www.svgrepo.com/show/452129/vs-code.svg" width="48" height="48" alt="Visual Studio Code icon" loading="lazy">
+              </div>
+              <h5 class="mb-0 tool-title">Visual Studio Code</h5>
+            </div>
+            <p class="tool-description">
+              Editor principale per lo sviluppo Flutter. Configurato con le estensioni Dart e Flutter per il supporto completo al linguaggio, debug integrato e hot reload. L'ambiente mi ha permesso di testare rapidamente le modifiche sul dispositivo fisico tramite USB debugging.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+            <!-- Sezione: Bilancio personale -->
+            <section class="personal_review section my-space bg-light">
+                <div class="section_title text-center pb-30">
+                    <h5 class="sub_title">Riflessione</h5>
+                    <h3 class="main_title">Cosa porto a casa</h3>
+                    <ul class="line"><li></li><li></li><li></li></ul>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                    <p>
+                        L'esperienza in SYEEW mi ha dato un assaggio concreto di come nasce un prodotto digitale: dal foglio bianco alla demo funzionante. Ho apprezzato la fiducia concessa e la libertà di sperimentare. Allo stesso tempo ho toccato con mano la velocità delle tempistiche in startup: alcune attività, come la connessione API o i test di usabilità, sono rimaste fuori scope per ragioni di calendario.
                     </p>
+                    <p class="my-space">
+                        Una delle cose che mi ha colpito di più è stata la totale dedizione del CEO al progetto: ogni dettaglio, ogni schermata, ogni strategia veniva curata con attenzione e passione quotidiana. Mi ha fatto riflettere molto su quanto possa essere appagante costruire qualcosa da zero, giorno dopo giorno, vederlo crescere e migliorarlo con continuità. È un approccio che sogno di poter adottare anch'io in futuro, magari su un progetto mio.
+                    </p>
+
+                    </div>
                 </div>
             </section>
 
-            <!-- Ringraziamenti -->
-            <section class="thanks_area section mt-80 mb-80">
-                <div class="container">
-                    <div class="section_title text-center pb-30">
-                        <h5 class="sub_title">Grazie</h5>
-                        <h3 class="main_title">Ringraziamenti</h3>
-                        <ul class="line"><li></li><li></li><li></li></ul>
+            <!-- Sezione: Trasparenza finanziaria -->
+            <section class="financial_area section my-space">
+                <div class="section_title text-center pb-30">
+                    <h5 class="sub_title">Trasparenza</h5>
+                    <h3 class="main_title">Aiuti di Stato ricevuti</h3>
+                    <ul class="line"><li></li><li></li><li></li></ul>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <p>
+                            SYEEW dichiara di aver percepito, nell'esercizio 2022, aiuti e garanzie pubbliche su finanziamenti concessi dalle Pubbliche Amministrazioni. I dettagli sono disponibili nel Registro Nazionale Trasparenza.
+                        </p>
                     </div>
-                    <p class="text-center">
-                        Desidero ringraziare calorosamente tutto il team di SYEEW per il supporto costante e
-                        l'inestimabile opportunità di crescita. Le competenze acquisite e le sfide affrontate
-                        durante questo percorso resteranno una tappa fondamentale nel mio sviluppo professionale.
-                    </p>
-                    <div class="text-center mt-50">
-                        <a href="https://www.figma.com/deck/hJrOtqtGPKStzLSoLbEfbl/Rinaldi-PCTO?node-id=42-192" class="main-btn" target="_blank">Presentazione Inglese</a>
-                        <a href="https://www.figma.com/proto/RXmiNTvJcI4bQm6VNsh4aT/SYEEW---Figma?node-id=2007-1682" class="main-btn" target="_blank">Mockup SYEEW</a>
+                </div>
+            </section>
+
+            <!-- Ringraziamenti e call-to-action -->
+            <section class="thanks_area section my-space mb-80 bg-light">
+                <div class="section_title text-center pb-30">
+                    <h5 class="sub_title">Grazie!</h5>
+                    <h3 class="main_title">Verso nuove sfide</h3>
+                    <ul class="line"><li></li><li></li><li></li></ul>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-10 text-center">
+                        <p>
+                            Ringrazio ogni membro del team per il tempo dedicato e per i feedback continui. Se vuoi dare un'occhiata ai prototipi o al codice, trovi tutto qui sotto.
+                        </p>
+                        <a href="https://www.figma.com/deck/hJrOtqtGPKStzLSoLbEfbl/Rinaldi-PCTO?node-id=42-192" class="main-btn" target="_blank" rel="noopener">Presentazione Figma</a>
+                        <a href="https://www.github.com/michelerinaldi/syeew-flutter" class="main-btn" target="_blank" rel="noopener">Repository GitHub</a>
                     </div>
                 </div>
             </section>
@@ -297,27 +398,25 @@
             </div>
         </div>
 
-        <!-- ====== BOTTOM NAVBAR MODERNA ====== -->
         <nav class="bottom-navbar-modern">
             <ul class="navbar-items">
-                <li><a href="index.html#areaumanistica"><i class="lni lni-pencil-alt"></i><span data-i18n="nav_umanistica">Umanistica</span></a></li>
-                <li><a href="index.html#areatecnica"><i class="lni lni-cog"></i><span data-i18n="nav_tecnica">Tecnica</span></a></li>
-                <li><a href="index.html#educazionecivica"><i class="lni lni-graduation"></i><span data-i18n="nav_civica">Civica</span></a></li>
-                <li><a href="index.html#home"><i class="lni lni-home"></i><span data-i18n="nav_home">Home</span></a></li>
-                <li><a href="pcto.html" class="active"><i class="lni lni-briefcase"></i><span data-i18n="nav_pcto">PCTO</span></a></li>
-                <li><a href="index.html#portfolio"><i class="lni lni-layout"></i><span data-i18n="nav_portfolio">Portfolio</span></a></li>
+                <li><a href="index.html#areaumanistica"><i class="lni lni-pencil-alt"></i><span>Umanistica</span></a></li>
+                <li><a href="index.html#areatecnica"><i class="lni lni-cog"></i><span>Tecnica</span></a></li>
+                <li><a href="index.html#educazionecivica"><i class="lni lni-graduation"></i><span>Civica</span></a></li>
+                <li><a href="index.html#home"><i class="lni lni-home"></i><span>Home</span></a></li>
+                <li><a href="pcto_riscritto.html" class="active"><i class="lni lni-briefcase"></i><span>PCTO</span></a></li>
+                <li><a href="index.html#portfolio"><i class="lni lni-layout"></i><span>Portfolio</span></a></li>
                 <li>
                     <a href="#" id="langToggleBottom">
                         <img src="assets/images/flag-it.png" alt="Lingua" class="flag-icon" id="bottomLangFlag" />
-                        <span class="lang-text" data-i18n="nav_lang">Lingua</span>
+                        <span class="lang-text">Lingua</span>
                     </a>
                 </li>
             </ul>
         </nav>
     </footer>
 
-    <!-- SCRIPTS -->
-    <!-- Gestione cambio lingua (come nella home) -->
+    <!-- SCRIPTS (come nella versione originale) -->
     <script>
         let currentLang = 'it';
         function updateLanguageUI(lang) {
@@ -328,7 +427,6 @@
                 if (bottomFlag) bottomFlag.src = 'assets/images/flag-en.png';
             }
         }
-
         function loadLanguage(lang) {
             fetch(`assets/lang/lang-${lang}.json`)
                 .then(response => response.json())
@@ -339,17 +437,14 @@
                     });
                 });
         }
-
         function switchLanguage() {
             currentLang = (currentLang === 'it') ? 'en' : 'it';
             updateLanguageUI(currentLang);
             loadLanguage(currentLang);
         }
-
         document.addEventListener('DOMContentLoaded', function () {
             updateLanguageUI(currentLang);
             loadLanguage(currentLang);
-
             const langToggleBottom = document.getElementById('langToggleBottom');
             if (langToggleBottom) {
                 langToggleBottom.addEventListener('click', function (e) {
