@@ -1661,14 +1661,6 @@ p {
     top: 0
 }
 
-<!DOCTYPE html>
-<html lang="it">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NavBar Bottom Migliorata</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/LineIcons/4.0.0/LineIcons.css" rel="stylesheet">
-    <style>
         body {
             margin: 0;
             padding: 0;
@@ -1944,5 +1936,6 @@ p {
         margin-right: 0 !important;
     }
 }
-    
+}
+
 </style>
