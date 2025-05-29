@@ -1661,6 +1661,14 @@ p {
     top: 0
 }
 
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NavBar Bottom Migliorata</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/LineIcons/4.0.0/LineIcons.css" rel="stylesheet">
+    <style>
         body {
             margin: 0;
             padding: 0;
@@ -1933,9 +1941,68 @@ p {
     
     .tool-icon {
         margin-bottom: 1rem;
-        margin-right: 0 !important;
+        margin-right: 0;
     }
 }
+
+.emoji-card {
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    border-radius: 1.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
+.emoji-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.emoji-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+    pointer-events: none;
+}
+
+.emoji-card:hover::before {
+    left: 100%;
+}
+
+.animation-box {
+    transition: all 0.3s ease;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+}
+
+.emoji-card:hover .animation-box {
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .emoji-card {
+        margin-bottom: 2rem;
+    }
+
+    .animation-box {
+        width: 100px;
+        height: 100px;
+    }
+
+    .animation-box > div {
+        width: 70px;
+        height: 70px;
+    }
+}
+ 
 </style>
+
