@@ -13,6 +13,7 @@
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
     <link href="assets/css/default.css" rel="stylesheet" />
     <link href="assets/css/style.css" rel="stylesheet" />
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <style>
         /* Miglior leggibilità */
         p { line-height: 1.65rem; }
@@ -68,53 +69,90 @@
     <script src="assets/js/main.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
 <script>
+// Script per le animazioni personalizzate degli emoji
 document.addEventListener('DOMContentLoaded', function() {
-    // Inizializza le animazioni Lottie per ogni Business Emoji
-    const animations = [
-        {
-            container: document.getElementById('scrigno-animation'),
-            path: 'assets/images/scrigno.json',
-            loop: true,
-            autoplay: true
-        },
-        {
-            container: document.getElementById('sirena-animation'),
-            path: 'assets/images/sirena.json',
-            loop: true,
-            autoplay: true
-        },
-        {
-            container: document.getElementById('spia-animation'),
-            path: 'assets/images/spia.json',
-            loop: true,
-            autoplay: true
-        },
-        {
-            container: document.getElementById('sfinge-animation'),
-            path: 'assets/images/sfinge.json',
-            loop: true,
-            autoplay: true
-        }
-    ];
-
-    animations.forEach(config => {
-        if (config.container) {
-            try {
-                lottie.loadAnimation({
-                    container: config.container,
-                    renderer: 'svg',
-                    loop: config.loop,
-                    autoplay: config.autoplay,
-                    path: config.path
-                });
-            } catch (error) {
-                console.log(`Animazione non trovata: ${config.path}`);
-                // Fallback: mostra un'icona statica se l'animazione non è disponibile
-                config.container.innerHTML = '<i class="lni lni-emoji-smile" style="font-size: 4rem; color: rgba(255,255,255,0.8);"></i>';
-            }
-        }
-    });
+    
+    // Animazione per lo Scrigno
+    const scrignoAnimation = document.getElementById('scrigno-animation');
+    if (scrignoAnimation) {
+        // Qui puoi aggiungere le tue animazioni specifiche per lo scrigno
+        console.log('Scrigno animation container ready');
+        
+        // Esempio di animazione personalizzata
+        scrignoAnimation.addEventListener('mouseenter', function() {
+            this.style.transform = 'scale(1.2) rotate(10deg)';
+        });
+        
+        scrignoAnimation.addEventListener('mouseleave', function() {
+            this.style.transform = 'scale(1) rotate(0deg)';
+        });
+    }
+    
+    // Animazione per la Sirena
+    const sirenaAnimation = document.getElementById('sirena-animation');
+    if (sirenaAnimation) {
+        console.log('Sirena animation container ready');
+        
+        // Esempio di animazione ondeggiante
+        sirenaAnimation.addEventListener('mouseenter', function() {
+            this.style.animation = 'wave 0.5s ease-in-out infinite alternate';
+        });
+        
+        sirenaAnimation.addEventListener('mouseleave', function() {
+            this.style.animation = 'none';
+        });
+    }
+    
+    // Animazione per la Spia
+    const spiaAnimation = document.getElementById('spia-animation');
+    if (spiaAnimation) {
+        console.log('Spia animation container ready');
+        
+        // Esempio di animazione di investigazione
+        spiaAnimation.addEventListener('mouseenter', function() {
+            this.style.filter = 'brightness(1.5) contrast(1.2)';
+        });
+        
+        spiaAnimation.addEventListener('mouseleave', function() {
+            this.style.filter = 'none';
+        });
+    }
+    
+    // Animazione per la Sfinge
+    const sfingeAnimation = document.getElementById('sfinge-animation');
+    if (sfingeAnimation) {
+        console.log('Sfinge animation container ready');
+        
+        // Esempio di animazione di avvertimento
+        sfingeAnimation.addEventListener('mouseenter', function() {
+            this.style.animation = 'pulse 0.3s ease-in-out 3';
+        });
+        
+        sfingeAnimation.addEventListener('mouseleave', function() {
+            this.style.animation = 'none';
+        });
+    }
+    
 });
+
+// CSS Keyframes aggiuntive per le animazioni JavaScript
+const additionalStyles = `
+    @keyframes wave {
+        0% { transform: translateY(0px) rotate(0deg); }
+        100% { transform: translateY(-5px) rotate(5deg); }
+    }
+    
+    @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.1); }
+        100% { transform: scale(1); }
+    }
+`;
+
+// Aggiungi gli stili aggiuntivi
+const styleSheet = document.createElement('style');
+styleSheet.textContent = additionalStyles;
+document.head.appendChild(styleSheet);
 </script>
 </head>
 <body>
@@ -178,82 +216,84 @@ document.addEventListener('DOMContentLoaded', function() {
                     </div>
                 </div>
             </section>
-<!-- Griglia delle 4 Emoji -->
-<div class="row justify-content-center">
+    <div class="container">
+        <!-- Griglia delle 4 Emoji -->
+        <div class="row justify-content-center">
 
-    <!-- Scrigno Verde -->
-    <div class="col-lg-3 col-md-6 mb-5">
-        <div class="emoji-card h-100 shadow-lg overflow-hidden mx-3" style="background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%); border-radius: 1.5rem;">
-            <div class="emoji-animation-container p-4 text-center">
-                <div class="animation-box mx-auto mb-4" style="width: 140px; height: 140px;">
-                    <div id="scrigno-animation" style="width: 100px; height: 100px;"></div>
+            <!-- Scrigno Verde -->
+            <div class="col-lg-3 col-md-6 mb-5">
+                <div class="emoji-card scrigno-card h-100 shadow-lg overflow-hidden mx-3" style="background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%); border-radius: 1.5rem;">
+                    <div class="emoji-animation-container p-4 text-center">
+                        <div class="animation-box mx-auto mb-4">
+                            <div id="scrigno-animation" style="width: 100px; height: 100px;"></div>
+                        </div>
+                        <h4 class="text-white fw-bold mb-3">Lo Scrigno</h4>
+                        <p class="text-white small lh-sm">
+                            <strong>Molto bene!</strong> Il tesoro è tuo! Rispetto al periodo precedente che hai selezionato, 
+                            stai andando alla grande. Lo Scrigno ti indica che sia il <em>prezzo medio di vendita</em> che 
+                            l'<em>efficienza operativa</em> della tua attività sono migliorati significativamente. 
+                            La tua strategia aziendale sta dando i frutti sperati: continua così!
+                        </p>
+                    </div>
                 </div>
-                <h4 class="text-white fw-bold mb-3">Lo Scrigno</h4>
-                <p class="text-white small lh-sm">
-                    <strong>Molto bene!</strong> Il tesoro è tuo! Rispetto al periodo precedente che hai selezionato, 
-                    stai andando alla grande. Lo Scrigno ti indica che sia il <em>prezzo medio di vendita</em> che 
-                    l'<em>efficienza operativa</em> della tua attività sono migliorati significativamente. 
-                    La tua strategia aziendale sta dando i frutti sperati: continua così! 🎯
-                </p>
             </div>
+
+            <!-- Sirena Azzurra -->
+            <div class="col-lg-3 col-md-6 mb-5">
+                <div class="emoji-card sirena-card h-100 shadow-lg overflow-hidden mx-3" style="background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%); border-radius: 1.5rem;">
+                    <div class="emoji-animation-container p-4 text-center">
+                        <div class="animation-box mx-auto mb-4">
+                            <div id="sirena-animation" style="width: 100px; height: 100px;"></div>
+                        </div>
+                        <h4 class="text-white fw-bold mb-3">La Sirena</h4>
+                        <p class="text-white small lh-sm">
+                            La Sirena nuota sempre, anche quando la corrente è contraria. <strong>Stai andando bene</strong>, 
+                            però attenzione: c'è qualcosa che non va del tutto. Mentre alcuni indicatori sono positivi, 
+                            l'<em>efficienza</em> o il <em>prezzo medio</em> potrebbero essere calati rispetto al periodo precedente. 
+                            È il momento di analizzare più a fondo i dati per identificare l'area di miglioramento.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Spia Gialla -->
+            <div class="col-lg-3 col-md-6 mb-5">
+                <div class="emoji-card spia-card h-100 shadow-lg overflow-hidden mx-3" style="background: linear-gradient(135deg, #eab308 0%, #ca8a04 100%); border-radius: 1.5rem;">
+                    <div class="emoji-animation-container p-4 text-center">
+                        <div class="animation-box mx-auto mb-4">
+                            <div id="spia-animation" style="width: 100px; height: 100px;"></div>
+                        </div>
+                        <h4 class="text-white fw-bold mb-3">La Spia</h4>
+                        <p class="text-white small lh-sm">
+                            Alla lente d'ingrandimento della Spia non sfugge nulla. È qui per <strong>segnalarti qualche insidia nascosta</strong>. 
+                            Nonostante l'efficienza o il prezzo medio siano migliorati rispetto al periodo precedente, 
+                            la <em>performance complessiva</em> della tua attività ha subito un calo. 
+                            Potrebbe essere il momento di rivedere la strategia generale o investigare fattori esterni. 
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sfinge Rossa -->
+            <div class="col-lg-3 col-md-6 mb-5">
+                <div class="emoji-card sfinge-card h-100 shadow-lg overflow-hidden mx-3" style="background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); border-radius: 1.5rem;">
+                    <div class="emoji-animation-container p-4 text-center">
+                        <div class="animation-box mx-auto mb-4">
+                            <div id="sfinge-animation" style="width: 100px; height: 100px;"></div>
+                        </div>
+                        <h4 class="text-white fw-bold mb-3">La Sfinge</h4>
+                        <p class="text-white small lh-sm">
+                            La Sfinge, enigmatica per natura, con il suo colore rosso intenso ti dà un <strong>avvertimento chiaro e diretto</strong>: 
+                            la tua performance è peggiorata rispetto al periodo precedente. Non tutto è perduto, ma è necessario 
+                            un <em>intervento immediato</em> per correggere la rotta. Analizza i dati, rivedi le strategie e 
+                            riprendi il controllo della situazione.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
-
-    <!-- Sirena Azzurra -->
-    <div class="col-lg-3 col-md-6 mb-5">
-        <div class="emoji-card h-100 shadow-lg overflow-hidden mx-3" style="background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%); border-radius: 1.5rem;">
-            <div class="emoji-animation-container p-4 text-center">
-                <div class="animation-box mx-auto mb-4" style="width: 140px; height: 140px;">
-                    <div id="sirena-animation" style="width: 100px; height: 100px;"></div>
-                </div>
-                <h4 class="text-white fw-bold mb-3">La Sirena</h4>
-                <p class="text-white small lh-sm">
-                    La Sirena nuota sempre, anche quando la corrente è contraria. <strong>Stai andando bene</strong>, 
-                    però attenzione: c'è qualcosa che non va del tutto. Mentre alcuni indicatori sono positivi, 
-                    l'<em>efficienza</em> o il <em>prezzo medio</em> potrebbero essere calati rispetto al periodo precedente. 
-                    È il momento di analizzare più a fondo i dati per identificare l'area di miglioramento. 🔍
-                </p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Spia Gialla -->
-    <div class="col-lg-3 col-md-6 mb-5">
-        <div class="emoji-card h-100 shadow-lg overflow-hidden mx-3" style="background: linear-gradient(135deg, #eab308 0%, #ca8a04 100%); border-radius: 1.5rem;">
-            <div class="emoji-animation-container p-4 text-center">
-                <div class="animation-box mx-auto mb-4" style="width: 140px; height: 140px;">
-                    <div id="spia-animation" style="width: 100px; height: 100px;"></div>
-                </div>
-                <h4 class="text-white fw-bold mb-3">La Spia</h4>
-                <p class="text-white small lh-sm">
-                    Alla lente d'ingrandimento della Spia non sfugge nulla. È qui per <strong>segnalarti qualche insidia nascosta</strong>. 
-                    Nonostante l'efficienza o il prezzo medio siano migliorati rispetto al periodo precedente, 
-                    la <em>performance complessiva</em> della tua attività ha subito un calo. 
-                    Potrebbe essere il momento di rivedere la strategia generale o investigare fattori esterni. 🎭
-                </p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Sfinge Rossa -->
-    <div class="col-lg-3 col-md-6 mb-5">
-        <div class="emoji-card h-100 shadow-lg overflow-hidden mx-3" style="background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); border-radius: 1.5rem;">
-            <div class="emoji-animation-container p-4 text-center">
-                <div class="animation-box mx-auto mb-4" style="width: 140px; height: 140px;">
-                    <div id="sfinge-animation" style="width: 100px; height: 100px;"></div>
-                </div>
-                <h4 class="text-white fw-bold mb-3">La Sfinge</h4>
-                <p class="text-white small lh-sm">
-                    La Sfinge, enigmatica per natura, con il suo colore rosso intenso ti dà un <strong>avvertimento chiaro e diretto</strong>: 
-                    la tua performance è peggiorata rispetto al periodo precedente. Non tutto è perduto, ma è necessario 
-                    un <em>intervento immediato</em> per correggere la rotta. Analizza i dati, rivedi le strategie e 
-                    riprendi il controllo della situazione.
-                </p>
-            </div>
-        </div>
-    </div>
-
-</div>
 
 
             <!-- Sezione: Il Team -->

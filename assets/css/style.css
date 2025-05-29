@@ -1661,13 +1661,13 @@ p {
     top: 0
 }
 
-        body {
-            margin: 0;
-            padding: 0;
-            background: #ffffff;
-            min-height: 100vh;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-        }
+body {
+    margin: 0;
+    padding: 0;
+    background: #ffffff;
+    min-height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
 
 /* ====== CONTENITORE NAVBAR MIGLIORATO ====== */
 .bottom-navbar-modern {
@@ -1919,24 +1919,37 @@ p {
     line-height: 1.6;
     margin-bottom: 0;
     font-size: 0.95rem;
+
+body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 2rem 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .emoji-card {
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
     border-radius: 2rem;
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+    box-shadow: 
+        0 12px 32px rgba(0, 0, 0, 0.15),
+        0 4px 16px rgba(0, 0, 0, 0.1);
     max-width: 360px;
     width: 100%;
     margin: 1rem auto;
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .emoji-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: 
+        0 25px 50px rgba(0, 0, 0, 0.25),
+        0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
+/* Effetto luce che scorre */
 .emoji-card::before {
     content: '';
     position: absolute;
@@ -1944,54 +1957,211 @@ p {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-    transition: left 0.5s;
+    background: linear-gradient(
+        90deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.4), 
+        rgba(255, 255, 255, 0.6), 
+        rgba(255, 255, 255, 0.4), 
+        transparent
+    );
+    transition: left 0.8s ease;
     pointer-events: none;
+    z-index: 1;
 }
 
 .emoji-card:hover::before {
     left: 100%;
 }
 
+/* Pulses di luce sui bordi */
+.emoji-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 2rem;
+    padding: 2px;
+    background: linear-gradient(45deg, 
+        rgba(255, 255, 255, 0.3), 
+        transparent, 
+        rgba(255, 255, 255, 0.3)
+    );
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: xor;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+}
+
+.emoji-card:hover::after {
+    opacity: 1;
+}
+
 .animation-box {
-    transition: all 0.3s ease;
-    border-radius: 25px;
-    background: rgba(255, 255, 255, 0.2);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 30px;
+    background: 
+        radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.4), transparent 50%),
+        rgba(255, 255, 255, 0.15);
     display: flex;
     align-items: center;
     justify-content: center;
-    backdrop-filter: blur(10px);
-    margin: 0 auto 1rem auto;
+    backdrop-filter: blur(15px);
+    margin: 0 auto 1.5rem auto;
     width: 140px;
     height: 140px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 
+        inset 0 1px 20px rgba(255, 255, 255, 0.2),
+        0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
 .emoji-card:hover .animation-box {
-    transform: scale(1.05);
+    transform: scale(1.08) rotate(2deg);
+    box-shadow: 
+        inset 0 1px 25px rgba(255, 255, 255, 0.3),
+        0 12px 40px rgba(0, 0, 0, 0.15),
+        0 0 30px rgba(255, 255, 255, 0.1);
 }
 
 .animation-box > div {
     width: 100px;
     height: 100px;
     margin: 0 auto;
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    transition: all 0.3s ease;
+    z-index: 2;
+    position: relative;
 }
 
+.emoji-card:hover .animation-box > div {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.5));
+}
+
+/* Effetti speciali solo per lo Scrigno */
+.scrigno-card .animation-box::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 32px;
+    background: linear-gradient(45deg, 
+        rgba(34, 197, 94, 0.6), 
+        transparent, 
+        rgba(34, 197, 94, 0.6)
+    );
+    opacity: 0;
+    animation: pulse-glow 3s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes pulse-glow {
+    0%, 100% { 
+        opacity: 0; 
+        transform: scale(1);
+    }
+    50% { 
+        opacity: 0.8; 
+        transform: scale(1.05);
+    }
+}
+
+/* Particelle luminose solo per lo Scrigno */
+.scrigno-card .animation-box::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: rgba(255, 215, 0, 0.9);
+    border-radius: 50%;
+    box-shadow: 
+        0 0 15px rgba(255, 215, 0, 0.8),
+        20px 20px 0 rgba(255, 215, 0, 0.6),
+        -20px -20px 0 rgba(255, 215, 0, 0.6),
+        20px -20px 0 rgba(255, 215, 0, 0.4),
+        -20px 20px 0 rgba(255, 215, 0, 0.4);
+    animation: orbit 4s linear infinite;
+    opacity: 0.8;
+}
+
+@keyframes orbit {
+    0% { transform: rotate(0deg) translateX(50px) rotate(0deg); }
+    100% { transform: rotate(360deg) translateX(50px) rotate(-360deg); }
+}
+
+/* Effetti specifici solo per lo Scrigno */
+.scrigno-card:hover .animation-box {
+    background: 
+        radial-gradient(circle at 30% 30%, rgba(255, 215, 0, 0.4), transparent 50%),
+        rgba(255, 255, 255, 0.25);
+    box-shadow: 
+        inset 0 1px 25px rgba(255, 215, 0, 0.3),
+        0 12px 40px rgba(0, 0, 0, 0.15),
+        0 0 30px rgba(255, 215, 0, 0.2);
+}
+
+/* Responsive */
 @media (max-width: 768px) {
     .emoji-card {
-        max-width: 90%;
+        max-width: 95%;
+        margin: 0.5rem auto;
     }
+    .animation-box {
+        width: 110px;
+        height: 110px;
+    }
+    .animation-box > div {
+        width: 80px;
+        height: 80px;
+        font-size: 3rem;
+    }
+}
 
+@media (max-width: 576px) {
     .animation-box {
         width: 100px;
         height: 100px;
     }
-
     .animation-box > div {
         width: 70px;
         height: 70px;
+        font-size: 2.5rem;
     }
 }
+
+/* Animazione di entrata staggered */
+.emoji-card {
+    opacity: 0;
+    animation: slideInUp 0.6s ease forwards;
 }
 
+.emoji-card:nth-child(1) { animation-delay: 0.1s; }
+.emoji-card:nth-child(2) { animation-delay: 0.2s; }
+.emoji-card:nth-child(3) { animation-delay: 0.3s; }
+.emoji-card:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(60px) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+h4 {
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+p {
+    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+}
+}
+}
 </style>
