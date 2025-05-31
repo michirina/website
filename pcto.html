@@ -14,9 +14,13 @@
     <link href="assets/css/default.css" rel="stylesheet" />
     <link href="assets/css/style.css" rel="stylesheet" />
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
     
 	
-    <!-- SCRIPTS (come nella versione originale) -->
+    <!-- SCRIPTS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         let currentLang = 'it';
         function updateLanguageUI(lang) {
@@ -151,471 +155,550 @@ document.head.appendChild(styleSheet);
 </script>
 </head>
 <body>
-    
-    <!-- Banner "Work in Progress" -->
-    <div class="work-in-progress-banner">
-        🚧 Il sito è attualmente in fase di aggiornamento. Alcuni contenuti potrebbero cambiare. 🚧
-    </div>
-
-    <!-- PRELOADER -->
-    <div class="preloader">
-        <div class="loader">
-            <div class="ytp-spinner">
-                <div class="ytp-spinner-container">
-                    <div class="ytp-spinner-rotator">
-                        <div class="ytp-spinner-left"><div class="ytp-spinner-circle"></div></div>
-                        <div class="ytp-spinner-right"><div class="ytp-spinner-circle"></div></div>
-                    </div>
-                </div>
+  <!-- Banner "Work in Progress" -->
+  <div class="work-in-progress-banner"> 🚧 Il sito è attualmente in fase di aggiornamento. Alcuni contenuti potrebbero cambiare. 🚧 </div>
+  <!-- PRELOADER -->
+  <div class="preloader">
+    <div class="loader">
+      <div class="ytp-spinner">
+        <div class="ytp-spinner-container">
+          <div class="ytp-spinner-rotator">
+            <div class="ytp-spinner-left">
+              <div class="ytp-spinner-circle"></div>
             </div>
+            <div class="ytp-spinner-right">
+              <div class="ytp-spinner-circle"></div>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
-
-    <!-- ====== CONTENUTO PRINCIPALE ====== -->
-    <section class="pcto_area section" id="pcto">
-        <div class="container">
-
-            <!-- Titolo pagina -->
-            <div class="section_title text-center pb-30">
-                <h5 class="sub_title">Percorsi per le Competenze Trasversali e l'Orientamento</h5>
-                <h3 class="main_title">La mia esperienza formativa presso <span class="text-primary">SYEEW</span></h3>
-                <ul class="line"><li></li><li></li><li></li></ul>
-            </div>
-
-            <!-- Introduzione -->
-            <div class="row justify-content-center my-space">
-                <div class="col-lg-10">
-                    <p class="lead">
-                        Lo scorso anno ho avuto l'occasione di affiancare il team di <strong>SYEEW S.r.l.</strong>, una giovane realtà jesina che sviluppa una piattaforma SaaS di Business Intelligence pensata per micro e piccole imprese. L'obiettivo? Rendere i numeri aziendali chiari come semafori: verdi quando tutto fila liscio, rossi quando serve intervenire.
-                    </p>
-                    <p>
-                        La squadra era di dimensioni ridotte,ciò mi ha permesso di starea stretto contatto con tutti, capire priorità diverse e soprattutto contribuire in prima persona. Non c'era un reparto UX dedicato, così ho lavorato in autonomia, confrontandomi di frequente con il CEO e con il mio Tutor tecnico.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Sezione: Chi è SYEEW -->
-            <section class="about_syeew section my-space">
-                <div class="row align-items-center">
-                    <div class="col-md-6 order-md-2 text-center mb-4 mb-md-0">
-                        <img src="assets/images/syeew_platform.png" alt="Mockup piattaforma SYEEW" class="img-fluid rounded shadow-sm">
-                    </div>
-                    <div class="col-md-6 order-md-1">
-                        <h4>SYEEW in breve</h4>
-                        <p>
-                            Fondata nel 2020, SYEEW mira a semplificare la vita agli imprenditori: invece di tabelle e grafici complessi, mostra <strong>Business Emoji</strong> che riassumono l'andamento aziendale a colpo d'occhio. Il motore dietro le quinte unisce data integration e moduli di Intelligenza Artificiale.
-                        </p>
-                        <p class="my-space">
-                            Nel 2022 l'azienda ha ricevuto un contributo pubblico di <strong>100 000 €</strong> (pari al 70 % dell'investimento complessivo) regolarmente registrato nel <abbr title="Registro nazionale degli aiuti di Stato">Registro Nazionale Trasparenza</abbr>.
-                        </p>
-                    </div>
-                </div>
-            </section>
+  </div>
+  <!-- ====== CONTENUTO PRINCIPALE ====== -->
+  <section class="pcto_area section" id="pcto">
     <div class="container">
-        <!-- Griglia delle 4 Emoji -->
-        <div class="row justify-content-center">
-
-            <!-- Scrigno Verde -->
-            <div class="col-lg-3 col-md-6 mb-5">
-                <div class="emoji-card scrigno-card h-100 shadow-lg overflow-hidden mx-3" style="background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%); border-radius: 1.5rem;">
-                    <div class="emoji-animation-container p-4 text-center">
-                        <div class="animation-box mx-auto mb-4">
-                            <div id="scrigno-animation" style="width: 100px; height: 100px;"></div>
-                        </div>
-                        <h4 class="text-white fw-bold mb-3">Lo Scrigno</h4>
-                        <p class="text-white small lh-sm">
-                            <strong>Molto bene!</strong> Il tesoro è tuo! Rispetto al periodo precedente che hai selezionato, 
-                            stai andando alla grande. Lo Scrigno ti indica che sia il <em>prezzo medio di vendita</em> che 
-                            l'<em>efficienza operativa</em> della tua attività sono migliorati significativamente. 
-                            La tua strategia aziendale sta dando i frutti sperati: continua così!
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Sirena Azzurra -->
-            <div class="col-lg-3 col-md-6 mb-5">
-                <div class="emoji-card sirena-card h-100 shadow-lg overflow-hidden mx-3" style="background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%); border-radius: 1.5rem;">
-                    <div class="emoji-animation-container p-4 text-center">
-                        <div class="animation-box mx-auto mb-4">
-                            <div id="sirena-animation" style="width: 100px; height: 100px;"></div>
-                        </div>
-                        <h4 class="text-white fw-bold mb-3">La Sirena</h4>
-                        <p class="text-white small lh-sm">
-                            La Sirena nuota sempre, anche quando la corrente è contraria. <strong>Stai andando bene</strong>, 
-                            però attenzione: c'è qualcosa che non va del tutto. Mentre alcuni indicatori sono positivi, 
-                            l'<em>efficienza</em> o il <em>prezzo medio</em> potrebbero essere calati rispetto al periodo precedente. 
-                            È il momento di analizzare più a fondo i dati per identificare l'area di miglioramento.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Spia Gialla -->
-            <div class="col-lg-3 col-md-6 mb-5">
-                <div class="emoji-card spia-card h-100 shadow-lg overflow-hidden mx-3" style="background: linear-gradient(135deg, #eab308 0%, #ca8a04 100%); border-radius: 1.5rem;">
-                    <div class="emoji-animation-container p-4 text-center">
-                        <div class="animation-box mx-auto mb-4">
-                            <div id="spia-animation" style="width: 100px; height: 100px;"></div>
-                        </div>
-                        <h4 class="text-white fw-bold mb-3">La Spia</h4>
-                        <p class="text-white small lh-sm">
-                            Alla lente d'ingrandimento della Spia non sfugge nulla. È qui per <strong>segnalarti qualche insidia nascosta</strong>. 
-                            Nonostante l'efficienza o il prezzo medio siano migliorati rispetto al periodo precedente, 
-                            la <em>performance complessiva</em> della tua attività ha subito un calo. 
-                            Potrebbe essere il momento di rivedere la strategia generale o investigare fattori esterni. 
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Sfinge Rossa -->
-            <div class="col-lg-3 col-md-6 mb-5">
-                <div class="emoji-card sfinge-card h-100 shadow-lg overflow-hidden mx-3" style="background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); border-radius: 1.5rem;">
-                    <div class="emoji-animation-container p-4 text-center">
-                        <div class="animation-box mx-auto mb-4">
-                            <div id="sfinge-animation" style="width: 100px; height: 100px;"></div>
-                        </div>
-                        <h4 class="text-white fw-bold mb-3">La Sfinge</h4>
-                        <p class="text-white small lh-sm">
-                            La Sfinge, enigmatica per natura, con il suo colore rosso intenso ti dà un <strong>avvertimento chiaro e diretto</strong>: 
-                            la tua performance è peggiorata rispetto al periodo precedente. Non tutto è perduto, ma è necessario 
-                            un <em>intervento immediato</em> per correggere la rotta. Analizza i dati, rivedi le strategie e 
-                            riprendi il controllo della situazione.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
+      <!-- Titolo pagina -->
+      <div class="section_title text-center pb-30">
+        <h5 class="sub_title">Percorsi per le Competenze Trasversali e l'Orientamento</h5>
+        <h3 class="main_title">La mia esperienza formativa presso <span class="text-primary">SYEEW</span>
+        </h3>
+        <ul class="line">
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+      <!-- Introduzione -->
+      <div class="row justify-content-center my-space">
+        <div class="col-lg-10">
+          <p class="lead"> Lo scorso anno ho avuto l'occasione di affiancare il team di <strong>SYEEW S.r.l.</strong>, una giovane realtà jesina che sviluppa una piattaforma SaaS di Business Intelligence pensata per micro e piccole imprese. L'obiettivo? Rendere i numeri aziendali chiari come semafori: verdi quando tutto fila liscio, rossi quando serve intervenire. </p>
+          <p> La squadra era di dimensioni ridotte,ciò mi ha permesso di stare a stretto contatto con tutti, capire priorità diverse e soprattutto contribuire in prima persona. Non c'era un reparto UX dedicato, così ho lavorato in autonomia, confrontandomi di frequente con il CEO e con il mio Tutor tecnico. </p>
         </div>
+      </div>
     </div>
-			<!-- Sezione: Tecnologie e strumenti -->
-		<section class="tools_area section my-space">
-		  <div class="section_title text-center pb-30">
-			<h5 class="sub_title">Toolkit</h5>
-			<h3 class="main_title">Software e linguaggi utilizzati</h3>
-			<ul class="line"><li></li><li></li><li></li></ul>
-		  </div>
-
-		  <div class="row justify-content-center">
-			<div class="col-lg-11">
-			  <div class="row">
-        
-				<!-- Adobe XD -->
-				<div class="col-lg-6 col-md-6 mb-4">
-				  <div class="tool-card p-4 rounded shadow-sm h-100 bg-white">
-					<div class="d-flex align-items-center mb-3">
-					  <div class="tool-icon me-3">
-						<img src="https://www.svgrepo.com/show/452151/adobe-xd.svg" width="48" height="48" alt="Adobe XD icon" loading="lazy">
-					  </div>
-					  <h5 class="mb-0 tool-title">Adobe XD</h5>
-					</div>
-					<p class="tool-description">
-					  Punto di partenza del progetto. Ho analizzato i mockup esistenti creati dal team per comprendere la struttura iniziale dell'interfaccia e i flussi utente già definiti. Questo mi ha permesso di identificare gli elementi da mantenere e quelli da ripensare completamente durante la fase di redesign in Figma.
-					</p>
-				  </div>
-				</div>
-
-				<!-- Figma -->
-				<div class="col-lg-6 col-md-6 mb-4">
-				  <div class="tool-card p-4 rounded shadow-sm h-100 bg-white">
-					<div class="d-flex align-items-center mb-3">
-					  <div class="tool-icon me-3">
-						<img src="https://www.svgrepo.com/show/452202/figma.svg" width="48" height="48" alt="Figma icon" loading="lazy">
-					  </div>
-					  <h5 class="mb-0 tool-title">Figma</h5>
-					</div>
-					<p class="tool-description">
-					  Il cuore della progettazione UX/UI. Ho creato una libreria di componenti riutilizzabili, definito un design system coerente con la brand identity di SYEEW e realizzato prototipi interattivi completi. La collaborazione in tempo reale ha facilitato i feedback con il team e la condivisione dei design con potenziali investitori.
-					</p>
-				  </div>
-				</div>
-
-				<!-- Flutter & Dart -->
-				<div class="col-lg-6 col-md-6 mb-4">
-				  <div class="tool-card p-4 rounded shadow-sm h-100 bg-white">
-					<div class="d-flex align-items-center mb-3">
-					  <div class="tool-icon me-3">
-						<img src="https://www.svgrepo.com/show/373604/flutter.svg" width="48" height="48" alt="Flutter icon" loading="lazy">
-						<img src="https://www.svgrepo.com/show/353631/dart.svg" width="44" height="44" alt="Dart icon" loading="lazy">
-					  </div>
-                
-					  <h5 class="mb-0 tool-title">  Flutter e Dart</h5>
-					</div>
-					<p class="tool-description">
-					  Framework scelto per la sua capacità di sviluppare applicazioni native per iOS e Android con un'unica codebase. Ho implementato cinque schermate principali traducendo i design Figma in codice Dart, gestendo animazioni fluide, navigazione tra pagine e popolamento di dati mock per simulare l'esperienza utente finale.
-					</p>
-				  </div>
-				</div>
-
-				<!-- Visual Studio Code -->
-				<div class="col-lg-6 col-md-6 mb-4">
-				  <div class="tool-card p-4 rounded shadow-sm h-100 bg-white">
-					<div class="d-flex align-items-center mb-3">
-					  <div class="tool-icon me-3">
-						<img src="https://www.svgrepo.com/show/452129/vs-code.svg" width="48" height="48" alt="Visual Studio Code icon" loading="lazy">
-					  </div>
-					  <h5 class="mb-0 tool-title">Visual Studio Code</h5>
-					</div>
-					<p class="tool-description">
-					  Editor principale per lo sviluppo Flutter. Configurato con le estensioni Dart e Flutter per il supporto completo al linguaggio, debug integrato e hot reload. L'ambiente mi ha permesso di testare rapidamente le modifiche sul dispositivo fisico tramite USB debugging.
-					</p>
-				  </div>
-				</div>
-
-			  </div>
-			</div>
-		  </div>
-		</section>
-
-            <!-- Sezione: Attività svolte -->
-            <section class="experience_area section my-space">
-                <div class="section_title text-center pb-30">
-                    <h5 class="sub_title">Cronologia</h5>
-                    <h3 class="main_title">Attività principali</h3>
-                    <ul class="line"><li></li><li></li><li></li></ul>
-                </div>
-
-                <!-- Primo periodo -->
-                <div class="experience_period my-space">
-                    <h4 class="mb-3">27 maggio – 14 giugno 2024</h4>
-                    <div class="row">
-                        <div class="col-lg-7">
-                            <p>
-                                Durante queste tre settimane mi sono concentrato su <strong>Figma</strong>. Partendo dall'interfaccia esistente, ho ridefinito la gerarchia delle schermate, creato uno stile visivo coerente con la brand identity e preparato <em>componenti riutilizzabili</em> per velocizzare i futuri aggiornamenti.
-                            </p>
-                        </div>
-                        <div class="col-lg-5">
-                            <!-- Carousel immagini periodo 1 -->
-                            <div id="carousel-period1" class="carousel slide shadow-sm" data-ride="carousel">
-                                <div class="carousel-inner rounded">
-                                    <div class="carousel-item active">
-                                        <img src="assets/images/period1_1.jpg" class="d-block w-100" alt="Wireframe in Figma" />
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img src="assets/images/period1_2.jpg" class="d-block w-100" alt="Componenti Figma" />
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img src="assets/images/period1_3.jpg" class="d-block w-100" alt="Prototype interactive" />
-                                    </div>
-                                </div>
-                                <a class="carousel-control-prev" href="#carousel-period1" role="button" data-slide="prev">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span class="sr-only">Precedente</span>
-                                </a>
-                                <a class="carousel-control-next" href="#carousel-period1" role="button" data-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="sr-only">Successivo</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Secondo periodo -->
-                <div class="experience_period my-space">
-                    <h4 class="mb-3">9 – 20 settembre 2024</h4>
-                    <div class="row">
-                        <div class="col-lg-7">
-                            <p>
-                                Durante il secondo periodo sono passato allo sviluppo in <strong>Flutter</strong>. Ho tradotto i prototipi in codice, realizzando <strong>cinque schermate principali</strong> . L'App girava su dispositivi reali, e l'ho testata tramite il Debug USB con il mio smartphone. Non erano presenti connessioni API: i dati erano popolati localmente per dimostrare flussi e animazioni.
-                            </p>
-                        </div>
-                        <div class="col-lg-5">
-                            <!-- Carousel immagini periodo 2 -->
-                            <div id="carousel-period2" class="carousel slide shadow-sm" data-ride="carousel">
-                                <div class="carousel-inner rounded">
-                                    <div class="carousel-item active">
-                                        <img src="assets/images/period2_1.jpg" class="d-block w-100" alt="Schermata Flutter 1" />
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img src="assets/images/period2_2.jpg" class="d-block w-100" alt="Schermata Flutter 2" />
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img src="assets/images/period2_3.jpg" class="d-block w-100" alt="Schermata Flutter 3" />
-                                    </div>
-                                </div>
-                                <a class="carousel-control-prev" href="#carousel-period2" role="button" data-slide="prev">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span class="sr-only">Precedente</span>
-                                </a>
-                                <a class="carousel-control-next" href="#carousel-period2" role="button" data-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="sr-only">Successivo</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Sezione: Esperienza SMAU -->
-            <section class="smau_area section my-space bg-light">
-                <div class="section_title text-center pb-30">
-                    <h5 class="sub_title">Networking</h5>
-                    <h3 class="main_title">Osservatore a SMAU Milano 2024</h3>
-                    <ul class="line"><li></li><li></li><li></li></ul>
-                </div>
-                <div class="row justify-content-center">
-                    <div class="col-lg-10">
-                        <p>
-                            Il <strong>29 ottobre 2024</strong> ho accompagnato SYEEW a <em>SMAU Milano</em>. Non avevamo uno stand, ma partecipare come ospite mi ha aperto gli occhi su come altri team raccontano i propri progetti e cercano partner. Ho preso appunti sui pitch e sulle tendenze del settore, utili per calibrare meglio le future presentazioni di SYEEW.
-                        </p>
-                    </div>
-                </div>
-            </section>
-
-
-            <!-- Sezione: Bilancio personale -->
-            <section class="personal_review section my-space bg-light">
-                <div class="section_title text-center pb-30">
-                    <h5 class="sub_title">Riflessione</h5>
-                    <h3 class="main_title">Cosa porto a casa</h3>
-                    <ul class="line"><li></li><li></li><li></li></ul>
-                </div>
-                <div class="row justify-content-center">
-                    <div class="col-lg-10">
-                    <p>
-                        L'esperienza in SYEEW mi ha dato un assaggio concreto di come nasce un prodotto digitale: dal foglio bianco alla demo funzionante. Ho apprezzato la fiducia concessa e la libertà di sperimentare. Allo stesso tempo ho toccato con mano la velocità delle tempistiche in startup: alcune attività, come la connessione API o i test di usabilità, sono rimaste fuori scope per ragioni di calendario.
-                    </p>
-                    <p class="my-space">
-                        Una delle cose che mi ha colpito di più è stata la totale dedizione del CEO al progetto: ogni dettaglio, ogni schermata, ogni strategia veniva curata con attenzione e passione quotidiana. Mi ha fatto riflettere molto su quanto possa essere appagante costruire qualcosa da zero, giorno dopo giorno, vederlo crescere e migliorarlo con continuità. È un approccio che sogno di poter adottare anch'io in futuro, magari su un progetto mio.
-                    </p>
-                            <div class="thanks-content">
-                                <p class="lead-text mb-4">
-                                    Desidero ringraziare di cuore ogni persona del team che ha reso possibile questa esperienza. Grazie per il tempo dedicato, per i suggerimenti precisi, per i consigli di vita, per i feedback costanti e per ogni singolo scambio di idee.
-                                </p>
-                                <p class="mb-4">
-                                    Questa esperienza mi ha anche aiutato a fare chiarezza sul mio futuro, infatti ho capito che vorrei proseguire i miei studi nell’ambito dell’Interaction Design. È stato proprio qui che ho iniziato a riflettere in modo più profondo su come le persone si relazionano con le interfacce digitali, a partire dal compito nel primo periodo, e questo mi ha da subito affascinato ed interessato.
-                                </p>
-                                <p class="mb-4">
-                                    Grazie ancora per aver creduto in me, per avermi affidato challenge importanti e per avermi fornito gli strumenti giusti per affrontare con consapevolezza ciò che verrà.
-                                </p>
-                                <p class="final-thanks">
-                                    A presto, SYEEW SOON!
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="documents_area section mb-80">
+  </section>
+  <!-- Sezione: Chi è SYEEW -->
+<section class="about_syeew">
   <div class="container">
-    <div class="section_title text-center pb-40">
-      <h5 class="sub_title">Documentazione</h5>
-      <h3 class="main_title">Consulta i documenti del progetto</h3>
-      <ul class="line"><li></li><li></li><li></li></ul>
-<div class="documents-buttons">
-
-  <!-- 1. Figma Mockup App -->
-  <a href="https://www.figma.com/proto/RXmiNTvJcI4bQm6VNsh4aT/SYEEW-Figma?node-id=1-2&p=f&t=QyUciyZHJBMt3NaA-0&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=2007%3A1804"
-     class="doc-button" target="_blank" rel="noopener">
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma">
-    <div class="doc-text">
-      <h4>Mockup applicazione</h4>
-      <p>Mockup con wireframes e mio redesign dell'interfaccia</p>
+    <!-- Banner centrale -->
+    <div class="text-center mb-5">
+      <img src="assets/images/syeew_banner.jpg" alt="Banner della piattaforma SYEEW" class="img-fluid rounded shadow-sm w-100" style="max-width: 900px;">
     </div>
-    <i class="fas fa-arrow-right"></i>
-  </a>
 
-  <!-- 2. Figma Presentazione in Inglese -->
-  <a href="https://www.figma.com/deck/hJrOtqtGPKStzLSoLbEfbl/Rinaldi-PCTO?node-id=1"
-     class="doc-button" target="_blank" rel="noopener">
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma">
-    <div class="doc-text">
-      <h4>Slide deck (EN)</h4>
-      <p>Presentazione del progetto, del team e della mia esperienza</p>
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <p>
+          Fondata nel 2020, <strong>SYEEW</strong> è una startup innovativa con sede a Jesi, che si propone di rivoluzionare il modo in cui micro e piccole imprese leggono i propri dati aziendali.
+          Il suo obiettivo è semplice ma ambizioso: <em>rendere i numeri comprensibili a colpo d’occhio</em>, grazie a un’interfaccia visiva che sfrutta <strong>Business Emoji</strong> per rappresentare l’andamento economico e gestionale.
+        </p>
+        <p class="my-space">
+          Dietro l’apparente semplicità si nasconde una tecnologia sofisticata, che unisce <strong>data integration</strong>, automazioni e moduli di <strong>Intelligenza Artificiale</strong>.
+          La piattaforma raccoglie i dati da fonti diverse, li normalizza, li elabora e li restituisce in forma immediata e intuitiva, così che anche chi non ha competenze analitiche possa prendere decisioni consapevoli.
+        </p>
+        <p class="my-space">
+          Nel 2022 SYEEW ha ricevuto un finanziamento pubblico pari a <strong>100 000 €</strong>, coprendo il <strong>70 %</strong> di un progetto di sviluppo regolarmente registrato nel 
+          <abbr title="Registro nazionale degli aiuti di Stato">Registro Nazionale Trasparenza</abbr>. Un riconoscimento concreto del valore innovativo che l’azienda sta portando nel panorama italiano delle PMI.
+        </p>
+      </div>
     </div>
-    <i class="fas fa-arrow-right"></i>
-  </a>
-
-  <!-- 3. GitHub Repository -->
-  <a href="https://www.github.com/michelerinaldi/syeew-flutter"
-     class="doc-button" target="_blank" rel="noopener">
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">
-    <div class="doc-text">
-      <h4>Progetto App Flutter</h4>
-      <p>Repository con il codice dell’app</p>
-    </div>
-    <i class="fas fa-arrow-right"></i>
-  </a>
-
-</div>
-
-
   </div>
 </section>
 
+  <section class="modalita_area section my-space">
+    <div class="container">
+      <div class="section_title text-center pb-30">
+        <h5 class="sub_title">Modalità di utilizzo</h5>
+        <h3 class="main_title">Quattro modi per <span class="text-primary">leggere il tuo business</span>
+        </h3>
+        <ul class="line">
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-lg-11">
+          <p class="lead text-center mb-5"> SYEEW si adatta al tuo tempo e alle tue esigenze con quattro modalità pensate per diversi livelli di approfondimento. </p>
+          <!-- Griglia delle 4 Modalità -->
+          <div class="row">
+            <!-- INDAFFARATO -->
+            <div class="col-lg-6 col-md-6 mb-5">
+              <div class="modalita-card h-100 shadow-lg rounded-4 overflow-hidden" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);">
+                <div class="p-4">
+                  <div class="d-flex align-items-center mb-3">
+                    <div class="modalita-icon me-3 p-3 rounded-circle bg-white bg-opacity-20">
+                      <img src="assets/images/indaffarato.svg" width="36" height="36" alt="Indaffarato" />
+                    </div>
+                    <h4 class="text-white fw-bold mb-0">INDAFFARATO</h4>
+                  </div>
+                  <p class="text-white small lh-sm opacity-95"> Questa modalità ti permette di avere un' <strong>idea immediata</strong> sull'andamento della tua azienda, senza dover dedicare tempo all'analisi. Grazie a <strong>quattro business emoji</strong>, puoi interpretare in un istante lo stato generale della situazione: positivo, negativo, stabile o da monitorare. È uno strumento visivo, istintivo, pensato per chi ha poco tempo ma vuole comunque restare sempre aggiornato. </p>
+                </div>
+              </div>
+            </div>
+            <!-- CURIOSO -->
+            <div class="col-lg-6 col-md-6 mb-5">
+              <div class="modalita-card h-100 shadow-lg rounded-4 overflow-hidden" style="background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);">
+                <div class="p-4">
+                  <div class="d-flex align-items-center mb-3">
+                    <div class="modalita-icon me-3 p-3 rounded-circle bg-white bg-opacity-20">
+                      <img src="assets/images/curioso.svg" width="36" height="36" alt="Curioso" />
+                    </div>
+                    <h4 class="text-white fw-bold mb-0">CURIOSO</h4>
+                  </div>
+                  <p class="text-white small lh-sm opacity-95"> Con Curioso puoi spingerti un po' oltre l'intuizione visiva e scoprire <strong>i dettagli del fatturato giornaliero</strong>, confrontandoli con un periodo selezionato. In pochi clic, ottieni una visione più chiara delle dinamiche quotidiane: quanto stai vendendo, come si sta evolvendo il business giorno per giorno. È una modalità leggera ma informativa, perfetta per osservare il presente con maggiore consapevolezza. </p>
+                </div>
+              </div>
+            </div>
+            <!-- MINUZIOSO -->
+            <div class="col-lg-6 col-md-6 mb-5">
+              <div class="modalita-card h-100 shadow-lg rounded-4 overflow-hidden" style="background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);">
+                <div class="p-4">
+                  <div class="d-flex align-items-center mb-3">
+                    <div class="modalita-icon me-3 p-3 rounded-circle bg-white bg-opacity-20">
+                      <img src="assets/images/minuzioso.svg" width="36" height="36" alt="Minuzioso" />
+                    </div>
+                    <h4 class="text-white fw-bold mb-0">MINUZIOSO</h4>
+                  </div>
+                  <p class="text-white small lh-sm opacity-95"> Questa modalità ti apre a un' <strong>analisi completa, voce per voce</strong>, con numeri precisi e confronti diretti. Puoi monitorare indicatori chiave come <em>commesse al giorno, prezzo medio, fatturato, ore x uomo giornaliere</em>. SYEEW ti mostra il <strong>livello di raggiungimento dei tuoi obiettivi</strong>, aiutandoti a capire quanto sei vicino al target. È lo strumento ideale per chi vuole <strong>entrare nel dettaglio</strong> e ottimizzare ogni aspetto. </p>
+                </div>
+              </div>
+            </div>
+            <!-- VEGGENTE -->
+            <div class="col-lg-6 col-md-6 mb-5">
+              <div class="modalita-card h-100 shadow-lg rounded-4 overflow-hidden" style="background: linear-gradient(135deg, #ec4899 0%, #db2777 100%);">
+                <div class="p-4">
+                  <div class="d-flex align-items-center mb-3">
+                    <div class="modalita-icon me-3 p-3 rounded-circle bg-white bg-opacity-20">
+                      <img src="assets/images/veggente.svg" width="36" height="36" alt="Veggente" />
+                    </div>
+                    <h4 class="text-white fw-bold mb-0">VEGGENTE</h4>
+                  </div>
+                  <p class="text-white small lh-sm opacity-95"> Grazie all' <strong>intelligenza artificiale integrata</strong>, questa modalità ti permette di <strong>anticipare il futuro</strong> e pianificare con maggiore sicurezza. Analizzando i tuoi dati attuali e passati, SYEEW genera una previsione dell'andamento dei prossimi mesi. Puoi impostare <strong>obiettivi mensili</strong> e monitorarne l'andamento. È la modalità ideale per passare da una gestione reattiva a una <strong>gestione realmente proattiva</strong>. </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
+  <div class="container">
+    <!-- Griglia delle 4 Emoji -->
+    <div class="section_title text-center pb-30">
+      <h5 class="sub_title">Le 4 Business Emoji</h5>
+      <h3 class="main_title">La <span class="text-primary">gamification</span> incontra l'analisi aziendale </h3>
+      <ul class="line">
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </div>
+    <div class="row justify-content-center">
+      <p class="lead text-center"> SYEEW trasforma i complessi dati aziendali in <strong>quattro emoji intuitive</strong> che raccontano immediatamente lo stato della tua attività.
+          <br>Un approccio di <em>gamification</em> che rende l'analisi business <strong>immediata, visiva e coinvolgente</strong>. </p>
+      <!-- Scrigno Verde -->
+      <div class="col-lg-3 col-md-6 mb-5">
+        <div class="emoji-card scrigno-card h-100 shadow-lg overflow-hidden mx-3" style="background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%); border-radius: 1.5rem;">
+          <div class="emoji-animation-container p-4 text-center">
+            <div class="animation-box mx-auto mb-4">
+              <div id="scrigno-animation" style="width: 100px; height: 100px;"></div>
+            </div>
+            <h4 class="text-white fw-bold mb-3">Lo Scrigno</h4>
+            <p class="text-white small lh-sm">
+              <strong>Molto bene!</strong> Il tesoro è tuo! Rispetto al periodo precedente che hai selezionato, stai andando alla grande. Lo Scrigno ti indica che sia il <em>prezzo medio di vendita</em> che l' <em>efficienza operativa</em> della tua attività sono migliorati significativamente. La tua strategia aziendale sta dando i frutti sperati: continua così!
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- Sirena Azzurra -->
+      <div class="col-lg-3 col-md-6 mb-5">
+        <div class="emoji-card sirena-card h-100 shadow-lg overflow-hidden mx-3" style="background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%); border-radius: 1.5rem;">
+          <div class="emoji-animation-container p-4 text-center">
+            <div class="animation-box mx-auto mb-4">
+              <div id="sirena-animation" style="width: 100px; height: 100px;"></div>
+            </div>
+            <h4 class="text-white fw-bold mb-3">La Sirena</h4>
+            <p class="text-white small lh-sm"> La Sirena nuota sempre, anche quando la corrente è contraria. <strong>Stai andando bene</strong>, però attenzione: c'è qualcosa che non va del tutto. Mentre alcuni indicatori sono positivi, l' <em>efficienza</em> o il <em>prezzo medio</em> potrebbero essere calati rispetto al periodo precedente. È il momento di analizzare più a fondo i dati per identificare l'area di miglioramento. </p>
+          </div>
+        </div>
+      </div>
+      <!-- Spia Gialla -->
+      <div class="col-lg-3 col-md-6 mb-5">
+        <div class="emoji-card spia-card h-100 shadow-lg overflow-hidden mx-3" style="background: linear-gradient(135deg, #eab308 0%, #ca8a04 100%); border-radius: 1.5rem;">
+          <div class="emoji-animation-container p-4 text-center">
+            <div class="animation-box mx-auto mb-4">
+              <div id="spia-animation" style="width: 100px; height: 100px;"></div>
+            </div>
+            <h4 class="text-white fw-bold mb-3">La Spia</h4>
+            <p class="text-white small lh-sm"> Alla lente d'ingrandimento della Spia non sfugge nulla. È qui per <strong>segnalarti qualche insidia nascosta</strong>. Nonostante l'efficienza o il prezzo medio siano migliorati rispetto al periodo precedente, la <em>performance complessiva</em> della tua attività ha subito un calo. Potrebbe essere il momento di rivedere la strategia generale o investigare fattori esterni. </p>
+          </div>
+        </div>
+      </div>
+      <!-- Sfinge Rossa -->
+      <div class="col-lg-3 col-md-6 mb-5">
+        <div class="emoji-card sfinge-card h-100 shadow-lg overflow-hidden mx-3" style="background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); border-radius: 1.5rem;">
+          <div class="emoji-animation-container p-4 text-center">
+            <div class="animation-box mx-auto mb-4">
+              <div id="sfinge-animation" style="width: 100px; height: 100px;"></div>
+            </div>
+            <h4 class="text-white fw-bold mb-3">La Sfinge</h4>
+            <p class="text-white small lh-sm"> La Sfinge, enigmatica per natura, con il suo colore rosso intenso ti dà un <strong>avvertimento chiaro e diretto</strong>: la tua performance è peggiorata rispetto al periodo precedente. Non tutto è perduto, ma è necessario un <em>intervento immediato</em> per correggere la rotta. Analizza i dati, rivedi le strategie e riprendi il controllo della situazione. </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Sezione: Tecnologie e strumenti -->
+  <section class="tools_area section my-space">
+    <div class="section_title text-center pb-30">
+      <h5 class="sub_title">Toolkit</h5>
+      <h3 class="main_title">Software e linguaggi utilizzati</h3>
+      <ul class="line">
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-lg-11">
+        <div class="row">
+          <!-- Adobe XD -->
+          <div class="col-lg-6 col-md-6 mb-4">
+            <div class="tool-card p-4 rounded shadow-sm h-100 bg-white">
+              <div class="d-flex align-items-center mb-3">
+                <div class="tool-icon me-3">
+                  <img src="https://www.svgrepo.com/show/452151/adobe-xd.svg" width="48" height="48" alt="Adobe XD icon" loading="lazy">
+                </div>
+                <h5 class="mb-0 tool-title">Adobe XD</h5>
+              </div>
+              <p class="tool-description"> Punto di partenza del progetto. Ho analizzato i mockup esistenti creati dal team per comprendere la struttura iniziale dell'interfaccia e i flussi utente già definiti. Questo mi ha permesso di identificare gli elementi da mantenere e quelli da ripensare completamente durante la fase di redesign in Figma. </p>
+            </div>
+          </div>
+          <!-- Figma -->
+          <div class="col-lg-6 col-md-6 mb-4">
+            <div class="tool-card p-4 rounded shadow-sm h-100 bg-white">
+              <div class="d-flex align-items-center mb-3">
+                <div class="tool-icon me-3">
+                  <img src="https://www.svgrepo.com/show/452202/figma.svg" width="48" height="48" alt="Figma icon" loading="lazy">
+                </div>
+                <h5 class="mb-0 tool-title">Figma</h5>
+              </div>
+              <p class="tool-description"> Il cuore della progettazione UX/UI. Ho creato una libreria di componenti riutilizzabili, definito un design system coerente con la brand identity di SYEEW e realizzato prototipi interattivi completi. La collaborazione in tempo reale ha facilitato i feedback con il team e la condivisione dei design con potenziali investitori. </p>
+            </div>
+          </div>
+          <!-- Flutter & Dart -->
+          <div class="col-lg-6 col-md-6 mb-4">
+            <div class="tool-card p-4 rounded shadow-sm h-100 bg-white">
+              <div class="d-flex align-items-center mb-3">
+                <div class="tool-icon me-3">
+                  <img src="https://www.svgrepo.com/show/373604/flutter.svg" width="48" height="48" alt="Flutter icon" loading="lazy">
+                  <img src="https://www.svgrepo.com/show/353631/dart.svg" width="44" height="44" alt="Dart icon" loading="lazy">
+                </div>
+                <h5 class="mb-0 tool-title"> Flutter e Dart</h5>
+              </div>
+              <p class="tool-description"> Framework scelto per la sua capacità di sviluppare applicazioni native per iOS e Android con un'unica codebase. Ho implementato cinque schermate principali traducendo i design Figma in codice Dart, gestendo animazioni fluide, navigazione tra pagine e popolamento di dati mock per simulare l'esperienza utente finale. </p>
+            </div>
+          </div>
+          <!-- Visual Studio Code -->
+          <div class="col-lg-6 col-md-6 mb-4">
+            <div class="tool-card p-4 rounded shadow-sm h-100 bg-white">
+              <div class="d-flex align-items-center mb-3">
+                <div class="tool-icon me-3">
+                  <img src="https://www.svgrepo.com/show/452129/vs-code.svg" width="48" height="48" alt="Visual Studio Code icon" loading="lazy">
+                </div>
+                <h5 class="mb-0 tool-title">Visual Studio Code</h5>
+              </div>
+              <p class="tool-description"> Editor principale per lo sviluppo Flutter. Configurato con le estensioni Dart e Flutter per il supporto completo al linguaggio, debug integrato e hot reload. L'ambiente mi ha permesso di testare rapidamente le modifiche sul dispositivo fisico tramite USB debugging. </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- Sezione: Attività svolte -->
+<section class="experience_area section my-space">
+  <div class="container">
+    <div class="section_title text-center pb-30">
+      <h5 class="sub_title">Cronologia</h5>
+      <h3 class="main_title">Attività principali</h3>
+      <ul class="line">
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </div>
 
-	<!-- NAVBAR -->
-	<nav class="bottom-navbar-modern">
-    <ul class="navbar-items">
-        <li data-page="umanistica">
-            <a href="areaumanistica.html">
-                <i class="lni lni-pencil-alt"></i>
-                <span data-i18n="nav_umanistica">Umanistica</span>
-            </a>
-        </li>
-        <li data-page="tecnica">
-            <a href="areatecnica.html">
-                <i class="lni lni-cog"></i>
-                <span data-i18n="nav_tecnica">Tecnica</span>
-            </a>
-        </li>
-        <li data-page="civica">
-            <a href="educazionecivica.html">
-                <i class="lni lni-graduation"></i>
-                <span data-i18n="nav_civica">Civica</span>
-            </a>
-        </li>
-        <li data-page="home">
-            <a href="index.html">
-                <i class="lni lni-home"></i>
-                <span data-i18n="nav_home">Home</span>
-            </a>
-        </li>
-        <li data-page="pcto">
-            <a href="pcto.html" class="active">
-                <i class="lni lni-briefcase"></i>
-                <span data-i18n="nav_pcto">PCTO</span>
-            </a>
-        </li>
-        <li data-page="portfolio">
-            <a href="portfolio.html">
-                <i class="lni lni-layout"></i>
-                <span data-i18n="nav_portfolio">Portfolio</span>
-            </a>
-        </li>
-        <li data-page="contatti">
-            <a href="contatti.html">
-                <i class="lni lni-envelope"></i>
-                <span>Contatti</span>
-            </a>
-        </li>
-    </ul>
-</nav>
+    <!-- Primo periodo -->
+    <div class="experience_period">
+      <h4 class="period-title">27 maggio – 14 giugno 2024</h4>
+      <div class="period-content">
+        <p>
+          Durante queste tre settimane mi sono concentrato su <strong>Figma</strong>. Partendo dall'interfaccia esistente, ho ridefinito la gerarchia delle schermate, creato uno stile visivo coerente con la brand identity e preparato <em>componenti riutilizzabili</em> per velocizzare i futuri aggiornamenti.
+        </p>
+    
+        <div class="image-gallery">
+          <div class="gallery-item">
+            <img src="assets/images/syeew_figma_1.jpg"/>
+          </div>
+          <div class="gallery-item">
+            <img src="assets/images/syeew_figma_2.jpg"/>
+
+          </div>
+          <div class="gallery-item">
+            <img src="assets/images/syeew_figma_3.jpg"/>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Secondo periodo -->
+    <div class="experience_period">
+      <h4 class="period-title">9 – 20 settembre 2024</h4>
+      <div class="period-content">
+        <p>
+          Durante il secondo periodo sono passato allo sviluppo in <strong>Flutter</strong>. Ho tradotto i prototipi in codice, realizzando <strong>cinque schermate principali</strong>. L'app girava su dispositivi reali, e l'ho testata tramite il Debug USB con il mio smartphone. Non erano presenti connessioni API: i dati erano popolati localmente per dimostrare flussi e animazioni.
+        </p>
+        
+        <div class="image-gallery">
+          <div class="gallery-item">
+            <img src="assets/images/syeew_flutter_1.jpg" />
+          </div>
+          <div class="gallery-item">
+            <img src="assets/images/syeew_flutter_2.jpg" />
+
+          </div>
+          <div class="gallery-item">
+            <img src="assets/images/syeew_flutter_3.jpg"/>
+ 
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Partecipazione a SMAU -->
+    <div class="experience_period">
+      <h4 class="period-title">29 ottobre 2024</h4>
+      <div class="period-content">
+        <p>
+          In questa data ho partecipato come ospite di SYEEW alla fiera <strong>SMAU Milano</strong>, uno degli eventi italiani più importanti nel mondo dell'innovazione, delle startup e della trasformazione digitale. Pur non avendo uno stand, abbiamo vissuto la giornata in modo attivo, esplorando gli spazi, ascoltando pitch e interagendo con altri professionisti.
+        </p>
+        <p class="my-space">
+          Ho ascoltato presentazioni e momenti di confronto che mi hanno fatto scoprire tante realtà emergenti; è stato molto formativo osservare come aziende di ogni tipo comunicano i propri valori, mission e risultati. Alcune con dati, altre con storytelling emozionale, altre ancora con focus sull'impatto sociale.
+        </p>
+        <p class="my-space">
+          Ho annotato spunti e riflessioni che mi sono stati utili per crescere come lavoratore e designer: ho capito quanto conti l'empatia nel racconto di un prodotto e quanto il design sia uno strumento potente anche nella comunicazione strategica.
+        </p>
+        <p class="my-space">
+          È stata una giornata intensa, stimolante, e diversa dal solito. Un momento per fermarsi e guardare fuori, per prendere ispirazione e poi tornare al lavoro con uno sguardo più ampio e consapevole.
+        </p>
+        
+        <div class="image-gallery">
+          <div class="gallery-item">
+            <img src="assets/images/syeew_smau_1.jpg"/>
+          </div>
+          <div class="gallery-item">
+            <img src="assets/images/syeew_smau_2.jpg" />
+          </div>
+          <div class="gallery-item">
+            <img src="assets/images/syeew_smau_3.jpg"/>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Sezione: Bilancio personale -->
+  <section class="personal_review section my-space bg-light">
+    <div class="section_title text-center pb-30">
+      <h5 class="sub_title">Riflessione</h5>
+      <h3 class="main_title">Cosa porto a casa</h3>
+      <ul class="line">
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <p> L'esperienza in SYEEW mi ha dato un assaggio concreto di come nasce un prodotto digitale: dal foglio bianco alla demo funzionante. Ho apprezzato la fiducia concessa e la libertà di sperimentare. Allo stesso tempo ho toccato con mano la velocità delle tempistiche in startup: alcune attività, come la connessione API o i test di usabilità, sono rimaste fuori scope per ragioni di calendario. </p>
+        <p class="my-space"> Una delle cose che mi ha colpito di più è stata la totale dedizione del CEO al progetto: ogni dettaglio, ogni schermata, ogni strategia veniva curata con attenzione e passione quotidiana. Mi ha fatto riflettere molto su quanto possa essere appagante costruire qualcosa da zero, giorno dopo giorno, vederlo crescere e migliorarlo con continuità. È un approccio che sogno di poter adottare anch'io in futuro, magari su un progetto mio. </p>
+        <div class="thanks-content">
+          <p class="lead-text mb-4"> Desidero ringraziare di cuore ogni persona del team che ha reso possibile questa esperienza. Grazie per il tempo dedicato, per i suggerimenti precisi, per i consigli di vita, per i feedback costanti e per ogni singolo scambio di idee. </p>
+          <p class="mb-4"> Questa esperienza mi ha anche aiutato a fare chiarezza sul mio futuro, infatti ho capito che vorrei proseguire i miei studi nell’ambito dell’Interaction Design. È stato proprio qui che ho iniziato a riflettere in modo più profondo su come le persone si relazionano con le interfacce digitali, a partire dal compito nel primo periodo, e questo mi ha da subito affascinato ed interessato. </p>
+          <p class="mb-4"> Grazie ancora per aver creduto in me, per avermi affidato challenge importanti e per avermi fornito gli strumenti giusti per affrontare con consapevolezza ciò che verrà. </p>
+          <p class="final-thanks"> A presto, SYEEW SOON! </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="documents_area section mb-80">
+    <div class="container">
+      <div class="section_title text-center pb-40">
+        <h5 class="sub_title">Documentazione</h5>
+        <h3 class="main_title">Consulta i documenti del progetto</h3>
+        <ul class="line">
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+        <div class="documents-buttons">
+          <!-- 1. Figma Mockup App -->
+          <a href="https://www.figma.com/proto/RXmiNTvJcI4bQm6VNsh4aT/SYEEW-Figma?node-id=1-2&p=f&t=QyUciyZHJBMt3NaA-0&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=2007%3A1804" class="doc-button" target="_blank" rel="noopener">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma">
+            <div class="doc-text">
+              <h4>Mockup applicazione</h4>
+              <p>Mockup con wireframes e mio redesign dell'interfaccia</p>
+            </div>
+            <i class="fas fa-arrow-right"></i>
+          </a>
+          <!-- 2. Figma Presentazione in Inglese -->
+          <a href="https://www.figma.com/deck/hJrOtqtGPKStzLSoLbEfbl/Rinaldi-PCTO?node-id=1" class="doc-button" target="_blank" rel="noopener">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma">
+            <div class="doc-text">
+              <h4>Slide deck (EN)</h4>
+              <p>Presentazione del progetto, del team e della mia esperienza</p>
+            </div>
+            <i class="fas fa-arrow-right"></i>
+          </a>
+          <!-- 3. GitHub Repository -->
+          <a href="https://github.com/michirina/pcto_syeew_flutter/" class="doc-button" target="_blank" rel="noopener">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">
+            <div class="doc-text">
+              <h4>Progetto App Flutter</h4>
+              <p>Repository con il codice dell’app</p>
+            </div>
+            <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+    
+    <section class="photo_carousel_area section my-space">
+  <div class="container">
+    <div id="finalCarousel" class="carousel slide shadow-sm rounded" data-bs-ride="carousel">
+      <div class="carousel-inner rounded">
+
+        <div class="carousel-item active">
+          <div class="carousel-img-wrapper">
+            <img src="assets/images/syeew_1.jpg" class="d-block w-100 img-fluid" alt="Slide 1">
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <div class="carousel-img-wrapper">
+            <img src="assets/images/syeew_2.jpg" class="d-block w-100 img-fluid" alt="Slide 2">
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <div class="carousel-img-wrapper">
+            <img src="assets/images/syeew_3.jpg" class="d-block w-100 img-fluid" alt="Slide 3">
+          </div>
+        </div>
+
+      </div>
+
+      <button class="carousel-control-prev" type="button" data-bs-target="#finalCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Precedente</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#finalCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Successivo</span>
+      </button>
+    </div>
+  </div>
+</section>
+
 
     
-<!--====== FOOTER PART START ======-->
-<footer class="footer_area gray-bg section" id="footer">
+    
+  <!-- NAVBAR -->
+  <nav class="bottom-navbar-modern">
+    <ul class="navbar-items">
+      <li data-page="umanistica">
+        <a href="areaumanistica.html">
+          <i class="lni lni-pencil-alt"></i>
+          <span data-i18n="nav_umanistica">Umanistica</span>
+        </a>
+      </li>
+      <li data-page="tecnica">
+        <a href="areatecnica.html">
+          <i class="lni lni-cog"></i>
+          <span data-i18n="nav_tecnica">Tecnica</span>
+        </a>
+      </li>
+      <li data-page="civica">
+        <a href="educazionecivica.html">
+          <i class="lni lni-graduation"></i>
+          <span data-i18n="nav_civica">Civica</span>
+        </a>
+      </li>
+      <li data-page="home">
+        <a href="index.html">
+          <i class="lni lni-home"></i>
+          <span data-i18n="nav_home">Home</span>
+        </a>
+      </li>
+      <li data-page="pcto">
+        <a href="pcto.html" class="active">
+          <i class="lni lni-briefcase"></i>
+          <span data-i18n="nav_pcto">PCTO</span>
+        </a>
+      </li>
+      <li data-page="portfolio">
+        <a href="portfolio.html">
+          <i class="lni lni-layout"></i>
+          <span data-i18n="nav_portfolio">Portfolio</span>
+        </a>
+      </li>
+      <li data-page="contatti">
+        <a href="contatti.html">
+          <i class="lni lni-envelope"></i>
+          <span>Contatti</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <!--====== FOOTER PART START ======-->
+  <footer class="footer_area gray-bg section" id="footer">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="footer_content text-center">
-                    <div class="copyright-container">
-                        <span class="copyright-text">© 2025 - Tutti i diritti riservati</span>
-						<img alt="Logo" src="assets/images/logo.png"  width="36" />
-                    </div>
-                    <p class="exam-text">Sito realizzato da Rinaldi Michele per l'esame di stato 2025</p>
-                </div> <!-- footer content -->
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="footer_content text-center">
+            <div class="copyright-container">
+              <span class="copyright-text">© 2025 - Tutti i diritti riservati</span>
+              <img alt="Logo" src="assets/images/logo.png" width="36" />
             </div>
+            <p class="exam-text">Sito realizzato da Rinaldi Michele per l'esame di stato 2025</p>
+          </div>
         </div>
+      </div>
     </div>
 </footer>
-<!--====== FOOTER PART ENDS ======-->
-
 </body>
 </html>
