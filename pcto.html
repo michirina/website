@@ -14,6 +14,7 @@
     <link href="assets/css/default.css" rel="stylesheet" />
     <link href="assets/css/style.css" rel="stylesheet" />
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    
 	
     <!-- SCRIPTS (come nella versione originale) -->
     <script>
@@ -499,55 +500,53 @@ document.head.appendChild(styleSheet);
                 </div>
             </section>
 
-            <!-- Documenti e risorse -->
             <section class="documents_area section mb-80">
-                <div class="container">
-                    <div class="section_title text-center pb-40">
-                        <h5 class="sub_title">Documentazione</h5>
-                        <h3 class="main_title">Consulta i documenti del progetto</h3>
-                        <ul class="line"><li></li><li></li><li></li></ul>
-                    </div>
-                    
-					<div class="documents-grid">
-                        <a href="https://www.figma.com/deck/hJrOtqtGPKStzLSoLbEfbl/Rinaldi-PCTO?node-id=42-192" class="document-card figma-card" target="_blank" rel="noopener">
-                            <div class="card-background"></div>
-                            <div class="card-content">
-                                <div class="card-icon">
-                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma" />
-                                </div>
-                                <div class="card-info">
-                                    <h4>Presentazione Figma</h4>
-                                    <p>Prototipo e design dell'applicazione</p>
-                                    <div class="card-badge">Design</div>
-                                </div>
-                                <div class="card-arrow">
-                                    <i class="fas fa-arrow-right"></i>
-                                </div>
-                            </div>
-                            <div class="card-glow"></div>
-                        </a>
-                        
-                        <a href="https://www.github.com/michelerinaldi/syeew-flutter" class="document-card github-card" target="_blank" rel="noopener">
-                            <div class="card-background"></div>
-                            <div class="card-content">
-                                <div class="card-icon">
-                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" />
-                                </div>
-                                <div class="card-info">
-                                    <h4>Repository GitHub</h4>
-                                    <p>Codice sorgente dell'applicazione</p>
-                                    <div class="card-badge">Codice</div>
-                                </div>
-                                <div class="card-arrow">
-                                    <i class="fas fa-arrow-right"></i>
-                                </div>
-                            </div>
-                            <div class="card-glow"></div>
-                        </a>
-                    </div>
+  <div class="container">
+    <div class="section_title text-center pb-40">
+      <h5 class="sub_title">Documentazione</h5>
+      <h3 class="main_title">Consulta i documenti del progetto</h3>
+      <ul class="line"><li></li><li></li><li></li></ul>
+<div class="documents-buttons">
 
-                </div>
-            </section>
+  <!-- 1. Figma Mockup App -->
+  <a href="https://www.figma.com/proto/RXmiNTvJcI4bQm6VNsh4aT/SYEEW-Figma?node-id=1-2&p=f&t=QyUciyZHJBMt3NaA-0&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=2007%3A1804"
+     class="doc-button" target="_blank" rel="noopener">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma">
+    <div class="doc-text">
+      <h4>Mockup applicazione</h4>
+      <p>Mockup con wireframes e mio redesign dell'interfaccia</p>
+    </div>
+    <i class="fas fa-arrow-right"></i>
+  </a>
+
+  <!-- 2. Figma Presentazione in Inglese -->
+  <a href="https://www.figma.com/deck/hJrOtqtGPKStzLSoLbEfbl/Rinaldi-PCTO?node-id=1"
+     class="doc-button" target="_blank" rel="noopener">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma">
+    <div class="doc-text">
+      <h4>Slide deck (EN)</h4>
+      <p>Presentazione del progetto, del team e della mia esperienza</p>
+    </div>
+    <i class="fas fa-arrow-right"></i>
+  </a>
+
+  <!-- 3. GitHub Repository -->
+  <a href="https://www.github.com/michelerinaldi/syeew-flutter"
+     class="doc-button" target="_blank" rel="noopener">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">
+    <div class="doc-text">
+      <h4>Progetto App Flutter</h4>
+      <p>Repository con il codice dell’app</p>
+    </div>
+    <i class="fas fa-arrow-right"></i>
+  </a>
+
+</div>
+
+
+  </div>
+</section>
+
         </div>
     </section>
 
@@ -617,396 +616,6 @@ document.head.appendChild(styleSheet);
     </div>
 </footer>
 <!--====== FOOTER PART ENDS ======-->
-
-     <style>
-        /* Reset e base */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: #f8fafc;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Sezione documenti */
-        .documents_area {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            padding: 100px 0;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .documents_area::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
-            opacity: 0.3;
-        }
-
-        .section_title {
-            position: relative;
-            z-index: 2;
-            margin-bottom: 60px;
-        }
-
-        .sub_title {
-            color: rgba(255, 255, 255, 0.8);
-            font-size: 16px;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 10px;
-        }
-
-        .main_title {
-            color: white;
-            font-size: 42px;
-            font-weight: 700;
-            margin-bottom: 20px;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .line {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            list-style: none;
-        }
-
-        .line li {
-            width: 60px;
-            height: 4px;
-            background: rgba(255, 255, 255, 0.3);
-            border-radius: 2px;
-        }
-
-        .line li:nth-child(2) {
-            background: white;
-        }
-
-        .documents-intro {
-            font-size: 18px;
-            color: rgba(255, 255, 255, 0.9);
-            max-width: 600px;
-            margin: 0 auto 50px;
-            line-height: 1.6;
-            position: relative;
-            z-index: 2;
-        }
-
-        .documents-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            max-width: 800px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 2;
-        }
-
-        .document-card {
-            position: relative;
-            display: block;
-            text-decoration: none;
-            border-radius: 20px;
-            overflow: hidden;
-            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            transform: translateY(0);
-            cursor: pointer;
-        }
-
-        .card-background {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: white;
-            transition: all 0.4s ease;
-        }
-
-        .card-content {
-            position: relative;
-            z-index: 2;
-            padding: 30px;
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            min-height: 120px;
-        }
-
-        .card-icon {
-            width: 60px;
-            height: 60px;
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .card-icon img {
-            width: 36px;
-            height: 36px;
-            transition: all 0.4s ease;
-        }
-
-        .figma-card .card-icon {
-            background: linear-gradient(135deg, #f24e1e, #ff7262, #a259ff, #1abcfe, #0acf83);
-            background-size: 300% 300%;
-            animation: gradientFlow 4s ease infinite;
-        }
-
-        .github-card .card-icon {
-            background: linear-gradient(135deg, #24292e, #4a5568);
-        }
-
-        .github-card .card-icon img {
-            filter: brightness(0) invert(1);
-        }
-
-        @keyframes gradientFlow {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-        }
-
-        .card-info {
-            flex: 1;
-        }
-
-        .card-info h4 {
-            font-size: 20px;
-            font-weight: 700;
-            color: #1a202c;
-            margin-bottom: 8px;
-            transition: all 0.3s ease;
-        }
-
-        .card-info p {
-            font-size: 14px;
-            color: #718096;
-            margin-bottom: 12px;
-            line-height: 1.5;
-        }
-
-        .card-badge {
-            display: inline-block;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .figma-card .card-badge {
-            background: linear-gradient(135deg, #f24e1e, #a259ff);
-            color: white;
-        }
-
-        .github-card .card-badge {
-            background: linear-gradient(135deg, #24292e, #4a5568);
-            color: white;
-        }
-
-        .card-arrow {
-            width: 40px;
-            height: 40px;
-            border-radius: 12px;
-            background: #f7fafc;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.4s ease;
-            color: #718096;
-        }
-
-        .card-glow {
-            position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            bottom: -2px;
-            border-radius: 22px;
-            opacity: 0;
-            transition: all 0.4s ease;
-            z-index: -1;
-        }
-
-        .figma-card .card-glow {
-            background: linear-gradient(135deg, #f24e1e, #ff7262, #a259ff, #1abcfe, #0acf83);
-            background-size: 300% 300%;
-            animation: gradientFlow 4s ease infinite;
-        }
-
-        .github-card .card-glow {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-        }
-
-        /* Effetti hover */
-        .document-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            text-decoration: none;
-        }
-
-        .document-card:hover .card-background {
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
-        }
-
-        .document-card:hover .card-glow {
-            opacity: 1;
-            filter: blur(20px);
-        }
-
-        .document-card:hover .card-icon {
-            transform: scale(1.1) rotate(5deg);
-        }
-
-        .document-card:hover .card-icon img {
-            transform: scale(1.1);
-        }
-
-        .document-card:hover .card-arrow {
-            background: #667eea;
-            color: white;
-            transform: translateX(5px);
-        }
-
-        .document-card:hover .card-info h4 {
-            color: #667eea;
-        }
-
-        /* Effetto click */
-        .document-card:active {
-            transform: translateY(-5px) scale(0.98);
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .documents_area {
-                padding: 80px 0;
-            }
-
-            .main_title {
-                font-size: 32px;
-            }
-
-            .documents-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-                padding: 0 20px;
-            }
-
-            .document-card {
-                border-radius: 16px;
-            }
-
-            .card-content {
-                padding: 25px;
-                min-height: 100px;
-            }
-
-            .card-icon {
-                width: 50px;
-                height: 50px;
-            }
-
-            .card-icon img {
-                width: 30px;
-                height: 30px;
-            }
-
-            .card-info h4 {
-                font-size: 18px;
-            }
-
-            .documents-intro {
-                font-size: 16px;
-                padding: 0 20px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .documents-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .document-card {
-                margin: 0 10px;
-            }
-            
-            .card-content {
-                padding: 20px;
-                flex-direction: column;
-                text-align: center;
-                gap: 15px;
-            }
-
-            .card-arrow {
-                align-self: center;
-            }
-        }
-
-        /* Animazioni aggiuntive */
-        .document-card {
-            animation: fadeInUp 0.6s ease forwards;
-        }
-
-        .document-card:nth-child(2) {
-            animation-delay: 0.2s;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Effetto particelle */
-        .documents_area::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: 
-                radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
-                radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
-                radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
-            background-size: 100px 100px, 80px 80px, 120px 120px;
-            animation: float 20s ease-in-out infinite;
-            pointer-events: none;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            33% { transform: translateY(-10px) rotate(1deg); }
-            66% { transform: translateY(5px) rotate(-1deg); }
-        }
-    </style>
-
-
 
 </body>
 </html>
