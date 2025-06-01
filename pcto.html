@@ -87,55 +87,7 @@
               switchLanguage();
             });
           }
-
-          // -- Inizio animazioni emoji (lasciate invariate) --
-          const scrignoAnimation = document.getElementById('scrigno-animation');
-          if (scrignoAnimation) {
-            console.log('Scrigno animation container ready');
-            scrignoAnimation.addEventListener('mouseenter', function() {
-              this.style.transform = 'scale(1.2) rotate(10deg)';
-            });
-            scrignoAnimation.addEventListener('mouseleave', function() {
-              this.style.transform = 'scale(1) rotate(0deg)';
-            });
-          }
-
-          const sirenaAnimation = document.getElementById('sirena-animation');
-          if (sirenaAnimation) {
-            console.log('Sirena animation container ready');
-            sirenaAnimation.addEventListener('mouseenter', function() {
-              this.style.animation = 'wave 0.5s ease-in-out infinite alternate';
-            });
-            sirenaAnimation.addEventListener('mouseleave', function() {
-              this.style.animation = 'none';
-            });
-          }
-
-          const spiaAnimation = document.getElementById('spia-animation');
-          if (spiaAnimation) {
-            console.log('Spia animation container ready');
-            spiaAnimation.addEventListener('mouseenter', function() {
-              this.style.filter = 'brightness(1.5) contrast(1.2)';
-            });
-            spiaAnimation.addEventListener('mouseleave', function() {
-              this.style.filter = 'none';
-            });
-          }
-
-          const sfingeAnimation = document.getElementById('sfinge-animation');
-          if (sfingeAnimation) {
-            console.log('Sfinge animation container ready');
-            sfingeAnimation.addEventListener('mouseenter', function() {
-              this.style.transform = 'scale(1.1) translateY(-5px)';
-            });
-            sfingeAnimation.addEventListener('mouseleave', function() {
-              this.style.transform = 'scale(1) translateY(0)';
-            });
-          }
-          // -- Fine animazioni emoji --
-        });
-    </script>
-    <script>
+            
   // PRIMA: individua elementi
   const langButton = document.getElementById('langButton');
   const langMenu = document.getElementById('langMenu');
