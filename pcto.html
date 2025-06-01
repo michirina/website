@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <title>Michele Rinaldi – PCTO SYEEW</title>
-    <meta name="description" content="Esperienza PCTO di Michele Rinaldi presso SYEEW: attività svolte, riflessioni personali, tecnologie utilizzate." />
+    <meta name="description" content="Esperienza PCTO di Michele...tività svolte, riflessioni personali, tecnologie utilizzate." />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="https://files.catbox.moe/5nm396.ico" rel="shortcut icon" type="image/png" />
 
@@ -13,51 +13,203 @@
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
     <link href="assets/css/default.css" rel="stylesheet" />
     <link href="assets/css/style.css" rel="stylesheet" />
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-
-    
-	
     <!-- SCRIPTS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        let currentLang = 'it';
+        // -------------------------------------------------------------------
+        // CONFIGURAZIONE LANGUAGE SWITCHER
+        // -------------------------------------------------------------------
+        const supportedLangs = ['it', 'en'];
+        // Tenta di rilevare la lingua del browser, fallback a 'it' se non supportata
+        function detectBrowserLanguage() {
+          const navLangs = navigator.languages || [navigator.language || 'it'];
+          for (let lang of navLangs) {
+            lang = lang.slice(0, 2).toLowerCase();
+            if (supportedLangs.includes(lang)) return lang;
+          }
+          return 'it';
+        }
+
+        // Recupera la lingua preferita (o rilevata dal browser)
+        let currentLang = localStorage.getItem('preferredLang') || detectBrowserLanguage();
+
+        // Aggiorna le immagini delle bandiere (in alto e in basso)
         function updateLanguageUI(lang) {
-            const bottomFlag = document.getElementById('bottomLangFlag');
-            if (lang === 'it') {
-                if (bottomFlag) bottomFlag.src = 'assets/images/flag-it.png';
-            } else {
-                if (bottomFlag) bottomFlag.src = 'assets/images/flag-en.png';
-            }
+          const topFlag = document.getElementById('topLangFlag');
+          const bottomFlag = document.getElementById('bottomLangFlag');
+          const imgSrc = (lang === 'it') ? 'assets/images/flag-it.png' : 'assets/images/flag-en.png';
+          if (topFlag) topFlag.src = imgSrc;
+          if (bottomFlag) bottomFlag.src = imgSrc;
         }
+
+        // Carica il file JSON corretto e sostituisce i testi
         function loadLanguage(lang) {
-            fetch(`assets/lang/lang-${lang}.json`)
-                .then(response => response.json())
-                .then(data => {
-                    document.querySelectorAll('[data-i18n]').forEach(el => {
-                        const key = el.getAttribute('data-i18n');
-                        if (data[key]) el.textContent = data[key];
-                    });
-                });
+          fetch(`assets/lang/lang-pcto-${lang}.json`)
+            .then(response => {
+              if (!response.ok) throw new Error(`File di traduzione non trovato: lang-pcto-${lang}.json`);
+              return response.json();
+            })
+            .then(data => {
+              document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (data[key]) {
+                  el.textContent = data[key];
+                }
+              });
+            })
+            .catch(err => console.error('Errore nella loadLanguage():', err));
         }
+
+        // Fa lo switch tra 'it' e 'en' e ricarica i testi
         function switchLanguage() {
-            currentLang = (currentLang === 'it') ? 'en' : 'it';
-            updateLanguageUI(currentLang);
-            loadLanguage(currentLang);
+          currentLang = (currentLang === 'it') ? 'en' : 'it';
+          localStorage.setItem('preferredLang', currentLang);
+          updateLanguageUI(currentLang);
+          loadLanguage(currentLang);
         }
+
+        // -------------------------------------------------------------------
+        // INIZIALIZZAZIONE SCRIPT (INCLUSI ANIMAZIONI EMOJI)
+        // -------------------------------------------------------------------
         document.addEventListener('DOMContentLoaded', function () {
-            updateLanguageUI(currentLang);
-            loadLanguage(currentLang);
-            const langToggleBottom = document.getElementById('langToggleBottom');
-            if (langToggleBottom) {
-                langToggleBottom.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    switchLanguage();
-                });
-            }
+          // Imposta inizialmente bandiere e testi
+          updateLanguageUI(currentLang);
+          loadLanguage(currentLang);
+
+          // Listener per toggle in alto e in basso
+          const toggleTop = document.getElementById('langToggleTop');
+          const toggleBottom = document.getElementById('langToggleBottom');
+          if (toggleTop) {
+            toggleTop.addEventListener('click', function(e) {
+              e.preventDefault();
+              switchLanguage();
+            });
+          }
+          if (toggleBottom) {
+            toggleBottom.addEventListener('click', function(e) {
+              e.preventDefault();
+              switchLanguage();
+            });
+          }
+
+          // -- Inizio animazioni emoji (lasciate invariate) --
+          const scrignoAnimation = document.getElementById('scrigno-animation');
+          if (scrignoAnimation) {
+            console.log('Scrigno animation container ready');
+            scrignoAnimation.addEventListener('mouseenter', function() {
+              this.style.transform = 'scale(1.2) rotate(10deg)';
+            });
+            scrignoAnimation.addEventListener('mouseleave', function() {
+              this.style.transform = 'scale(1) rotate(0deg)';
+            });
+          }
+
+          const sirenaAnimation = document.getElementById('sirena-animation');
+          if (sirenaAnimation) {
+            console.log('Sirena animation container ready');
+            sirenaAnimation.addEventListener('mouseenter', function() {
+              this.style.animation = 'wave 0.5s ease-in-out infinite alternate';
+            });
+            sirenaAnimation.addEventListener('mouseleave', function() {
+              this.style.animation = 'none';
+            });
+          }
+
+          const spiaAnimation = document.getElementById('spia-animation');
+          if (spiaAnimation) {
+            console.log('Spia animation container ready');
+            spiaAnimation.addEventListener('mouseenter', function() {
+              this.style.filter = 'brightness(1.5) contrast(1.2)';
+            });
+            spiaAnimation.addEventListener('mouseleave', function() {
+              this.style.filter = 'none';
+            });
+          }
+
+          const sfingeAnimation = document.getElementById('sfinge-animation');
+          if (sfingeAnimation) {
+            console.log('Sfinge animation container ready');
+            sfingeAnimation.addEventListener('mouseenter', function() {
+              this.style.transform = 'scale(1.1) translateY(-5px)';
+            });
+            sfingeAnimation.addEventListener('mouseleave', function() {
+              this.style.transform = 'scale(1) translateY(0)';
+            });
+          }
+          // -- Fine animazioni emoji --
         });
     </script>
+    <script>
+  // PRIMA: individua elementi
+  const langButton = document.getElementById('langButton');
+  const langMenu = document.getElementById('langMenu');
+  const langOptions = document.querySelectorAll('.lang-option');
+  const currentLangFlag = document.getElementById('currentLangFlag');
+  const currentLangCode = document.getElementById('currentLangCode');
+
+  // Funzione per aprire/chiudere il menu
+  langButton.addEventListener('click', function(e) {
+    e.stopPropagation(); 
+    langMenu.classList.toggle('show');
+  });
+
+  // Se clicchi fuori dal menu, lo chiudi
+  document.addEventListener('click', function() {
+    langMenu.classList.remove('show');
+  });
+
+  // Gestione click su ogni opzione
+  langOptions.forEach(option => {
+    option.addEventListener('click', function(e) {
+      e.stopPropagation();
+      // rimuovi .active da tutte
+      langOptions.forEach(opt => opt.classList.remove('active'));
+      // imposta .active su quella cliccata
+      this.classList.add('active');
+
+      // leggi codice lingua dalla data attribute
+      const selectedLang = this.getAttribute('data-lang');
+
+      // aggiorna bandiera e codice nel bottone principale
+      currentLangFlag.src = `assets/images/flag-${selectedLang}.png`;
+      currentLangCode.textContent = selectedLang.toUpperCase();
+
+      // (opzionale) salva in localStorage o richiama loadLanguage()
+      localStorage.setItem('preferredLang', selectedLang);
+      // qui puoi poi invocare la tua loadLanguage(selectedLang)
+      if (typeof switchLanguage === 'function') {
+        // forza lo switch, salvando currentLang prima di tutto
+        currentLang = selectedLang;
+        updateLanguageUI(selectedLang);
+        loadLanguage(selectedLang);
+      }
+
+      // chiudi il menu
+      langMenu.classList.remove('show');
+    });
+  });
+
+  // Inizializza opzione selezionata all’avvio
+  document.addEventListener('DOMContentLoaded', function() {
+    const saved = localStorage.getItem('preferredLang') || 'it';
+    langOptions.forEach(opt => {
+      if (opt.getAttribute('data-lang') === saved) {
+        opt.classList.add('active');
+        currentLangFlag.src = `assets/images/flag-${saved}.png`;
+        currentLangCode.textContent = saved.toUpperCase();
+      }
+    });
+  });
+</script>
+
+
+        
+    
+    
+    <!-- SCRIPT VENDOR RESTANTI -->
     <script src="assets/js/vendor/jquery-1.12.4.min.js"></script>
     <script src="assets/js/vendor/modernizr-3.7.1.min.js"></script>
     <script src="assets/js/popper.min.js"></script>
@@ -66,97 +218,14 @@
     <script src="assets/js/jquery.easing.min.js"></script>
     <script src="assets/js/scrolling-nav.js"></script>
     <script src="assets/js/main.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
-<script>
-// Script per le animazioni personalizzate degli emoji
-document.addEventListener('DOMContentLoaded', function() {
-    
-    // Animazione per lo Scrigno
-    const scrignoAnimation = document.getElementById('scrigno-animation');
-    if (scrignoAnimation) {
-        // Qui puoi aggiungere le tue animazioni specifiche per lo scrigno
-        console.log('Scrigno animation container ready');
-        
-        // Esempio di animazione personalizzata
-        scrignoAnimation.addEventListener('mouseenter', function() {
-            this.style.transform = 'scale(1.2) rotate(10deg)';
-        });
-        
-        scrignoAnimation.addEventListener('mouseleave', function() {
-            this.style.transform = 'scale(1) rotate(0deg)';
-        });
-    }
-    
-    // Animazione per la Sirena
-    const sirenaAnimation = document.getElementById('sirena-animation');
-    if (sirenaAnimation) {
-        console.log('Sirena animation container ready');
-        
-        // Esempio di animazione ondeggiante
-        sirenaAnimation.addEventListener('mouseenter', function() {
-            this.style.animation = 'wave 0.5s ease-in-out infinite alternate';
-        });
-        
-        sirenaAnimation.addEventListener('mouseleave', function() {
-            this.style.animation = 'none';
-        });
-    }
-    
-    // Animazione per la Spia
-    const spiaAnimation = document.getElementById('spia-animation');
-    if (spiaAnimation) {
-        console.log('Spia animation container ready');
-        
-        // Esempio di animazione di investigazione
-        spiaAnimation.addEventListener('mouseenter', function() {
-            this.style.filter = 'brightness(1.5) contrast(1.2)';
-        });
-        
-        spiaAnimation.addEventListener('mouseleave', function() {
-            this.style.filter = 'none';
-        });
-    }
-    
-    // Animazione per la Sfinge
-    const sfingeAnimation = document.getElementById('sfinge-animation');
-    if (sfingeAnimation) {
-        console.log('Sfinge animation container ready');
-        
-        // Esempio di animazione di avvertimento
-        sfingeAnimation.addEventListener('mouseenter', function() {
-            this.style.animation = 'pulse 0.3s ease-in-out 3';
-        });
-        
-        sfingeAnimation.addEventListener('mouseleave', function() {
-            this.style.animation = 'none';
-        });
-    }
-    
-});
-
-// CSS Keyframes aggiuntive per le animazioni JavaScript
-const additionalStyles = `
-    @keyframes wave {
-        0% { transform: translateY(0px) rotate(0deg); }
-        100% { transform: translateY(-5px) rotate(5deg); }
-    }
-    
-    @keyframes pulse {
-        0% { transform: scale(1); }
-        50% { transform: scale(1.1); }
-        100% { transform: scale(1); }
-    }
-`;
-
-// Aggiungi gli stili aggiuntivi
-const styleSheet = document.createElement('style');
-styleSheet.textContent = additionalStyles;
-document.head.appendChild(styleSheet);
-</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
 </head>
 <body>
   <!-- Banner "Work in Progress" -->
-  <div class="work-in-progress-banner"> 🚧 Il sito è attualmente in fase di aggiornamento. Alcuni contenuti potrebbero cambiare. 🚧 </div>
+  <div class="work-in-progress-banner" data-i18n="work_in_progress_banner">
+    🚧 Il sito è attualmente in fase di aggiornamento. Alcuni contenuti potrebbero cambiare. 🚧
+  </div>
+
   <!-- PRELOADER -->
   <div class="preloader">
     <div class="loader">
@@ -164,23 +233,27 @@ document.head.appendChild(styleSheet);
         <div class="ytp-spinner-container">
           <div class="ytp-spinner-rotator">
             <div class="ytp-spinner-left">
-              <div class="ytp-spinner-circle"></div>
+              <div class="ytp-spinner-circle" data-i18n="preloader_alt"></div>
             </div>
             <div class="ytp-spinner-right">
-              <div class="ytp-spinner-circle"></div>
+              <div class="ytp-spinner-circle" data-i18n="preloader_alt"></div>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+
   <!-- ====== CONTENUTO PRINCIPALE ====== -->
   <section class="pcto_area section" id="pcto">
     <div class="container">
       <!-- Titolo pagina -->
       <div class="section_title text-center pb-30">
-        <h5 class="sub_title">Percorsi per le Competenze Trasversali e l'Orientamento</h5>
-        <h3 class="main_title">La mia esperienza formativa presso <span class="text-primary">SYEEW</span>
+        <h5 class="sub_title" data-i18n="pcto_section_sub_title">
+          Percorsi per le Competenze Trasversali e l'Orientamento
+        </h5>
+        <h3 class="main_title" data-i18n="pcto_section_main_title">
+          La mia esperienza formativa presso <span class="text-primary">SYEEW</span>
         </h3>
         <ul class="line">
           <li></li>
@@ -191,44 +264,49 @@ document.head.appendChild(styleSheet);
       <!-- Introduzione -->
       <div class="row justify-content-center my-space">
         <div class="col-lg-10">
-          <p class="lead"> Lo scorso anno ho avuto l'occasione di affiancare il team di <strong>SYEEW S.r.l.</strong>, una giovane realtà jesina che sviluppa una piattaforma SaaS di Business Intelligence pensata per micro e piccole imprese. L'obiettivo? Rendere i numeri aziendali chiari come semafori: verdi quando tutto fila liscio, rossi quando serve intervenire. </p>
-          <p> La squadra era di dimensioni ridotte,ciò mi ha permesso di stare a stretto contatto con tutti, capire priorità diverse e soprattutto contribuire in prima persona. Non c'era un reparto UX dedicato, così ho lavorato in autonomia, confrontandomi di frequente con il CEO e con il mio Tutor tecnico. </p>
+          <p class="lead" data-i18n="pcto_intro_para1">
+            Lo scorso anno ho avuto l'occasione di affiancare il team di <strong>SYEEW S.r.l.</strong>, una giovane realtà che sviluppa una piattaforma SaaS di Business Intelligence pensata per micro e piccole imprese. L'obiettivo? Rendere i numeri aziendali chiari come semafori: verdi quando tutto fila liscio, rossi quando serve intervenire.
+          </p>
+          <p data-i18n="pcto_intro_para2">
+            La squadra era di dimensioni ridotte, ciò mi ha permesso di stare a stretto contatto con tutti, capire priorità diverse e soprattutto contribuire in prima persona. Non c'era un reparto UX dedicato, così ho lavorato in autonomia, confrontandomi di frequente con il CEO e con il mio Tutor tecnico.
+          </p>
         </div>
       </div>
     </div>
   </section>
-  <!-- Sezione: Chi è SYEEW -->
-<section class="about_syeew">
-  <div class="container">
-    <!-- Banner centrale -->
-    <div class="text-center mb-5">
-      <img src="assets/images/syeew_banner.jpg" alt="Banner della piattaforma SYEEW" class="img-fluid rounded shadow-sm w-100" style="max-width: 900px;">
-    </div>
 
-    <div class="row justify-content-center">
-      <div class="col-lg-10">
-        <p>
-          Fondata nel 2020, <strong>SYEEW</strong> è una startup innovativa con sede a Jesi, che si propone di rivoluzionare il modo in cui micro e piccole imprese leggono i propri dati aziendali.
-          Il suo obiettivo è semplice ma ambizioso: <em>rendere i numeri comprensibili a colpo d’occhio</em>, grazie a un’interfaccia visiva che sfrutta <strong>Business Emoji</strong> per rappresentare l’andamento economico e gestionale.
-        </p>
-        <p class="my-space">
-          Dietro l’apparente semplicità si nasconde una tecnologia sofisticata, che unisce <strong>data integration</strong>, automazioni e moduli di <strong>Intelligenza Artificiale</strong>.
-          La piattaforma raccoglie i dati da fonti diverse, li normalizza, li elabora e li restituisce in forma immediata e intuitiva, così che anche chi non ha competenze analitiche possa prendere decisioni consapevoli.
-        </p>
-        <p class="my-space">
-          Nel 2022 SYEEW ha ricevuto un finanziamento pubblico pari a <strong>100 000 €</strong>, coprendo il <strong>70 %</strong> di un progetto di sviluppo regolarmente registrato nel 
-          <abbr title="Registro nazionale degli aiuti di Stato">Registro Nazionale Trasparenza</abbr>. Un riconoscimento concreto del valore innovativo che l’azienda sta portando nel panorama italiano delle PMI.
-        </p>
+  <!-- Sezione: Chi è SYEEW -->
+  <section class="about_syeew">
+    <div class="container">
+      <!-- Banner centrale -->
+      <div class="text-center mb-5">
+        <img src="assets/images/syeew_banner.jpg" alt="Banner della piattaforma SYEEW" class="img-fluid rounded shadow-sm w-100" style="max-width: 900px;" />
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <p data-i18n="about_syeew_para1">
+            Fondata nel 2020, <strong>SYEEW</strong> è una startup innovativa con sede a Jesi, che si propone di rivoluzionare il modo in cui micro e piccole imprese leggono i propri dati aziendali. Il suo obiettivo è semplice ma ambizioso: <em>rendere i numeri comprensibili a colpo d’occhio</em>, grazie a un’interfaccia visiva che sfrutta <strong>Business Emoji</strong> per rappresentare l’andamento economico e gestionale.
+          </p>
+          <p class="my-space" data-i18n="about_syeew_para2">
+            Dietro l’apparente semplicità si nasconde una tecnologia sofisticata, che unisce <strong>data integration</strong>, automazioni e moduli di <strong>Intelligenza Artificiale</strong>. La piattaforma raccoglie i dati da fonti diverse, li normalizza, li elabora e li restituisce in forma immediata e intuitiva, così che anche chi non ha competenze analitiche possa prendere decisioni consapevoli.
+          </p>
+          <p class="my-space" data-i18n="about_syeew_para3">
+            Nel 2022 SYEEW ha ricevuto un finanziamento pubblico pari a <strong>100 000 €</strong>, coprendo il <strong>70 %</strong> di un progetto di sviluppo regolarmente registrato nel <abbr title="Registro nazionale degli aiuti di Stato">Registro Nazionale Trasparenza</abbr>. Un riconoscimento concreto del valore innovativo che l’azienda sta portando nel panorama italiano delle PMI.
+          </p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
+  <!-- Sezione: Modalità -->
   <section class="modalita_area section my-space">
     <div class="container">
       <div class="section_title text-center pb-30">
-        <h5 class="sub_title">Modalità di utilizzo</h5>
-        <h3 class="main_title">Quattro modi per <span class="text-primary">leggere il tuo business</span>
+        <h5 class="sub_title" data-i18n="modalita_sub_title">
+          Modalità di utilizzo
+        </h5>
+        <h3 class="main_title" data-i18n="modalita_main_title">
+          Quattro modi per <span class="text-primary">leggere il tuo business</span>
         </h3>
         <ul class="line">
           <li></li>
@@ -238,7 +316,9 @@ document.head.appendChild(styleSheet);
       </div>
       <div class="row justify-content-center">
         <div class="col-lg-11">
-          <p class="lead text-center mb-5"> SYEEW si adatta al tuo tempo e alle tue esigenze con quattro modalità pensate per diversi livelli di approfondimento. </p>
+          <p class="lead text-center mb-5" data-i18n="modalita_lead">
+            SYEEW si adatta al tuo tempo e alle tue esigenze con quattro modalità pensate per diversi livelli di approfondimento.
+          </p>
           <!-- Griglia delle 4 Modalità -->
           <div class="row">
             <!-- INDAFFARATO -->
@@ -249,9 +329,13 @@ document.head.appendChild(styleSheet);
                     <div class="modalita-icon me-3 p-3 rounded-circle bg-white bg-opacity-20">
                       <img src="assets/images/indaffarato.svg" width="36" height="36" alt="Indaffarato" />
                     </div>
-                    <h4 class="text-white fw-bold mb-0">INDAFFARATO</h4>
+                    <h4 class="text-white fw-bold mb-0" data-i18n="modalita_indaffarato_title">
+                      INDAFFARATO
+                    </h4>
                   </div>
-                  <p class="text-white small lh-sm opacity-95"> Questa modalità ti permette di avere un' <strong>idea immediata</strong> sull'andamento della tua azienda, senza dover dedicare tempo all'analisi. Grazie a <strong>quattro business emoji</strong>, puoi interpretare in un istante lo stato generale della situazione: positivo, negativo, stabile o da monitorare. È uno strumento visivo, istintivo, pensato per chi ha poco tempo ma vuole comunque restare sempre aggiornato. </p>
+                  <p class="text-white small lh-sm opacity-95" data-i18n="modalita_indaffarato_desc">
+                    Questa modalità ti permette di avere un' <strong>idea immediata</strong> sull'andamento della tua azienda, senza dover dedicare tempo all'analisi. Grazie a <strong>quattro business emoji</strong>, puoi interpretare in un istante lo stato generale della situazione: positivo, negativo, stabile o da monitorare. È uno strumento visivo, istintivo, pensato per chi ha poco tempo ma vuole comunque restare sempre aggiornato.
+                  </p>
                 </div>
               </div>
             </div>
@@ -263,9 +347,13 @@ document.head.appendChild(styleSheet);
                     <div class="modalita-icon me-3 p-3 rounded-circle bg-white bg-opacity-20">
                       <img src="assets/images/curioso.svg" width="36" height="36" alt="Curioso" />
                     </div>
-                    <h4 class="text-white fw-bold mb-0">CURIOSO</h4>
+                    <h4 class="text-white fw-bold mb-0" data-i18n="modalita_curioso_title">
+                      CURIOSO
+                    </h4>
                   </div>
-                  <p class="text-white small lh-sm opacity-95"> Con Curioso puoi spingerti un po' oltre l'intuizione visiva e scoprire <strong>i dettagli del fatturato giornaliero</strong>, confrontandoli con un periodo selezionato. In pochi clic, ottieni una visione più chiara delle dinamiche quotidiane: quanto stai vendendo, come si sta evolvendo il business giorno per giorno. È una modalità leggera ma informativa, perfetta per osservare il presente con maggiore consapevolezza. </p>
+                  <p class="text-white small lh-sm opacity-95" data-i18n="modalita_curioso_desc">
+                    Con Curioso puoi spingerti un po' oltre l'intuizione visiva e scoprire <strong>i dettagli del fatturato giornaliero</strong>, confrontandoli con un periodo selezionato. In pochi clic, ottieni una visione più chiara delle dinamiche quotidiane: quanto stai vendendo, come si sta evolvendo il business giorno per giorno. È una modalità leggera ma informativa, perfetta per osservare il presente con maggiore consapevolezza.
+                  </p>
                 </div>
               </div>
             </div>
@@ -277,9 +365,13 @@ document.head.appendChild(styleSheet);
                     <div class="modalita-icon me-3 p-3 rounded-circle bg-white bg-opacity-20">
                       <img src="assets/images/minuzioso.svg" width="36" height="36" alt="Minuzioso" />
                     </div>
-                    <h4 class="text-white fw-bold mb-0">MINUZIOSO</h4>
+                    <h4 class="text-white fw-bold mb-0" data-i18n="modalita_minuzioso_title">
+                      MINUZIOSO
+                    </h4>
                   </div>
-                  <p class="text-white small lh-sm opacity-95"> Questa modalità ti apre a un' <strong>analisi completa, voce per voce</strong>, con numeri precisi e confronti diretti. Puoi monitorare indicatori chiave come <em>commesse al giorno, prezzo medio, fatturato, ore x uomo giornaliere</em>. SYEEW ti mostra il <strong>livello di raggiungimento dei tuoi obiettivi</strong>, aiutandoti a capire quanto sei vicino al target. È lo strumento ideale per chi vuole <strong>entrare nel dettaglio</strong> e ottimizzare ogni aspetto. </p>
+                  <p class="text-white small lh-sm opacity-95" data-i18n="modalita_minuzioso_desc">
+                    Questa modalità ti apre a un' <strong>analisi completa, voce per voce</strong>, con numeri precisi e confronti diretti. Puoi monitorare indicatori chiave come <em>commesse al giorno, prezzo medio, fatturato, ore x uomo giornaliere</em>. SYEEW ti mostra il <strong>livello di raggiungimento dei tuoi obiettivi</strong>, aiutandoti a capire quanto sei vicino al target. È lo strumento ideale per chi vuole <strong>entrare nel dettaglio</strong> e ottimizzare ogni aspetto.
+                  </p>
                 </div>
               </div>
             </div>
@@ -291,22 +383,31 @@ document.head.appendChild(styleSheet);
                     <div class="modalita-icon me-3 p-3 rounded-circle bg-white bg-opacity-20">
                       <img src="assets/images/veggente.svg" width="36" height="36" alt="Veggente" />
                     </div>
-                    <h4 class="text-white fw-bold mb-0">VEGGENTE</h4>
+                    <h4 class="text-white fw-bold mb-0" data-i18n="modalita_veggente_title">
+                      VEGGENTE
+                    </h4>
                   </div>
-                  <p class="text-white small lh-sm opacity-95"> Grazie all' <strong>intelligenza artificiale integrata</strong>, questa modalità ti permette di <strong>anticipare il futuro</strong> e pianificare con maggiore sicurezza. Analizzando i tuoi dati attuali e passati, SYEEW genera una previsione dell'andamento dei prossimi mesi. Puoi impostare <strong>obiettivi mensili</strong> e monitorarne l'andamento. È la modalità ideale per passare da una gestione reattiva a una <strong>gestione realmente proattiva</strong>. </p>
+                  <p class="text-white small lh-sm opacity-95" data-i18n="modalita_veggente_desc">
+                    Grazie all' <strong>intelligenza artificiale integrata</strong>, questa modalità ti permette di <strong>anticipare il futuro</strong> e pianificare con maggiore sicurezza. Analizzando i tuoi dati attuali e passati, SYEEW genera una previsione dell'andamento dei prossimi mesi. Puoi impostare <strong>obiettivi mensili</strong> e monitorarne l'andamento. È la modalità ideale per passare da una gestione reattiva a una <strong>gestione realmente proattiva</strong>.
+                  </p>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </div>      
     </div>
   </section>
+
+  <!-- Sezione: Emoji -->
   <div class="container">
-    <!-- Griglia delle 4 Emoji -->
     <div class="section_title text-center pb-30">
-      <h5 class="sub_title">Le 4 Business Emoji</h5>
-      <h3 class="main_title">La <span class="text-primary">gamification</span> incontra l'analisi aziendale </h3>
+      <h5 class="sub_title" data-i18n="emoji_section_sub_title">
+        Le 4 Business Emoji
+      </h5>
+      <h3 class="main_title" data-i18n="emoji_section_main_title">
+        La <span class="text-primary">gamification</span> incontra l'analisi aziendale
+      </h3>
       <ul class="line">
         <li></li>
         <li></li>
@@ -314,8 +415,9 @@ document.head.appendChild(styleSheet);
       </ul>
     </div>
     <div class="row justify-content-center">
-      <p class="lead text-center"> SYEEW trasforma i complessi dati aziendali in <strong>quattro emoji intuitive</strong> che raccontano immediatamente lo stato della tua attività.
-          <br>Un approccio di <em>gamification</em> che rende l'analisi business <strong>immediata, visiva e coinvolgente</strong>. </p>
+      <p class="lead text-center" data-i18n="emoji_section_lead">
+        SYEEW trasforma i complessi dati aziendali in <strong>quattro emoji intuitive</strong> che raccontano immediatamente lo stato della tua attività.<br>Un approccio di <em>gamification</em> che rende l'analisi business <strong>immediata, visiva e coinvolgente</strong>.
+      </p>
       <!-- Scrigno Verde -->
       <div class="col-lg-3 col-md-6 mb-5">
         <div class="emoji-card scrigno-card h-100 shadow-lg overflow-hidden mx-3" style="background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%); border-radius: 1.5rem;">
@@ -323,8 +425,10 @@ document.head.appendChild(styleSheet);
             <div class="animation-box mx-auto mb-4">
               <div id="scrigno-animation" style="width: 100px; height: 100px;"></div>
             </div>
-            <h4 class="text-white fw-bold mb-3">Lo Scrigno</h4>
-            <p class="text-white small lh-sm">
+            <h4 class="text-white fw-bold mb-3" data-i18n="emoji_scrigno_title">
+              Lo Scrigno
+            </h4>
+            <p class="text-white small lh-sm" data-i18n="emoji_scrigno_desc">
               <strong>Molto bene!</strong> Il tesoro è tuo! Rispetto al periodo precedente che hai selezionato, stai andando alla grande. Lo Scrigno ti indica che sia il <em>prezzo medio di vendita</em> che l' <em>efficienza operativa</em> della tua attività sono migliorati significativamente. La tua strategia aziendale sta dando i frutti sperati: continua così!
             </p>
           </div>
@@ -337,8 +441,12 @@ document.head.appendChild(styleSheet);
             <div class="animation-box mx-auto mb-4">
               <div id="sirena-animation" style="width: 100px; height: 100px;"></div>
             </div>
-            <h4 class="text-white fw-bold mb-3">La Sirena</h4>
-            <p class="text-white small lh-sm"> La Sirena nuota sempre, anche quando la corrente è contraria. <strong>Stai andando bene</strong>, però attenzione: c'è qualcosa che non va del tutto. Mentre alcuni indicatori sono positivi, l' <em>efficienza</em> o il <em>prezzo medio</em> potrebbero essere calati rispetto al periodo precedente. È il momento di analizzare più a fondo i dati per identificare l'area di miglioramento. </p>
+            <h4 class="text-white fw-bold mb-3" data-i18n="emoji_sirena_title">
+              La Sirena
+            </h4>
+            <p class="text-white small lh-sm" data-i18n="emoji_sirena_desc">
+              La Sirena nuota sempre, anche quando la corrente è contraria. <strong>Stai andando bene</strong>, però attenzione: c'è qualcosa che non va del tutto. Mentre alcuni indicatori sono positivi, l' <em>efficienza</em> o il <em>prezzo medio</em> potrebbero essere calati rispetto al periodo precedente. È il momento di analizzare più a fondo i dati per identificare l'area di miglioramento.
+            </p>
           </div>
         </div>
       </div>
@@ -349,8 +457,12 @@ document.head.appendChild(styleSheet);
             <div class="animation-box mx-auto mb-4">
               <div id="spia-animation" style="width: 100px; height: 100px;"></div>
             </div>
-            <h4 class="text-white fw-bold mb-3">La Spia</h4>
-            <p class="text-white small lh-sm"> Alla lente d'ingrandimento della Spia non sfugge nulla. È qui per <strong>segnalarti qualche insidia nascosta</strong>. Nonostante l'efficienza o il prezzo medio siano migliorati rispetto al periodo precedente, la <em>performance complessiva</em> della tua attività ha subito un calo. Potrebbe essere il momento di rivedere la strategia generale o investigare fattori esterni. </p>
+            <h4 class="text-white fw-bold mb-3" data-i18n="emoji_spia_title">
+              La Spia
+            </h4>
+            <p class="text-white small lh-sm" data-i18n="emoji_spia_desc">
+              Alla lente d'ingrandimento della Spia non sfugge nulla. È qui per <strong>segnalarti qualche insidia nascosta</strong>. Nonostante l'efficienza o il prezzo medio siano migliorati rispetto al periodo precedente, la <em>performance complessiva</em> della tua attività ha subito un calo. Potrebbe essere il momento di rivedere la strategia generale o investigare fattori esterni.
+            </p>
           </div>
         </div>
       </div>
@@ -361,18 +473,27 @@ document.head.appendChild(styleSheet);
             <div class="animation-box mx-auto mb-4">
               <div id="sfinge-animation" style="width: 100px; height: 100px;"></div>
             </div>
-            <h4 class="text-white fw-bold mb-3">La Sfinge</h4>
-            <p class="text-white small lh-sm"> La Sfinge, enigmatica per natura, con il suo colore rosso intenso ti dà un <strong>avvertimento chiaro e diretto</strong>: la tua performance è peggiorata rispetto al periodo precedente. Non tutto è perduto, ma è necessario un <em>intervento immediato</em> per correggere la rotta. Analizza i dati, rivedi le strategie e riprendi il controllo della situazione. </p>
+            <h4 class="text-white fw-bold mb-3" data-i18n="emoji_sfinge_title">
+              La Sfinge
+            </h4>
+            <p class="text-white small lh-sm" data-i18n="emoji_sfinge_desc">
+              La Sfinge, enigmatica per natura, con il suo colore rosso intenso ti dà un <strong>avvertimento chiaro e diretto</strong>: la tua performance è peggiorata rispetto al periodo precedente. Non tutto è perduto, ma è necessario un <em>intervento immediato</em> per correggere la rotta. Analizza i dati, rivedi le strategie e riprendi il controllo della situazione.
+            </p>
           </div>
         </div>
       </div>
     </div>
   </div>
+
   <!-- Sezione: Tecnologie e strumenti -->
   <section class="tools_area section my-space">
     <div class="section_title text-center pb-30">
-      <h5 class="sub_title">Toolkit</h5>
-      <h3 class="main_title">Software e linguaggi utilizzati</h3>
+      <h5 class="sub_title" data-i18n="tools_section_sub_title">
+        Toolkit
+      </h5>
+      <h3 class="main_title" data-i18n="tools_section_main_title">
+        Software e linguaggi utilizzati
+      </h3>
       <ul class="line">
         <li></li>
         <li></li>
@@ -387,11 +508,15 @@ document.head.appendChild(styleSheet);
             <div class="tool-card p-4 rounded shadow-sm h-100 bg-white">
               <div class="d-flex align-items-center mb-3">
                 <div class="tool-icon me-3">
-                  <img src="https://www.svgrepo.com/show/452151/adobe-xd.svg" width="48" height="48" alt="Adobe XD icon" loading="lazy">
+                  <img src="https://www.svgrepo.com/show/452151/adobe-xd.svg" width="48" height="48" alt="Adobe XD icon" loading="lazy" />
                 </div>
-                <h5 class="mb-0 tool-title">Adobe XD</h5>
+                <h5 class="mb-0 tool-title" data-i18n="tool_adobe_xd_title">
+                  Adobe XD
+                </h5>
               </div>
-              <p class="tool-description"> Punto di partenza del progetto. Ho analizzato i mockup esistenti creati dal team per comprendere la struttura iniziale dell'interfaccia e i flussi utente già definiti. Questo mi ha permesso di identificare gli elementi da mantenere e quelli da ripensare completamente durante la fase di redesign in Figma. </p>
+              <p class="tool-description" data-i18n="tool_adobe_xd_desc">
+                Punto di partenza del progetto. Ho analizzato i mockup esistenti creati dal team per comprendere la struttura iniziale dell'interfaccia e i flussi utente già definiti. Questo mi ha permesso di identificare gli elementi da mantenere e quelli da ripensare completamente durante la fase di redesign in Figma.
+              </p>
             </div>
           </div>
           <!-- Figma -->
@@ -399,11 +524,15 @@ document.head.appendChild(styleSheet);
             <div class="tool-card p-4 rounded shadow-sm h-100 bg-white">
               <div class="d-flex align-items-center mb-3">
                 <div class="tool-icon me-3">
-                  <img src="https://www.svgrepo.com/show/452202/figma.svg" width="48" height="48" alt="Figma icon" loading="lazy">
+                  <img src="https://www.svgrepo.com/show/452202/figma.svg" width="48" height="48" alt="Figma icon" loading="lazy" />
                 </div>
-                <h5 class="mb-0 tool-title">Figma</h5>
+                <h5 class="mb-0 tool-title" data-i18n="tool_figma_title">
+                  Figma
+                </h5>
               </div>
-              <p class="tool-description"> Il cuore della progettazione UX/UI. Ho creato una libreria di componenti riutilizzabili, definito un design system coerente con la brand identity di SYEEW e realizzato prototipi interattivi completi. La collaborazione in tempo reale ha facilitato i feedback con il team e la condivisione dei design con potenziali investitori. </p>
+              <p class="tool-description" data-i18n="tool_figma_desc">
+                Il cuore della progettazione UX/UI. Ho creato una libreria di componenti riutilizzabili, definito un design system coerente con la brand identity di SYEEW e realizzato prototipi interattivi completi. La collaborazione in tempo reale ha facilitato i feedback con il team e la condivisione dei design con potenziali investitori.
+              </p>
             </div>
           </div>
           <!-- Flutter & Dart -->
@@ -411,12 +540,16 @@ document.head.appendChild(styleSheet);
             <div class="tool-card p-4 rounded shadow-sm h-100 bg-white">
               <div class="d-flex align-items-center mb-3">
                 <div class="tool-icon me-3">
-                  <img src="https://www.svgrepo.com/show/373604/flutter.svg" width="48" height="48" alt="Flutter icon" loading="lazy">
-                  <img src="https://www.svgrepo.com/show/353631/dart.svg" width="44" height="44" alt="Dart icon" loading="lazy">
+                  <img src="https://www.svgrepo.com/show/373604/flutter.svg" width="48" height="48" alt="Flutter icon" loading="lazy" />
+                  <img src="https://www.svgrepo.com/show/353631/dart.svg" width="44" height="44" alt="Dart icon" loading="lazy" />
                 </div>
-                <h5 class="mb-0 tool-title"> Flutter e Dart</h5>
+                <h5 class="mb-0 tool-title" data-i18n="tool_flutter_dart_title">
+                  Flutter e Dart
+                </h5>
               </div>
-              <p class="tool-description"> Framework scelto per la sua capacità di sviluppare applicazioni native per iOS e Android con un'unica codebase. Ho implementato cinque schermate principali traducendo i design Figma in codice Dart, gestendo animazioni fluide, navigazione tra pagine e popolamento di dati mock per simulare l'esperienza utente finale. </p>
+              <p class="tool-description" data-i18n="tool_flutter_dart_desc">
+                Framework scelto per la sua capacità di sviluppare applicazioni native per iOS e Android con un'unica codebase. Ho implementato cinque schermate principali traducendo i design Figma in codice Dart, gestendo animazioni fluide, navigazione tra pagine e popolamento di dati mock per simulare l'esperienza utente finale.
+              </p>
             </div>
           </div>
           <!-- Visual Studio Code -->
@@ -424,117 +557,128 @@ document.head.appendChild(styleSheet);
             <div class="tool-card p-4 rounded shadow-sm h-100 bg-white">
               <div class="d-flex align-items-center mb-3">
                 <div class="tool-icon me-3">
-                  <img src="https://www.svgrepo.com/show/452129/vs-code.svg" width="48" height="48" alt="Visual Studio Code icon" loading="lazy">
+                  <img src="https://www.svgrepo.com/show/452129/vs-code.svg" width="48" height="48" alt="Visual Studio Code icon" loading="lazy" />
                 </div>
-                <h5 class="mb-0 tool-title">Visual Studio Code</h5>
+                <h5 class="mb-0 tool-title" data-i18n="tool_vscode_title">
+                  Visual Studio Code
+                </h5>
               </div>
-              <p class="tool-description"> Editor principale per lo sviluppo Flutter. Configurato con le estensioni Dart e Flutter per il supporto completo al linguaggio, debug integrato e hot reload. L'ambiente mi ha permesso di testare rapidamente le modifiche sul dispositivo fisico tramite USB debugging. </p>
+              <p class="tool-description" data-i18n="tool_vscode_desc">
+                Editor principale per lo sviluppo Flutter. Configurato con le estensioni Dart e Flutter per il supporto completo al linguaggio, debug integrato e hot reload. L'ambiente mi ha permesso di testare rapidamente le modifiche sul dispositivo fisico tramite USB debugging.
+              </p>
             </div>
           </div>
         </div>
       </div>
     </div>
   </section>
-<!-- Sezione: Attività svolte -->
-<section class="experience_area section my-space">
-  <div class="container">
-    <div class="section_title text-center pb-30">
-      <h5 class="sub_title">Cronologia</h5>
-      <h3 class="main_title">Attività principali</h3>
-      <ul class="line">
-        <li></li>
-        <li></li>
-        <li></li>
-      </ul>
-    </div>
 
-    <!-- Primo periodo -->
-    <div class="experience_period">
-      <h4 class="period-title">27 maggio – 14 giugno 2024</h4>
-      <div class="period-content">
-        <p>
-          Durante queste tre settimane mi sono concentrato su <strong>Figma</strong>. Partendo dall'interfaccia esistente, ho ridefinito la gerarchia delle schermate, creato uno stile visivo coerente con la brand identity e preparato <em>componenti riutilizzabili</em> per velocizzare i futuri aggiornamenti.
-        </p>
-    
-        <div class="image-gallery">
-          <div class="gallery-item">
-            <img src="assets/images/syeew_figma_1.jpg"/>
+  <!-- Sezione: Attività svolte -->
+  <section class="experience_area section my-space">
+    <div class="container">
+      <div class="section_title text-center pb-30">
+        <h5 class="sub_title" data-i18n="experience_section_sub_title">
+          Cronologia
+        </h5>
+        <h3 class="main_title" data-i18n="experience_section_main_title">
+          Attività principali
+        </h3>
+        <ul class="line">
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+
+      <!-- Primo periodo -->
+      <div class="experience_period">
+        <h4 class="period-title" data-i18n="experience_period1_title">
+          27 maggio – 14 giugno 2024
+        </h4>
+        <div class="period-content">
+          <p data-i18n="experience_period1_para">
+            Durante queste tre settimane mi sono concentrato su <strong>Figma</strong>. Partendo dall'interfaccia esistente, ho ridefinito la gerarchia delle schermate, creato uno stile visivo coerente con la brand identity e preparato <em>componenti riutilizzabili</em> per velocizzare i futuri aggiornamenti.
+          </p>
+          <div class="image-gallery">
+            <div class="gallery-item">
+              <img src="assets/images/syeew_figma_1.jpg" alt="Mockup Figma 1" />
+            </div>
+            <div class="gallery-item">
+              <img src="assets/images/syeew_figma_2.jpg" alt="Mockup Figma 2" />
+            </div>
+            <div class="gallery-item">
+              <img src="assets/images/syeew_figma_3.jpg" alt="Mockup Figma 3" />
+            </div>
           </div>
-          <div class="gallery-item">
-            <img src="assets/images/syeew_figma_2.jpg"/>
+        </div>
+      </div>
 
+      <!-- Secondo periodo -->
+      <div class="experience_period">
+        <h4 class="period-title" data-i18n="experience_period2_title">
+          9 – 20 settembre 2024
+        </h4>
+        <div class="period-content">
+          <p data-i18n="experience_period2_para">
+            Durante il secondo periodo sono passato allo sviluppo in <strong>Flutter</strong>. Ho tradotto i prototipi in codice, realizzando <strong>cinque schermate principali</strong>. L'app girava su dispositivi reali, e l'ho testata tramite il Debug USB con il mio smartphone. Non erano presenti connessioni API: i dati erano popolati localmente per dimostrare flussi e animazioni.
+          </p>
+          <div class="image-gallery">
+            <div class="gallery-item">
+              <img src="assets/images/syeew_flutter_1.jpg" alt="Flutter 1" />
+            </div>
+            <div class="gallery-item">
+              <img src="assets/images/syeew_flutter_2.jpg" alt="Flutter 2" />
+            </div>
+            <div class="gallery-item">
+              <img src="assets/images/syeew_flutter_3.jpg" alt="Flutter 3" />
+            </div>
           </div>
-          <div class="gallery-item">
-            <img src="assets/images/syeew_figma_3.jpg"/>
+        </div>
+      </div>
 
+      <!-- Partecipazione a SMAU -->
+      <div class="experience_period">
+        <h4 class="period-title" data-i18n="experience_period3_title">
+          29 ottobre 2024
+        </h4>
+        <div class="period-content">
+          <p data-i18n="experience_period3_para1">
+            In questa data ho partecipato come ospite di SYEEW alla fiera <strong>SMAU Milano</strong>, uno degli eventi italiani più importanti nel mondo dell'innovazione, delle startup e della trasformazione digitale. Pur non avendo uno stand, abbiamo vissuto la giornata in modo attivo, esplorando gli spazi, ascoltando pitch e interagendo con altri professionisti.
+          </p>
+          <p class="my-space" data-i18n="experience_period3_para2">
+            Ho ascoltato presentazioni e momenti di confronto che mi hanno fatto scoprire tante realtà emergenti; è stato molto formativo osservare come aziende di ogni tipo comunicano i propri valori, mission e risultati. Alcune con dati, altre con storytelling emozionale, altre ancora con focus sull'impatto sociale.
+          </p>
+          <p class="my-space" data-i18n="experience_period3_para3">
+            Ho annotato spunti e riflessioni che mi sono stati utili per crescere come lavoratore e designer: ho capito quanto conti l'empatia nel racconto di un prodotto e quanto il design sia uno strumento potente anche nella comunicazione strategica.
+          </p>
+          <p class="my-space" data-i18n="experience_period3_para4">
+            È stata una giornata intensa, stimolante, e diversa dal solito. Un momento per fermarsi e guardare fuori, per prendere ispirazione e poi tornare al lavoro con uno sguardo più ampio e consapevole.
+          </p>
+          <div class="image-gallery">
+            <div class="gallery-item">
+              <img src="assets/images/syeew_smau_1.jpg" alt="SMAU 1" />
+            </div>
+            <div class="gallery-item">
+              <img src="assets/images/syeew_smau_2.jpg" alt="SMAU 2" />
+            </div>
+            <div class="gallery-item">
+              <img src="assets/images/syeew_smau_3.jpg" alt="SMAU 3" />
+            </div>
           </div>
         </div>
       </div>
     </div>
-
-    <!-- Secondo periodo -->
-    <div class="experience_period">
-      <h4 class="period-title">9 – 20 settembre 2024</h4>
-      <div class="period-content">
-        <p>
-          Durante il secondo periodo sono passato allo sviluppo in <strong>Flutter</strong>. Ho tradotto i prototipi in codice, realizzando <strong>cinque schermate principali</strong>. L'app girava su dispositivi reali, e l'ho testata tramite il Debug USB con il mio smartphone. Non erano presenti connessioni API: i dati erano popolati localmente per dimostrare flussi e animazioni.
-        </p>
-        
-        <div class="image-gallery">
-          <div class="gallery-item">
-            <img src="assets/images/syeew_flutter_1.jpg" />
-          </div>
-          <div class="gallery-item">
-            <img src="assets/images/syeew_flutter_2.jpg" />
-
-          </div>
-          <div class="gallery-item">
-            <img src="assets/images/syeew_flutter_3.jpg"/>
- 
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Partecipazione a SMAU -->
-    <div class="experience_period">
-      <h4 class="period-title">29 ottobre 2024</h4>
-      <div class="period-content">
-        <p>
-          In questa data ho partecipato come ospite di SYEEW alla fiera <strong>SMAU Milano</strong>, uno degli eventi italiani più importanti nel mondo dell'innovazione, delle startup e della trasformazione digitale. Pur non avendo uno stand, abbiamo vissuto la giornata in modo attivo, esplorando gli spazi, ascoltando pitch e interagendo con altri professionisti.
-        </p>
-        <p class="my-space">
-          Ho ascoltato presentazioni e momenti di confronto che mi hanno fatto scoprire tante realtà emergenti; è stato molto formativo osservare come aziende di ogni tipo comunicano i propri valori, mission e risultati. Alcune con dati, altre con storytelling emozionale, altre ancora con focus sull'impatto sociale.
-        </p>
-        <p class="my-space">
-          Ho annotato spunti e riflessioni che mi sono stati utili per crescere come lavoratore e designer: ho capito quanto conti l'empatia nel racconto di un prodotto e quanto il design sia uno strumento potente anche nella comunicazione strategica.
-        </p>
-        <p class="my-space">
-          È stata una giornata intensa, stimolante, e diversa dal solito. Un momento per fermarsi e guardare fuori, per prendere ispirazione e poi tornare al lavoro con uno sguardo più ampio e consapevole.
-        </p>
-        
-        <div class="image-gallery">
-          <div class="gallery-item">
-            <img src="assets/images/syeew_smau_1.jpg"/>
-          </div>
-          <div class="gallery-item">
-            <img src="assets/images/syeew_smau_2.jpg" />
-          </div>
-          <div class="gallery-item">
-            <img src="assets/images/syeew_smau_3.jpg"/>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
+  </section>
 
   <!-- Sezione: Bilancio personale -->
   <section class="personal_review section my-space bg-light">
     <div class="section_title text-center pb-30">
-      <h5 class="sub_title">Riflessione</h5>
-      <h3 class="main_title">Cosa porto a casa</h3>
+      <h5 class="sub_title" data-i18n="review_section_sub_title">
+        Riflessione
+      </h5>
+      <h3 class="main_title" data-i18n="review_section_main_title">
+        Cosa porto a casa
+      </h3>
       <ul class="line">
         <li></li>
         <li></li>
@@ -543,100 +687,118 @@ document.head.appendChild(styleSheet);
     </div>
     <div class="row justify-content-center">
       <div class="col-lg-10">
-        <p> L'esperienza in SYEEW mi ha dato un assaggio concreto di come nasce un prodotto digitale: dal foglio bianco alla demo funzionante. Ho apprezzato la fiducia concessa e la libertà di sperimentare. Allo stesso tempo ho toccato con mano la velocità delle tempistiche in startup: alcune attività, come la connessione API o i test di usabilità, sono rimaste fuori scope per ragioni di calendario. </p>
-        <p class="my-space"> Una delle cose che mi ha colpito di più è stata la totale dedizione del CEO al progetto: ogni dettaglio, ogni schermata, ogni strategia veniva curata con attenzione e passione quotidiana. Mi ha fatto riflettere molto su quanto possa essere appagante costruire qualcosa da zero, giorno dopo giorno, vederlo crescere e migliorarlo con continuità. È un approccio che sogno di poter adottare anch'io in futuro, magari su un progetto mio. </p>
+        <p data-i18n="review_para1">
+          L'esperienza in SYEEW mi ha dato un assaggio concreto di come nasce un prodotto digitale: dal foglio bianco alla demo funzionante. Ho apprezzato la fiducia concessa e la libertà di sperimentare. Allo stesso tempo ho toccato con mano la velocità delle tempistiche in startup: alcune attività, come la connessione API o i test di usabilità, sono rimaste fuori scope per ragioni di calendario.
+        </p>
+        <p class="my-space" data-i18n="review_para2">
+          Una delle cose che mi ha colpito di più è stata la totale dedizione del CEO al progetto: ogni dettaglio, ogni schermata, ogni strategia veniva curata con attenzione e passione quotidiana. Mi ha fatto riflettere molto su quanto possa essere appagante costruire qualcosa da zero, giorno dopo giorno, vederlo crescere e migliorarlo con continuità. È un approccio che sogno di poter adottare anch'io in futuro, magari su un progetto mio.
+        </p>
         <div class="thanks-content">
-          <p class="lead-text mb-4"> Desidero ringraziare di cuore ogni persona del team che ha reso possibile questa esperienza. Grazie per il tempo dedicato, per i suggerimenti precisi, per i consigli di vita, per i feedback costanti e per ogni singolo scambio di idee. </p>
-          <p class="mb-4"> Questa esperienza mi ha anche aiutato a fare chiarezza sul mio futuro, infatti ho capito che vorrei proseguire i miei studi nell’ambito dell’Interaction Design. È stato proprio qui che ho iniziato a riflettere in modo più profondo su come le persone si relazionano con le interfacce digitali, a partire dal compito nel primo periodo, e questo mi ha da subito affascinato ed interessato. </p>
-          <p class="mb-4"> Grazie ancora per aver creduto in me, per avermi affidato challenge importanti e per avermi fornito gli strumenti giusti per affrontare con consapevolezza ciò che verrà. </p>
-          <p class="final-thanks"> A presto, SYEEW SOON! </p>
+          <p class="lead-text mb-4" data-i18n="review_thanks_lead">
+            Desidero ringraziare di cuore ogni persona del team che ha reso possibile questa esperienza. Grazie per il tempo dedicato, per i suggerimenti precisi, per i consigli di vita, per i feedback costanti e per ogni singolo scambio di idee.
+          </p>
+          <p class="mb-4" data-i18n="review_thanks_para">
+            Questa esperienza mi ha anche aiutato a fare chiarezza sul mio futuro, infatti ho capito che vorrei proseguire i miei studi nell’ambito dell’Interaction Design. È stato proprio qui che ho iniziato a riflettere in modo più profondo su come le persone si relazionano con le interfacce digitali, a partire dal compito nel primo periodo, e questo mi ha da subito affascinato ed interessato.
+          </p>
+          <p class="mb-4" data-i18n="review_final_thanks">
+            Grazie ancora per aver creduto in me, per avermi affidato challenge importanti e per avermi fornito gli strumenti giusti per affrontare con consapevolezza ciò che verrà.
+          </p>
+          <p class="final-thanks" data-i18n="review_sign_off">
+            A presto, SYEEW SOON!
+          </p>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- Sezione: Documentazione -->
   <section class="documents_area section mb-80">
     <div class="container">
       <div class="section_title text-center pb-40">
-        <h5 class="sub_title">Documentazione</h5>
-        <h3 class="main_title">Consulta i documenti del progetto</h3>
+        <h5 class="sub_title" data-i18n="documents_section_sub_title">
+          Documentazione
+        </h5>
+        <h3 class="main_title" data-i18n="documents_section_main_title">
+          Consulta i documenti del progetto
+        </h3>
         <ul class="line">
           <li></li>
           <li></li>
           <li></li>
         </ul>
-        <div class="documents-buttons">
+        <div class="documents-buttons d-flex justify-content-center flex-wrap">
           <!-- 1. Figma Mockup App -->
-          <a href="https://www.figma.com/proto/RXmiNTvJcI4bQm6VNsh4aT/SYEEW-Figma?node-id=1-2&p=f&t=QyUciyZHJBMt3NaA-0&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=2007%3A1804" class="doc-button" target="_blank" rel="noopener">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma">
+          <a href="https://www.figma.com/proto/RXmiNTvJcI4bQm6VNsh4aT/SYEEW-Figma?node-id=1-2&p=f&t=QyUciyZHJBMt3NaA-0&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=2007%3A1804" class="doc-button m-2" target="_blank" rel="noopener">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma" />
             <div class="doc-text">
-              <h4>Mockup applicazione</h4>
-              <p>Mockup con wireframes e mio redesign dell'interfaccia</p>
+              <h4 data-i18n="documents_mockup_title">
+                Mockup applicazione
+              </h4>
+              <p data-i18n="documents_mockup_desc">
+                Mockup con wireframes e mio redesign dell'interfaccia
+              </p>
             </div>
             <i class="fas fa-arrow-right"></i>
           </a>
           <!-- 2. Figma Presentazione in Inglese -->
-          <a href="https://www.figma.com/deck/hJrOtqtGPKStzLSoLbEfbl/Rinaldi-PCTO?node-id=1" class="doc-button" target="_blank" rel="noopener">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma">
+          <a href="https://www.figma.com/deck/hJrOtqtGPKStzLSoLbEfbl/Rinaldi-PCTO?node-id=1" class="doc-button m-2" target="_blank" rel="noopener">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma" />
             <div class="doc-text">
-              <h4>Slide deck (EN)</h4>
-              <p>Presentazione del progetto, del team e della mia esperienza</p>
+              <h4 data-i18n="documents_presentation_title">
+                Slide deck (EN)
+              </h4>
+              <p data-i18n="documents_presentation_desc">
+                Presentazione del progetto, del team e della mia esperienza
+              </p>
             </div>
             <i class="fas fa-arrow-right"></i>
           </a>
           <!-- 3. GitHub Repository -->
-          <a href="https://github.com/michirina/pcto_syeew_flutter/" class="doc-button" target="_blank" rel="noopener">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">
+          <a href="https://github.com/michirina/pcto_syeew_flutter/" class="doc-button m-2" target="_blank" rel="noopener">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" />
             <div class="doc-text">
-              <h4>Progetto App Flutter</h4>
-              <p>Repository con il codice dell’app</p>
+              <h4 data-i18n="documents_github_title">
+                GitHub Repository
+              </h4>
+              <p data-i18n="documents_github_desc">
+                Codice sorgente completo dell’app Flutter e del back-end
+              </p>
             </div>
             <i class="fas fa-arrow-right"></i>
           </a>
         </div>
       </div>
+      <!-- Carousel finale -->
+      <div id="finalCarousel" class="carousel slide mt-5" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="carousel-img-wrapper">
+              <img src="assets/images/syeew_1.jpg" class="d-block w-100 img-fluid" alt="Slide 1" />
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="carousel-img-wrapper">
+              <img src="assets/images/syeew_2.jpg" class="d-block w-100 img-fluid" alt="Slide 2" />
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="carousel-img-wrapper">
+              <img src="assets/images/syeew_3.jpg" class="d-block w-100 img-fluid" alt="Slide 3" />
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#finalCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden" data-i18n="carousel_prev">Precedente</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#finalCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden" data-i18n="carousel_next">Successivo</span>
+        </button>
+      </div>
     </div>
   </section>
-    
-    <section class="photo_carousel_area section my-space">
-  <div class="container">
-    <div id="finalCarousel" class="carousel slide shadow-sm rounded" data-bs-ride="carousel">
-      <div class="carousel-inner rounded">
 
-        <div class="carousel-item active">
-          <div class="carousel-img-wrapper">
-            <img src="assets/images/syeew_1.jpg" class="d-block w-100 img-fluid" alt="Slide 1">
-          </div>
-        </div>
-
-        <div class="carousel-item">
-          <div class="carousel-img-wrapper">
-            <img src="assets/images/syeew_2.jpg" class="d-block w-100 img-fluid" alt="Slide 2">
-          </div>
-        </div>
-
-        <div class="carousel-item">
-          <div class="carousel-img-wrapper">
-            <img src="assets/images/syeew_3.jpg" class="d-block w-100 img-fluid" alt="Slide 3">
-          </div>
-        </div>
-
-      </div>
-
-      <button class="carousel-control-prev" type="button" data-bs-target="#finalCarousel" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Precedente</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#finalCarousel" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Successivo</span>
-      </button>
-    </div>
-  </div>
-</section>
-
-
-    
-    
   <!-- NAVBAR -->
   <nav class="bottom-navbar-modern">
     <ul class="navbar-items">
@@ -679,26 +841,55 @@ document.head.appendChild(styleSheet);
       <li data-page="contatti">
         <a href="contatti.html">
           <i class="lni lni-envelope"></i>
-          <span>Contatti</span>
+          <span data-i18n="nav_contatti">Contatti</span>
         </a>
       </li>
     </ul>
   </nav>
-  <!--====== FOOTER PART START ======-->
+
+  <!-- FOOTER -->
   <footer class="footer_area gray-bg section" id="footer">
     <div class="container">
       <div class="row">
-        <div class="col-lg-12">
+        <div class="col-lg-12">  
           <div class="footer_content text-center">
             <div class="copyright-container">
-              <span class="copyright-text">© 2025 - Tutti i diritti riservati</span>
+              <span class="copyright-text" data-i18n="footer_copyright">
+                © 2025 - Tutti i diritti riservati
+              </span>
               <img alt="Logo" src="assets/images/logo.png" width="36" />
             </div>
-            <p class="exam-text">Sito realizzato da Rinaldi Michele per l'esame di stato 2025</p>
+            <p class="exam-text" data-i18n="footer_credit">
+              Sito realizzato da Rinaldi Michele per l'esame di stato 2025
+            </p>
           </div>
         </div>
       </div>
     </div>
-</footer>
+  </footer>
+    <!-- Modern Language Switcher -->
+<div class="modern-lang-switcher">
+  <div id="langDropdown" class="lang-dropdown">
+    <div id="langButton" class="lang-button">
+      <img id="currentLangFlag" src="assets/images/flag-it.png" alt="IT" class="lang-flag">
+      <span id="currentLangCode" class="lang-code">IT</span>
+      <span class="lang-arrow">▼</span>
+    </div>
+    
+    <div id="langMenu" class="lang-menu">
+      <div class="lang-option" data-lang="it">
+        <img src="assets/images/flag-it.png" alt="IT" class="lang-flag">
+        <span class="lang-name">Italiano</span>
+        <span class="lang-check">✓</span>
+      </div>
+      <div class="lang-option" data-lang="en">
+        <img src="assets/images/flag-en.png" alt="EN" class="lang-flag">
+        <span class="lang-name">English</span>
+        <span class="lang-check">✓</span>
+      </div>
+    </div>
+  </div>
+</div>
+    
 </body>
 </html>
