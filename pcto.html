@@ -81,15 +81,8 @@
 
           // Listener per toggle in alto e in basso
           const toggleTop = document.getElementById('langToggleTop');
-          const toggleBottom = document.getElementById('langToggleBottom');
           if (toggleTop) {
             toggleTop.addEventListener('click', function(e) {
-              e.preventDefault();
-              switchLanguage();
-            });
-          }
-          if (toggleBottom) {
-            toggleBottom.addEventListener('click', function(e) {
               e.preventDefault();
               switchLanguage();
             });
@@ -201,6 +194,46 @@
         currentLangFlag.src = `assets/images/flag-${saved}.png`;
         currentLangCode.textContent = saved.toUpperCase();
       }
+    });
+  });
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // 1) Scrigno
+    lottie.loadAnimation({
+      container: document.getElementById('scrigno-animation'),
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      path: 'assets/images/scrigno.json' // <-- verifica che il file esista qui
+    });
+
+    // 2) Sirena
+    lottie.loadAnimation({
+      container: document.getElementById('sirena-animation'),
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      path: 'assets/images/sirena.json'
+    });
+
+    // 3) Spia
+    lottie.loadAnimation({
+      container: document.getElementById('spia-animation'),
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      path: 'assets/images/spia.json'
+    });
+
+    // 4) Sfinge
+    lottie.loadAnimation({
+      container: document.getElementById('sfinge-animation'),
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      path: 'assets/images/sfinge.json'
     });
   });
 </script>
