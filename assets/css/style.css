@@ -2129,3 +2129,30 @@ p {
         font-size: 12px;
     }
 }
+
+
+.emoji-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* centra verticalmente */
+  align-items: center;     /* centra orizzontalmente */
+  border-radius: 1.5rem;   /* arrotonda gli angoli dell’intera card */
+  overflow: hidden;        /* impedisce che l’animazione esca dai bordi */
+}
+
+
+.emoji-animation-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* imposta un’altezza minima in modo che l’animazione resti centrata
+     anche se il contenuto di testo sotto cambia dimensione */
+  min-height: 200px; /* regola in base all’altezza che desideri */
+  border-radius: 1rem; /* arrotonda gli angoli della zona animazione */
+  background-color: rgba(255, 255, 255, 0.1); /* opzione: sfondo leggermente semitrasparente */
+}
+
+.animation-box {
+  border-radius: 1rem;
+  overflow: hidden;
+}
