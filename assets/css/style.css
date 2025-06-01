@@ -2129,3 +2129,20 @@ p {
         font-size: 12px;
     }
 }
+
+
+.animation-wrapper {
+    width: 100px;
+    height: 100px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 1rem;          /* arrotondamento dei bordi */
+    display: flex;
+    align-items: center;
+    justify-content: center;      /* centra l'animazione all’interno */
+    margin: 0 auto 1rem;          /* centro orizzontale e margine inferiore */
+    overflow: hidden;             /* taglia eventuali fuoriuscite */
+  }
+  .animation-wrapper div {
+    width: 80px;                  /* dimensione interna per l’animazione */
+    height: 80px;
+  }
