@@ -403,17 +403,20 @@
     <p class="lead text-center" data-i18n="emoji_section_lead">
       SYEEW trasforma i complessi dati aziendali in <strong>quattro emoji intuitive</strong> che raccontano immediatamente lo stato della tua attività.<br>Un approccio di <em>gamification</em> che rende l'analisi business <strong>immediata, visiva e coinvolgente</strong>.
     </p>
+
     <!-- Scrigno Verde -->
     <div class="col-lg-3 col-md-6 mb-5">
-      <!-- Aggiungiamo qui le classi Bootstrap per centrare verticalmente e orizzontalmente -->
       <div class="emoji-card scrigno-card h-100 shadow-lg overflow-hidden mx-3 
                   d-flex flex-column justify-content-center" 
            style="background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%); border-radius: 1.5rem;">
         <div class="emoji-animation-container p-4 text-center w-100">
-          <!-- Arrotondiamo anche il contenitore dell'animazione -->
-          <div class="animation-box mx-auto mb-4 rounded" style="overflow: hidden;">
-            <div id="scrigno-animation" style="width: 100px; height: 100px;"></div>
+          
+          <!-- Quadrato arrotondato con sfondo bianco al 10% -->
+          <div class="animation-wrapper">
+            <!-- Dentro mettiamo l’animazione, ad es. Lottie o SVG -->
+            <div id="scrigno-animation"></div>
           </div>
+          
           <h4 class="text-white fw-bold mb-3" data-i18n="emoji_scrigno_title">
             Lo Scrigno
           </h4>
@@ -423,15 +426,18 @@
         </div>
       </div>
     </div>
+
     <!-- Sirena Azzurra -->
     <div class="col-lg-3 col-md-6 mb-5">
       <div class="emoji-card sirena-card h-100 shadow-lg overflow-hidden mx-3 
                   d-flex flex-column justify-content-center" 
            style="background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%); border-radius: 1.5rem;">
         <div class="emoji-animation-container p-4 text-center w-100">
-          <div class="animation-box mx-auto mb-4 rounded" style="overflow: hidden;">
-            <div id="sirena-animation" style="width: 100px; height: 100px;"></div>
+          
+          <div class="animation-wrapper">
+            <div id="sirena-animation"></div>
           </div>
+          
           <h4 class="text-white fw-bold mb-3" data-i18n="emoji_sirena_title">
             La Sirena
           </h4>
@@ -441,15 +447,18 @@
         </div>
       </div>
     </div>
+
     <!-- Spia Gialla -->
     <div class="col-lg-3 col-md-6 mb-5">
       <div class="emoji-card spia-card h-100 shadow-lg overflow-hidden mx-3 
                   d-flex flex-column justify-content-center" 
            style="background: linear-gradient(135deg, #eab308 0%, #ca8a04 100%); border-radius: 1.5rem;">
         <div class="emoji-animation-container p-4 text-center w-100">
-          <div class="animation-box mx-auto mb-4 rounded" style="overflow: hidden;">
-            <div id="spia-animation" style="width: 100px; height: 100px;"></div>
+          
+          <div class="animation-wrapper">
+            <div id="spia-animation"></div>
           </div>
+          
           <h4 class="text-white fw-bold mb-3" data-i18n="emoji_spia_title">
             La Spia
           </h4>
@@ -459,15 +468,18 @@
         </div>
       </div>
     </div>
+
     <!-- Sfinge Rossa -->
     <div class="col-lg-3 col-md-6 mb-5">
       <div class="emoji-card sfinge-card h-100 shadow-lg overflow-hidden mx-3 
                   d-flex flex-column justify-content-center" 
            style="background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); border-radius: 1.5rem;">
         <div class="emoji-animation-container p-4 text-center w-100">
-          <div class="animation-box mx-auto mb-4 rounded" style="overflow: hidden;">
-            <div id="sfinge-animation" style="width: 100px; height: 100px;"></div>
+          
+          <div class="animation-wrapper">
+            <div id="sfinge-animation"></div>
           </div>
+          
           <h4 class="text-white fw-bold mb-3" data-i18n="emoji_sfinge_title">
             La Sfinge
           </h4>
@@ -477,6 +489,7 @@
         </div>
       </div>
     </div>
+
   </div>
 </div>
 
