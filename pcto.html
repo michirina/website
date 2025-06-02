@@ -15,141 +15,110 @@
     <link href="assets/css/style.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
 
     <!-- SCRIPTS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        // -------------------------------------------------------------------
-        // CONFIGURAZIONE LANGUAGE SWITCHER
-        // -------------------------------------------------------------------
-        const supportedLangs = ['it', 'en'];
-        // Tenta di rilevare la lingua del browser, fallback a 'it' se non supportata
-        function detectBrowserLanguage() {
-          const navLangs = navigator.languages || [navigator.language || 'it'];
-          for (let lang of navLangs) {
-            lang = lang.slice(0, 2).toLowerCase();
-            if (supportedLangs.includes(lang)) return lang;
-          }
-          return 'it';
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>f
+
+<script>
+// JavaScript Language Switcher
+(function() {
+    let currentLang = 'it';
+    let translations = {};
+
+    // Carica le traduzioni
+    async function loadTranslations(lang) {
+        try {
+            const response = await fetch(`assets/lang/lang-pcto-${lang}.json`);
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            const data = await response.json();
+            translations[lang] = data;
+            return data;
+        } catch (error) {
+            console.error(`Errore nel caricamento delle traduzioni per ${lang}:`, error);
+            return null;
         }
+    }
 
-        // Recupera la lingua preferita (o rilevata dal browser)
-        let currentLang = localStorage.getItem('preferredLang') || detectBrowserLanguage();
+    // Applica le traduzioni agli elementi
+    function applyTranslations(langData) {
+        const elements = document.querySelectorAll('[data-i18n]');
+        
+        elements.forEach(element => {
+            element.classList.add('fade-out');
+        });
 
-        // Aggiorna le immagini delle bandiere (in alto e in basso)
-        function updateLanguageUI(lang) {
-          const topFlag = document.getElementById('topLangFlag');
-          const bottomFlag = document.getElementById('bottomLangFlag');
-          const imgSrc = (lang === 'it') ? 'assets/images/flag-it.png' : 'assets/images/flag-en.png';
-          if (topFlag) topFlag.src = imgSrc;
-          if (bottomFlag) bottomFlag.src = imgSrc;
-        }
-
-        // Carica il file JSON corretto e sostituisce i testi
-        function loadLanguage(lang) {
-          fetch(`assets/lang/lang-pcto-${lang}.json`)
-            .then(response => {
-              if (!response.ok) throw new Error(`File di traduzione non trovato: lang-pcto-${lang}.json`);
-              return response.json();
-            })
-            .then(data => {
-              document.querySelectorAll('[data-i18n]').forEach(el => {
-                const key = el.getAttribute('data-i18n');
-                if (data[key]) {
-                  el.textContent = data[key];
+        setTimeout(() => {
+            elements.forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (langData[key]) {
+                    element.textContent = langData[key];
                 }
-              });
-            })
-            .catch(err => console.error('Errore nella loadLanguage():', err));
-        }
-
-        // Fa lo switch tra 'it' e 'en' e ricarica i testi
-        function switchLanguage() {
-          currentLang = (currentLang === 'it') ? 'en' : 'it';
-          localStorage.setItem('preferredLang', currentLang);
-          updateLanguageUI(currentLang);
-          loadLanguage(currentLang);
-        }
-
-        // -------------------------------------------------------------------
-        // INIZIALIZZAZIONE SCRIPT (INCLUSI ANIMAZIONI EMOJI)
-        // -------------------------------------------------------------------
-        document.addEventListener('DOMContentLoaded', function () {
-          // Imposta inizialmente bandiere e testi
-          updateLanguageUI(currentLang);
-          loadLanguage(currentLang);
-
-          // Listener per toggle in alto e in basso
-          const toggleTop = document.getElementById('langToggleTop');
-          if (toggleTop) {
-            toggleTop.addEventListener('click', function(e) {
-              e.preventDefault();
-              switchLanguage();
+                element.classList.remove('fade-out');
+                element.classList.add('fade-in');
             });
-          }
-            
-  // PRIMA: individua elementi
-  const langButton = document.getElementById('langButton');
-  const langMenu = document.getElementById('langMenu');
-  const langOptions = document.querySelectorAll('.lang-option');
-  const currentLangFlag = document.getElementById('currentLangFlag');
-  const currentLangCode = document.getElementById('currentLangCode');
+        }, 200);
+    }
 
-  // Funzione per aprire/chiudere il menu
-  langButton.addEventListener('click', function(e) {
-    e.stopPropagation(); 
-    langMenu.classList.toggle('show');
-  });
+    // Cambia lingua
+    async function changeLanguage(lang) {
+    if (lang === currentLang) return; // Questa riga resta per evitare richieste doppie
 
-  // Se clicchi fuori dal menu, lo chiudi
-  document.addEventListener('click', function() {
-    langMenu.classList.remove('show');
-  });
+    currentLang = lang; // Aggiorna subito la lingua corrente
 
-  // Gestione click su ogni opzione
-  langOptions.forEach(option => {
-    option.addEventListener('click', function(e) {
-      e.stopPropagation();
-      // rimuovi .active da tutte
-      langOptions.forEach(opt => opt.classList.remove('active'));
-      // imposta .active su quella cliccata
-      this.classList.add('active');
-
-      // leggi codice lingua dalla data attribute
-      const selectedLang = this.getAttribute('data-lang');
-
-      // aggiorna bandiera e codice nel bottone principale
-      currentLangFlag.src = `assets/images/flag-${selectedLang}.png`;
-      currentLangCode.textContent = selectedLang.toUpperCase();
-
-      // (opzionale) salva in localStorage o richiama loadLanguage()
-      localStorage.setItem('preferredLang', selectedLang);
-      // qui puoi poi invocare la tua loadLanguage(selectedLang)
-      if (typeof switchLanguage === 'function') {
-        // forza lo switch, salvando currentLang prima di tutto
-        currentLang = selectedLang;
-        updateLanguageUI(selectedLang);
-        loadLanguage(selectedLang);
-      }
-
-      // chiudi il menu
-      langMenu.classList.remove('show');
+    // Aggiorna i bottoni
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.remove('active');
     });
-  });
+    document.querySelector(`[data-lang="${lang}"]`).classList.add('active');
 
-  // Inizializza opzione selezionata all’avvio
-  document.addEventListener('DOMContentLoaded', function() {
-    const saved = localStorage.getItem('preferredLang') || 'it';
-    langOptions.forEach(opt => {
-      if (opt.getAttribute('data-lang') === saved) {
-        opt.classList.add('active');
-        currentLangFlag.src = `assets/images/flag-${saved}.png`;
-        currentLangCode.textContent = saved.toUpperCase();
-      }
-    });
-  });
+    // Carica e applica le traduzioni
+    let langData = translations[lang];
+    if (!langData) {
+        langData = await loadTranslations(lang);
+    }
+
+    if (langData) {
+        applyTranslations(langData);
+
+        // Salva la preferenza nel localStorage
+        localStorage.setItem('preferred-language', lang);
+    }
+}
+
+
+    // Inizializzazione
+    function init() {
+        // Carica la lingua preferita salvata o usa italiano come default
+        const savedLang = localStorage.getItem('preferred-language') || 'it';
+        
+        // Aggiungi event listeners ai bottoni
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const lang = btn.getAttribute('data-lang');
+                console.log('Cambio lingua a:', lang); // Debug
+                changeLanguage(lang);
+            });
+        });
+
+        // Carica la lingua iniziale
+        changeLanguage(savedLang);
+    }
+
+    // Avvia quando il DOM è pronto
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
+    }
+})();
 </script>
 
+    
+    
 <script>
   document.addEventListener('DOMContentLoaded', function() {
     // 1) Scrigno
@@ -189,10 +158,6 @@
     });
   });
 </script>
-
-
-        
-    
     
     <!-- SCRIPT VENDOR RESTANTI -->
     <script src="assets/js/vendor/jquery-1.12.4.min.js"></script>
@@ -319,7 +284,7 @@
                     </h4>
                   </div>
                   <p class="text-white small lh-sm opacity-95" data-i18n="modalita_indaffarato_desc">
-                    Questa modalità ti permette di avere un' <strong>idea immediata</strong> sull'andamento della tua azienda, senza dover dedicare tempo all'analisi. Grazie a <strong>quattro business emoji</strong>, puoi interpretare in un istante lo stato generale della situazione: positivo, negativo, stabile o da monitorare. È uno strumento visivo, istintivo, pensato per chi ha poco tempo ma vuole comunque restare sempre aggiornato.
+                    Questa modalità ti permette di avere un' idea immediata sull'andamento della tua azienda, senza dover dedicare tempo all'analisi. Grazie a quattro business emoji, puoi interpretare in un istante lo stato generale della situazione: positivo, negativo, stabile o da monitorare. È uno strumento visivo, istintivo, pensato per chi ha poco tempo ma vuole comunque restare sempre aggiornato.
                   </p>
                 </div>
               </div>
@@ -337,7 +302,7 @@
                     </h4>
                   </div>
                   <p class="text-white small lh-sm opacity-95" data-i18n="modalita_curioso_desc">
-                    Con Curioso puoi spingerti un po' oltre l'intuizione visiva e scoprire <strong>i dettagli del fatturato giornaliero</strong>, confrontandoli con un periodo selezionato. In pochi clic, ottieni una visione più chiara delle dinamiche quotidiane: quanto stai vendendo, come si sta evolvendo il business giorno per giorno. È una modalità leggera ma informativa, perfetta per osservare il presente con maggiore consapevolezza.
+                    Con Curioso puoi spingerti un po' oltre l'intuizione visiva e scoprire i dettagli del fatturato giornaliero, confrontandoli con un periodo selezionato. In pochi clic, ottieni una visione più chiara delle dinamiche quotidiane: quanto stai vendendo, come si sta evolvendo il business giorno per giorno. È una modalità leggera ma informativa, perfetta per osservare il presente con maggiore consapevolezza.
                   </p>
                 </div>
               </div>
@@ -355,7 +320,7 @@
                     </h4>
                   </div>
                   <p class="text-white small lh-sm opacity-95" data-i18n="modalita_minuzioso_desc">
-                    Questa modalità ti apre a un' <strong>analisi completa, voce per voce</strong>, con numeri precisi e confronti diretti. Puoi monitorare indicatori chiave come <em>commesse al giorno, prezzo medio, fatturato, ore x uomo giornaliere</em>. SYEEW ti mostra il <strong>livello di raggiungimento dei tuoi obiettivi</strong>, aiutandoti a capire quanto sei vicino al target. È lo strumento ideale per chi vuole <strong>entrare nel dettaglio</strong> e ottimizzare ogni aspetto.
+                    Questa modalità ti apre a un' analisi completa, voce per voce, con numeri precisi e confronti diretti. Puoi monitorare indicatori chiave come <em>commesse al giorno, prezzo medio, fatturato, ore x uomo giornaliere</em>. SYEEW ti mostra il livello di raggiungimento dei tuoi obiettivi, aiutandoti a capire quanto sei vicino al target. È lo strumento ideale per chi vuole entrare nel dettaglio e ottimizzare ogni aspetto.
                   </p>
                 </div>
               </div>
@@ -373,7 +338,7 @@
                     </h4>
                   </div>
                   <p class="text-white small lh-sm opacity-95" data-i18n="modalita_veggente_desc">
-                    Grazie all' <strong>intelligenza artificiale integrata</strong>, questa modalità ti permette di <strong>anticipare il futuro</strong> e pianificare con maggiore sicurezza. Analizzando i tuoi dati attuali e passati, SYEEW genera una previsione dell'andamento dei prossimi mesi. Puoi impostare <strong>obiettivi mensili</strong> e monitorarne l'andamento. È la modalità ideale per passare da una gestione reattiva a una <strong>gestione realmente proattiva</strong>.
+                    Grazie all' intelligenza artificiale integrata, questa modalità ti permette di anticipare il futuro e pianificare con maggiore sicurezza. Analizzando i tuoi dati attuali e passati, SYEEW genera una previsione dell'andamento dei prossimi mesi. Puoi impostare obiettivi mensili e monitorarne l'andamento. È la modalità ideale per passare da una gestione reattiva a una gestione realmente proattiva.
                   </p>
                 </div>
               </div>
@@ -404,6 +369,7 @@
       SYEEW trasforma i complessi dati aziendali in <strong>quattro emoji intuitive</strong> che raccontano immediatamente lo stato della tua attività.<br>Un approccio di <em>gamification</em> che rende l'analisi business <strong>immediata, visiva e coinvolgente</strong>.
     </p>
 
+      
     <!-- Scrigno Verde -->
     <div class="col-lg-3 col-md-6 mb-5">
       <div class="emoji-card scrigno-card h-100 shadow-lg overflow-hidden mx-3 
@@ -421,7 +387,7 @@
             Lo Scrigno
           </h4>
           <p class="text-white small lh-sm" data-i18n="emoji_scrigno_desc">
-            <strong>Molto bene!</strong> Il tesoro è tuo! Rispetto al periodo precedente che hai selezionato, stai andando alla grande. Lo Scrigno ti indica che sia il <em>prezzo medio di vendita</em> che l' <em>efficienza operativa</em> della tua attività sono migliorati significativamente. La tua strategia aziendale sta dando i frutti sperati: continua così!
+            Molto bene! Il tesoro è tuo! Rispetto al periodo precedente che hai selezionato, stai andando alla grande. Lo Scrigno ti indica che sia il <em>prezzo medio di vendita</em> che l' <em>efficienza operativa</em> della tua attività sono migliorati significativamente. La tua strategia aziendale sta dando i frutti sperati: continua così!
           </p>
         </div>
       </div>
@@ -442,7 +408,7 @@
             La Sirena
           </h4>
           <p class="text-white small lh-sm" data-i18n="emoji_sirena_desc">
-            La Sirena nuota sempre, anche quando la corrente è contraria. <strong>Stai andando bene</strong>, però attenzione: c'è qualcosa che non va del tutto. Mentre alcuni indicatori sono positivi, l' <em>efficienza</em> o il <em>prezzo medio</em> potrebbero essere calati rispetto al periodo precedente. È il momento di analizzare più a fondo i dati per identificare l'area di miglioramento.
+            La Sirena nuota sempre, anche quando la corrente è contraria. Stai andando bene, però attenzione: c'è qualcosa che non va del tutto. Mentre alcuni indicatori sono positivi, l' <em>efficienza</em> o il <em>prezzo medio</em> potrebbero essere calati rispetto al periodo precedente. È il momento di analizzare più a fondo i dati per identificare l'area di miglioramento.
           </p>
         </div>
       </div>
@@ -463,7 +429,7 @@
             La Spia
           </h4>
           <p class="text-white small lh-sm" data-i18n="emoji_spia_desc">
-            Alla lente d'ingrandimento della Spia non sfugge nulla. È qui per <strong>segnalarti qualche insidia nascosta</strong>. Nonostante l'efficienza o il prezzo medio siano migliorati rispetto al periodo precedente, la <em>performance complessiva</em> della tua attività ha subito un calo. Potrebbe essere il momento di rivedere la strategia generale o investigare fattori esterni.
+            Alla lente d'ingrandimento della Spia non sfugge nulla. È qui per segnalarti qualche insidia nascosta. Nonostante l'efficienza o il prezzo medio siano migliorati rispetto al periodo precedente, la <em>performance complessiva</em> della tua attività ha subito un calo. Potrebbe essere il momento di rivedere la strategia generale o investigare fattori esterni.
           </p>
         </div>
       </div>
@@ -484,7 +450,7 @@
             La Sfinge
           </h4>
           <p class="text-white small lh-sm" data-i18n="emoji_sfinge_desc">
-            La Sfinge, enigmatica per natura, con il suo colore rosso intenso ti dà un <strong>avvertimento chiaro e diretto</strong>: la tua performance è peggiorata rispetto al periodo precedente. Non tutto è perduto, ma è necessario un <em>intervento immediato</em> per correggere la rotta. Analizza i dati, rivedi le strategie e riprendi il controllo della situazione.
+            La Sfinge, enigmatica per natura, con il suo colore rosso intenso ti dà un avvertimento chiaro e diretto: la tua performance è peggiorata rispetto al periodo precedente. Non tutto è perduto, ma è necessario un <em>intervento immediato</em> per correggere la rotta. Analizza i dati, rivedi le strategie e riprendi il controllo della situazione.
           </p>
         </div>
       </div>
@@ -876,28 +842,15 @@
       </div>
     </div>
   </footer>
-    <!-- Modern Language Switcher -->
-<div class="modern-lang-switcher">
-  <div id="langDropdown" class="lang-dropdown">
-    <div id="langButton" class="lang-button">
-      <img id="currentLangFlag" src="assets/images/flag-it.png" alt="IT" class="lang-flag">
-      <span id="currentLangCode" class="lang-code">IT</span>
-      <span class="lang-arrow">▼</span>
-    </div>
+
     
-    <div id="langMenu" class="lang-menu">
-      <div class="lang-option" data-lang="it">
-        <img src="assets/images/flag-it.png" alt="IT" class="lang-flag">
-        <span class="lang-name">Italiano</span>
-        <span class="lang-check">✓</span>
-      </div>
-      <div class="lang-option" data-lang="en">
-        <img src="assets/images/flag-en.png" alt="EN" class="lang-flag">
-        <span class="lang-name">English</span>
-        <span class="lang-check">✓</span>
-      </div>
-    </div>
-  </div>
+<div class="language-switcher">
+  <button class="lang-btn active" data-lang="it">
+    <img src="assets/images/flag-it.png" alt="Italiano" class="flag-icon">
+  </button>
+  <button class="lang-btn" data-lang="en">
+    <img src="assets/images/flag-en.png" alt="English" class="flag-icon">
+  </button>
 </div>
     
 </body>
