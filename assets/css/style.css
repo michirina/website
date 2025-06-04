@@ -1725,6 +1725,7 @@ p {
 
 .doc-button:hover {
   border-width: 3px;
+  transform: translateY(-3px);
   box-shadow: 0 6px 16px rgba(15, 98, 254, 0.2);
 }
 
@@ -1760,6 +1761,7 @@ p {
 }
 
 
+<style>
 .modalita-card {
     transition: all 0.3s ease;
     cursor: pointer;

@@ -4,10 +4,10 @@
 
   "pcto_section_sub_title": "Percorsi per le Competenze Trasversali e l'Orientamento",
   "pcto_section_main_title": "La mia esperienza formativa presso SYEEW",
-  "pcto_intro_para1": "Lo scorso anno ho avuto l'occasione di affiancare il team di SYEEW S.r.l., una giovane realtà che sviluppa una piattaforma SaaS di Business Intelligence pensata per micro e piccole imprese. L'obiettivo? <strong>Rendere i numeri aziendali chiari come semafori:</strong> verdi quando tutto fila liscio, rossi quando serve intervenire.",
-  "pcto_intro_para2": "<strong>Non c'era un reparto UX dedicato,</strong> così ho lavorato in autonomia, confrontandomi di frequente con il CEO e con il mio Tutor tecnico.",
+  "pcto_intro_para1": "Lo scorso anno ho avuto l'occasione di affiancare il team di SYEEW S.r.l., una giovane realtà che sviluppa una piattaforma SaaS di Business Intelligence pensata per micro e piccole imprese. L'obiettivo? Rendere i numeri aziendali chiari come semafori: verdi quando tutto fila liscio, rossi quando serve intervenire.",
+  "pcto_intro_para2": "La squadra era di dimensioni ridotte, ciò mi ha permesso di stare a stretto contatto con tutti, capire priorità diverse e soprattutto contribuire in prima persona. Non c'era un reparto UX dedicato, così ho lavorato in autonomia, confrontandomi di frequente con il CEO e con il mio Tutor tecnico.",
 
-  "about_syeew_para1": "Fondata nel 2020, SYEEW è una startup innovativa con sede a Jesi, che si propone di rivoluzionare il modo in cui micro e piccole imprese leggono i propri dati aziendali. Il suo obiettivo è <strongsemplice ma ambizioso:</strong> rendere i numeri comprensibili a colpo d’occhio, grazie a un’interfaccia visiva che sfrutta Business Emoji per rappresentare l’andamento economico e gestionale.",
+  "about_syeew_para1": "Fondata nel 2020, SYEEW è una startup innovativa con sede a Jesi, che si propone di rivoluzionare il modo in cui micro e piccole imprese leggono i propri dati aziendali. Il suo obiettivo è semplice ma ambizioso: rendere i numeri comprensibili a colpo d’occhio, grazie a un’interfaccia visiva che sfrutta Business Emoji per rappresentare l’andamento economico e gestionale.",
   "about_syeew_para2": "Dietro l’apparente semplicità si nasconde una tecnologia sofisticata, che unisce data integration, automazioni e moduli di Intelligenza Artificiale. La piattaforma raccoglie i dati da fonti diverse, li normalizza, li elabora e li restituisce in forma immediata e intuitiva, così che anche chi non ha competenze analitiche possa prendere decisioni consapevoli.",
   "about_syeew_para3": "Nel 2022 SYEEW ha ricevuto un finanziamento pubblico pari a 100 000 €, coprendo il 70 % di un progetto di sviluppo regolarmente registrato nel Registro Nazionale Trasparenza. Un riconoscimento concreto del valore innovativo che l’azienda sta portando nel panorama italiano delle PMI.",
 
@@ -15,39 +15,39 @@
   "modalita_main_title": "Quattro modi per leggere il tuo business",
   "modalita_lead": "SYEEW si adatta al tuo tempo e alle tue esigenze con quattro modalità pensate per diversi livelli di approfondimento.",
 
-  "modalita_indaffarato_title": "<strong>INDAFFARATO</strong>",
+  "modalita_indaffarato_title": "INDAFFARATO",
   "modalita_indaffarato_desc": "Questa modalità ti permette di avere un' idea immediata sull'andamento della tua azienda, senza dover dedicare tempo all'analisi. Grazie a quattro business emoji, puoi interpretare in un istante lo stato generale della situazione: positivo, negativo, stabile o da monitorare. È uno strumento visivo, istintivo, pensato per chi ha poco tempo ma vuole comunque restare sempre aggiornato.",
 
-  "modalita_curioso_title": "<strong>CURIOSO</strong>",
+  "modalita_curioso_title": "CURIOSO",
   "modalita_curioso_desc": "Con Curioso puoi spingerti un po' oltre l'intuizione visiva e scoprire i dettagli del fatturato giornaliero, confrontandoli con un periodo selezionato. In pochi clic, ottieni una visione più chiara delle dinamiche quotidiane: quanto stai vendendo, come si sta evolvendo il business giorno per giorno. È una modalità leggera ma informativa, perfetta per osservare il presente con maggiore consapevolezza.",
 
-  "modalita_minuzioso_title": "<strong>MINUZIOSO</strong>",
-  "modalita_minuzioso_desc": "Questa modalità ti apre a un' analisi completa, voce per voce, con numeri precisi e confronti diretti. Puoi monitorare indicatori chiave come commesse al giorno, prezzo medio, fatturato, ore x uomo giornaliere. <strong>SYEEW ti mostra il livello di raggiungimento dei tuoi obiettivi,</strong> aiutandoti a capire quanto sei vicino al target. È lo strumento ideale per chi vuole entrare nel dettaglio e ottimizzare ogni aspetto.",
+  "modalita_minuzioso_title": "MINUZIOSO",
+  "modalita_minuzioso_desc": "Questa modalità ti apre a un' analisi completa, voce per voce, con numeri precisi e confronti diretti. Puoi monitorare indicatori chiave come commesse al giorno, prezzo medio, fatturato, ore x uomo giornaliere. SYEEW ti mostra il livello di raggiungimento dei tuoi obiettivi, aiutandoti a capire quanto sei vicino al target. È lo strumento ideale per chi vuole entrare nel dettaglio e ottimizzare ogni aspetto.",
 
-  "modalita_veggente_title": "<strong>VEGGENTE</strong>",
-  "modalita_veggente_desc": "Grazie all' intelligenza artificiale integrata, questa modalità ti permette di anticipare il futuro e pianificare con maggiore sicurezza. Analizzando i tuoi dati attuali e passati, SYEEW genera una previsione dell'andamento dei prossimi mesi. Puoi impostare obiettivi mensili e monitorarne l'andamento. <strong>È la modalità ideale per passare da una gestione reattiva a una gestione realmente proattiva.</strong>",
+  "modalita_veggente_title": "VEGGENTE",
+  "modalita_veggente_desc": "Grazie all' intelligenza artificiale integrata, questa modalità ti permette di anticipare il futuro e pianificare con maggiore sicurezza. Analizzando i tuoi dati attuali e passati, SYEEW genera una previsione dell'andamento dei prossimi mesi. Puoi impostare obiettivi mensili e monitorarne l'andamento. È la modalità ideale per passare da una gestione reattiva a una gestione realmente proattiva.",
 
   "emoji_section_sub_title": "Le 4 Business Emoji",
   "emoji_section_main_title": "La gamification incontra l'analisi aziendale",
   "emoji_section_lead": "SYEEW trasforma i complessi dati aziendali in quattro emoji intuitive che raccontano immediatamente lo stato della tua attività. Un approccio di gamification che rende l'analisi business immediata, visiva e coinvolgente.",
 
-  "emoji_scrigno_title": "<strong>Lo Scrigno</strong>",
-  "emoji_scrigno_desc": "Molto bene! Il tesoro è tuo! Rispetto al periodo precedente che hai selezionato, stai andando alla grande. <strong>Lo Scrigno ti indica</strong> che sia il prezzo medio di vendita che l' efficienza operativa della tua attività sono migliorati significativamente. La tua strategia aziendale sta dando i frutti sperati: continua così!",
+  "emoji_scrigno_title": "Lo Scrigno",
+  "emoji_scrigno_desc": "Molto bene! Il tesoro è tuo! Rispetto al periodo precedente che hai selezionato, stai andando alla grande. Lo Scrigno ti indica che sia il prezzo medio di vendita che l' efficienza operativa della tua attività sono migliorati significativamente. La tua strategia aziendale sta dando i frutti sperati: continua così!",
 
-  "emoji_sirena_title": "<strong>La Sirena</strong>",
-  "emoji_sirena_desc": "La Sirena nuota sempre, anche quando la corrente è contraria. Stai andando bene, però <strong>attenzione:</strong> c'è qualcosa che non va del tutto. Mentre alcuni indicatori sono positivi, l' efficienza o il prezzo medio potrebbero essere calati rispetto al periodo precedente. È il momento di analizzare più a fondo i dati per identificare l'area di miglioramento.",
+  "emoji_sirena_title": "La Sirena",
+  "emoji_sirena_desc": "La Sirena nuota sempre, anche quando la corrente è contraria. Stai andando bene, però attenzione: c'è qualcosa che non va del tutto. Mentre alcuni indicatori sono positivi, l' efficienza o il prezzo medio potrebbero essere calati rispetto al periodo precedente. È il momento di analizzare più a fondo i dati per identificare l'area di miglioramento.",
 
-  "emoji_spia_title": "<strong>La Spia</strong>",
-  "emoji_spia_desc": "Alla lente d'ingrandimento della Spia non sfugge nulla. È qui per segnalarti qualche insidia nascosta. Nonostante l'efficienza o il prezzo medio siano migliorati rispetto al periodo precedente, <strong>Potrebbe essere il momento di rivedere la strategia generale</strong> o investigare fattori esterni.",
+  "emoji_spia_title": "La Spia",
+  "emoji_spia_desc": "Alla lente d'ingrandimento della Spia non sfugge nulla. È qui per segnalarti qualche insidia nascosta. Nonostante l'efficienza o il prezzo medio siano migliorati rispetto al periodo precedente, la performance complessiva della tua attività ha subito un calo. Potrebbe essere il momento di rivedere la strategia generale o investigare fattori esterni.",
 
-  "emoji_sfinge_title": "<strong>La Sfinge</strong>",
-  "emoji_sfinge_desc": "La Sfinge, enigmatica per natura, con il suo colore rosso intenso ti dà un avvertimento chiaro e diretto: la tua performance è peggiorata rispetto al periodo precedente. Non tutto è perduto, ma <strong>è necessario un intervento immediato per correggere la rotta.</strong> Analizza i dati, rivedi le strategie e riprendi il controllo della situazione.",
+  "emoji_sfinge_title": "La Sfinge",
+  "emoji_sfinge_desc": "La Sfinge, enigmatica per natura, con il suo colore rosso intenso ti dà un avvertimento chiaro e diretto: la tua performance è peggiorata rispetto al periodo precedente. Non tutto è perduto, ma è necessario un intervento immediato per correggere la rotta. Analizza i dati, rivedi le strategie e riprendi il controllo della situazione.",
 
   "tools_section_sub_title": "Toolkit",
   "tools_section_main_title": "Software e linguaggi utilizzati",
 
   "tool_adobe_xd_title": "Adobe XD",
-  "tool_adobe_xd_desc": "Punto di partenza del progetto. Ho analizzato i mockup esistenti creati dal team per comprendere la struttura iniziale dell'interfaccia e i flussi utente già definiti. <strong>Questo mi ha permesso di identificare gli elementi da mantenere e quelli da ripensare completamente durante la fase di redesign in Figma.</strong>",
+  "tool_adobe_xd_desc": "Punto di partenza del progetto. Ho analizzato i mockup esistenti creati dal team per comprendere la struttura iniziale dell'interfaccia e i flussi utente già definiti. Questo mi ha permesso di identificare gli elementi da mantenere e quelli da ripensare completamente durante la fase di redesign in Figma.",
 
   "tool_figma_title": "Figma",
   "tool_figma_desc": "Il cuore della progettazione UX/UI. Ho creato una libreria di componenti riutilizzabili, definito un design system coerente con la brand identity di SYEEW e realizzato prototipi interattivi completi. La collaborazione in tempo reale ha facilitato i feedback con il team e la condivisione dei design con potenziali investitori.",
@@ -65,7 +65,7 @@
   "experience_period1_para": "Durante queste tre settimane mi sono concentrato su Figma. Partendo dall'interfaccia esistente, ho ridefinito la gerarchia delle schermate, creato uno stile visivo coerente con la brand identity e preparato componenti riutilizzabili per velocizzare i futuri aggiornamenti.",
 
   "experience_period2_title": "9 – 20 settembre 2024",
-  "experience_period2_para": "<strong>Non erano presenti connessioni API: i dati erano popolati localmente per dimostrare flussi e animazioni.</strong>",
+  "experience_period2_para": "Durante il secondo periodo sono passato allo sviluppo in Flutter. Ho tradotto i prototipi in codice, realizzando cinque schermate principali. L'app girava su dispositivi reali, e l'ho testata tramite il Debug USB con il mio smartphone. Non erano presenti connessioni API: i dati erano popolati localmente per dimostrare flussi e animazioni.",
 
   "experience_period3_title": "29 ottobre 2024",
   "experience_period3_para1": "In questa data ho partecipato come ospite di SYEEW alla fiera SMAU Milano, uno degli eventi italiani più importanti nel mondo dell'innovazione, delle startup e della trasformazione digitale. Pur non avendo uno stand, abbiamo vissuto la giornata in modo attivo, esplorando gli spazi, ascoltando pitch e interagendo con altri professionisti.",
@@ -76,11 +76,11 @@
   "review_section_sub_title": "Riflessione",
   "review_section_main_title": "Considerazioni finali",
   "review_para1": "L'esperienza in SYEEW mi ha dato un assaggio concreto di come nasce un prodotto digitale: dal foglio bianco alla demo funzionante. Ho apprezzato la fiducia concessa e la libertà di sperimentare. Allo stesso tempo ho toccato con mano la velocità delle tempistiche in startup: alcune attività, come la connessione API o i test di usabilità, sono rimaste fuori scope per ragioni di calendario.",
-  "review_para2": "<strong>Mi ha fatto riflettere molto su quanto possa essere appagante costruire qualcosa da zero, giorno dopo giorno, vederlo crescere e migliorarlo con continuità.</strong>",
-  "review_thanks_lead": "<strong>Desidero ringraziare di cuore ogni persona del team</strong> che ha reso possibile questa esperienza. Grazie per il tempo dedicato, per i suggerimenti precisi, per i consigli di vita, per i feedback costanti e per ogni singolo scambio di idee.",
+  "review_para2": "Una delle cose che mi ha colpito di più è stata la totale dedizione del CEO al progetto: ogni dettaglio, ogni schermata, ogni strategia veniva curata con attenzione e passione quotidiana. Mi ha fatto riflettere molto su quanto possa essere appagante costruire qualcosa da zero, giorno dopo giorno, vederlo crescere e migliorarlo con continuità. È un approccio che sogno di poter adottare anch'io in futuro, magari su un progetto mio.",
+  "review_thanks_lead": "Desidero ringraziare di cuore ogni persona del team che ha reso possibile questa esperienza. Grazie per il tempo dedicato, per i suggerimenti precisi, per i consigli di vita, per i feedback costanti e per ogni singolo scambio di idee.",
   "review_thanks_para": "Questa esperienza mi ha anche aiutato a fare chiarezza sul mio futuro, infatti ho capito che vorrei proseguire i miei studi nell’ambito dell’Interaction Design. È stato proprio qui che ho iniziato a riflettere in modo più profondo su come le persone si relazionano con le interfacce digitali, a partire dal compito nel primo periodo, e questo mi ha da subito affascinato ed interessato.",
   "review_final_thanks": "Grazie ancora per aver creduto in me, per avermi affidato challenge importanti e per avermi fornito gli strumenti giusti per affrontare con consapevolezza ciò che verrà.",
-  "review_sign_off": "<strong>A presto, SYEEW SOON!</strong>",
+  "review_sign_off": "A presto, SYEEW SOON!",
 
   "documents_section_sub_title": "Documentazione",
   "documents_section_main_title": "Consulta i documenti del progetto",
