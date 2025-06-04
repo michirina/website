@@ -3,93 +3,93 @@
   "preloader_alt": "",
 
   "pcto_section_sub_title": "Pathways for Transversal Skills and Orientation",
-  "pcto_section_main_title": "My educational experience at SYEEW",
-  "pcto_intro_para1": "Last year I had the opportunity to join the team at SYEEW S.r.l., a young company developing a SaaS Business Intelligence platform for micro and small businesses. The goal? Make business numbers as clear as traffic lights: green when everything’s running smoothly, red when action is needed.",
-  "pcto_intro_para2": "The team was small, which allowed me to work closely with everyone, understand different priorities, and actively contribute. There was no dedicated UX department, so I worked independently while regularly consulting with the CEO and my technical tutor.",
+  "pcto_section_main_title": "My Internship at SYEEW",
+  "pcto_intro_para1": "Last year, I had the chance to join the SYEEW S.r.l. team—a young company building a SaaS Business Intelligence platform for micro and small businesses. The goal? <strong>Make business numbers as clear as traffic lights:</strong> green when everything’s running smoothly, red when action is needed.",
+  "pcto_intro_para2": "Because the team was small, I worked closely with everyone, learned to balance different priorities, and made meaningful contributions. <strong>With no dedicated UX department,</strong> I drove my own work while regularly consulting with the CEO and my technical tutor.",
 
-  "about_syeew_para1": "Founded in 2020, SYEEW is an innovative startup based in Jesi, aiming to revolutionize how micro and small businesses interpret their business data. Its goal is simple but ambitious: make numbers instantly understandable through a visual interface using Business Emojis to represent financial and operational performance.",
-  "about_syeew_para2": "Behind the apparent simplicity lies a sophisticated technology that combines data integration, automation, and AI modules. The platform collects data from various sources, normalizes it, processes it, and returns it in an immediate and intuitive format, allowing even those without analytical skills to make informed decisions.",
-  "about_syeew_para3": "In 2022, SYEEW received public funding of €100,000, covering 70% of a development project officially registered in the National Transparency Register. A concrete acknowledgment of the innovative value the company brings to the Italian SME landscape.",
+  "about_syeew_para1": "Founded in 2020 and headquartered in Jesi, SYEEW is an innovative startup on a mission to revolutionize how micro and small businesses read their data. Our aim is <strong>simple but ambitious:</strong> make numbers instantly understandable through a visual interface that uses Business Emojis to show financial and operational performance.",
+  "about_syeew_para2": "Beneath the apparent simplicity lies a sophisticated technology that combines data integration, automation, and AI modules. The platform aggregates data from multiple sources, normalizes it, processes it, and delivers it in an instant, intuitive format—so even those without analytical skills can make informed decisions.",
+  "about_syeew_para3": "In 2022, SYEEW secured public funding of €100,000, covering 70% of a development project officially registered in the National Transparency Register. This recognition highlights the innovative value we bring to Italy’s SME ecosystem.",
 
-  "modalita_sub_title": "Usage modes",
-  "modalita_main_title": "Four ways to read your business",
-  "modalita_lead": "SYEEW adapts to your time and needs with four modes designed for different levels of insight.",
+  "modalita_sub_title": "Usage Modes",
+  "modalita_main_title": "Four Ways to Understand Your Business",
+  "modalita_lead": "SYEEW adapts to your schedule and needs with four modes designed for different levels of insight.",
 
-  "modalita_indaffarato_title": "BUSY",
-  "modalita_indaffarato_desc": "This mode gives you an immediate idea of how your business is performing, without needing to spend time analyzing. Thanks to four business emojis, you can instantly interpret the overall status: positive, negative, stable, or worth monitoring. It’s a visual, instinctive tool designed for those with little time who still want to stay updated.",
+  "modalita_indaffarato_title": "<strong>BUSY</strong>",
+  "modalita_indaffarato_desc": "This mode gives you an instant snapshot of your business’s health—no deep dive required. Thanks to four Business Emojis, you can immediately interpret overall status: positive, negative, stable, or worth monitoring. A visual, instinctive tool for those with little time who still want to stay informed.",
 
-  "modalita_curioso_title": "CURIOUS",
-  "modalita_curioso_desc": "With Curious, you can go a bit beyond visual intuition and explore daily revenue details, comparing them to a selected period. In just a few clicks, you get a clearer view of your daily performance: how much you're selling, how your business is evolving day by day. It's a lightweight but informative mode, perfect for gaining present-day awareness.",
+  "modalita_curioso_title": "<strong>CURIOUS</strong>",
+  "modalita_curioso_desc": "With Curious, you can move beyond a quick visual cue and explore daily revenue details, comparing them to a selected period. In just a few clicks, you’ll see how much you’re selling and how your business evolves day by day. It’s a lightweight but informative mode—perfect for gaining real-time awareness.",
 
-  "modalita_minuzioso_title": "DETAILED",
-  "modalita_minuzioso_desc": "This mode opens up a complete analysis, item by item, with exact numbers and direct comparisons. You can monitor key metrics like orders per day, average price, revenue, and man-hours per day. SYEEW shows how close you are to your goals, helping you understand your progress. Ideal for those who want to dive into details and optimize every aspect.",
+  "modalita_minuzioso_title": "<strong>DETAILED</strong>",
+  "modalita_minuzioso_desc": "This mode unlocks a full analysis, line by line, with precise numbers and direct comparisons. Monitor key metrics like orders per day, average price, revenue, and man-hours per day. <strong>SYEEW shows exactly how close you are to your goals,</strong> helping you track progress and optimize every aspect.",
 
-  "modalita_veggente_title": "FORESIGHT",
-  "modalita_veggente_desc": "Thanks to integrated artificial intelligence, this mode lets you anticipate the future and plan more confidently. By analyzing your current and past data, SYEEW generates a forecast for the coming months. You can set monthly goals and monitor progress. It’s ideal for shifting from reactive to truly proactive management.",
+  "modalita_veggente_title": "<strong>FORESIGHT</strong>",
+  "modalita_veggente_desc": "Harnessing integrated AI, this mode lets you anticipate future trends and plan with confidence. By analyzing your current and past data, SYEEW generates forecasts for the coming months. You can set monthly goals and track progress—<strong>the ideal way to shift from reactive to proactive management</strong>.",
 
   "emoji_section_sub_title": "The 4 Business Emojis",
-  "emoji_section_main_title": "Gamification meets business analysis",
-  "emoji_section_lead": "SYEEW turns complex business data into four intuitive emojis that instantly reveal your business status. A gamified approach that makes business analysis immediate, visual, and engaging.",
+  "emoji_section_main_title": "Gamification Meets Business Analysis",
+  "emoji_section_lead": "SYEEW transforms complex business data into four intuitive emojis that instantly reveal your company’s status. A gamified approach that makes business analysis immediate, visual, and engaging.",
 
-  "emoji_scrigno_title": "The Chest",
-  "emoji_scrigno_desc": "Very good! The treasure is yours! Compared to the previous period you selected, you're doing great. The Chest shows that both your average sales price and operational efficiency have significantly improved. Your business strategy is paying off: keep it up!",
+  "emoji_scrigno_title": "<strong>The Chest</strong>",
+  "emoji_scrigno_desc": "Excellent! The treasure is yours! Compared to the period you selected before, you’re doing fantastic. <strong>The Chest indicates</strong> that both your average sales price and operational efficiency have improved significantly. Your business strategy is paying off—keep it up!",
 
-  "emoji_sirena_title": "The Mermaid",
-  "emoji_sirena_desc": "The Mermaid always swims, even against the current. You're doing well, but beware: something's not quite right. While some indicators are positive, efficiency or average price may have dropped compared to the previous period. It’s time to dive deeper into the data to identify the area needing improvement.",
+  "emoji_sirena_title": "<strong>The Mermaid</strong>",
+  "emoji_sirena_desc": "The Mermaid keeps swimming, even against the current. You’re doing well, but <strong>be cautious:</strong> something isn’t quite right. While some indicators are positive, efficiency or average price may have dipped compared to the previous period. It’s time to dive deeper into the data and identify where improvements are needed.",
 
-  "emoji_spia_title": "The Spy",
-  "emoji_spia_desc": "Nothing escapes the Spy’s magnifying glass. It's here to alert you to hidden pitfalls. Although efficiency or average price have improved from the previous period, your overall business performance has declined. It might be time to revisit your overall strategy or investigate external factors.",
+  "emoji_spia_title": "<strong>The Spy</strong>",
+  "emoji_spia_desc": "Nothing escapes the Spy’s magnifying glass. It’s here to warn you of hidden pitfalls. Even if efficiency or average price has improved, your overall business performance has declined. <strong>Consider revisiting your strategy</strong> or investigating external factors.",
 
-  "emoji_sfinge_title": "The Sphinx",
-  "emoji_sfinge_desc": "The Sphinx, enigmatic by nature, with its intense red color gives you a clear and direct warning: your performance has worsened compared to the previous period. Not all is lost, but immediate action is needed to get back on track. Analyze the data, review your strategies, and regain control.",
+  "emoji_sfinge_title": "<strong>The Sphinx</strong>",
+  "emoji_sfinge_desc": "Enigmatic by nature, the Sphinx—and its intense red hue—delivers a clear, direct warning: your performance has worsened compared to the previous period. Not all hope is lost, but <strong>immediate action is needed</strong> to get back on track. Analyze the data, refine your strategies, and regain control.",
 
   "tools_section_sub_title": "Toolkit",
-  "tools_section_main_title": "Software and languages used",
+  "tools_section_main_title": "Software and Languages Used",
 
   "tool_adobe_xd_title": "Adobe XD",
-  "tool_adobe_xd_desc": "The starting point of the project. I analyzed the existing mockups created by the team to understand the initial interface structure and defined user flows. This allowed me to identify elements to keep and others to completely rethink during the redesign phase in Figma.",
+  "tool_adobe_xd_desc": "The starting point of the project. I analyzed the existing mockups created by the team to understand the initial interface structure and user flows. <strong>This process highlighted elements to keep and others to completely redesign in Figma.</strong>",
 
   "tool_figma_title": "Figma",
-  "tool_figma_desc": "The core of the UX/UI design. I created a library of reusable components, defined a design system consistent with SYEEW’s brand identity, and built complete interactive prototypes. Real-time collaboration facilitated feedback with the team and design sharing with potential investors.",
+  "tool_figma_desc": "The heart of UX/UI design. I built a library of reusable components, defined a design system aligned with SYEEW’s brand identity, and created fully interactive prototypes. Real-time collaboration made feedback seamless for the team and potential investors.",
 
   "tool_flutter_dart_title": "Flutter and Dart",
-  "tool_flutter_dart_desc": "Chosen framework for its ability to build native apps for iOS and Android from a single codebase. I implemented five main screens by translating Figma designs into Dart code, handling smooth animations, page navigation, and mock data population to simulate the final user experience.",
+  "tool_flutter_dart_desc": "Chosen for its ability to build native iOS and Android apps from a single codebase. I implemented five main screens by translating Figma designs into Dart code, handling smooth animations, page navigation, and populating mock data to simulate the final user experience.",
 
   "tool_vscode_title": "Visual Studio Code",
-  "tool_vscode_desc": "Main editor for Flutter development. Configured with Dart and Flutter extensions for full language support, integrated debugging, and hot reload. The environment allowed me to quickly test changes on a physical device via USB debugging.",
+  "tool_vscode_desc": "My primary code editor for Flutter development. Configured with Dart and Flutter extensions for full language support, integrated debugging, and hot reload—allowing rapid testing on a physical device via USB debugging.",
 
   "experience_section_sub_title": "Timeline",
-  "experience_section_main_title": "Key activities",
+  "experience_section_main_title": "Key Activities",
 
   "experience_period1_title": "May 27 – June 14, 2024",
-  "experience_period1_para": "During these three weeks, I focused on Figma. Starting from the existing interface, I redefined screen hierarchy, created a visual style consistent with the brand identity, and prepared reusable components to speed up future updates.",
+  "experience_period1_para": "Over these three weeks, I focused on Figma. Starting with the existing interface, I reimagined screen hierarchy, established a visual style consistent with the brand, and created reusable components to speed up future updates.",
 
   "experience_period2_title": "September 9 – 20, 2024",
-  "experience_period2_para": "In the second phase, I switched to Flutter development. I translated the prototypes into code, creating five main screens. The app ran on real devices, and I tested it via USB debugging on my smartphone. There were no API connections: data was populated locally to demonstrate flows and animations.",
+  "experience_period2_para": "In the second phase, I moved to Flutter development. I translated the prototypes into code and built five main screens. The app ran on real devices, and I tested it via USB debugging on my smartphone. <strong>No API integrations were included—data was populated locally to demonstrate flows and animations.</strong>",
 
   "experience_period3_title": "October 29, 2024",
-  "experience_period3_para1": "On this date, I joined SYEEW as a guest at SMAU Milan, one of the most important Italian events for innovation, startups, and digital transformation. Although we didn’t have a booth, we actively experienced the day, exploring the venue, listening to pitches, and networking with professionals.",
-  "experience_period3_para2": "I attended presentations and discussions that introduced me to many emerging realities. It was enlightening to observe how companies communicate their values, missions, and results: some through data, others with emotional storytelling, and others with a focus on social impact.",
-  "experience_period3_para3": "I took notes and gathered insights that helped me grow as both a worker and a designer. I realized how important empathy is in product storytelling and how powerful design can be in strategic communication.",
-  "experience_period3_para4": "It was an intense, inspiring day—different from the usual. A moment to pause and look outward, gather inspiration, and return to work with a broader, more conscious perspective.",
+  "experience_period3_para1": "On this day, I attended SMAU Milan as a guest of SYEEW—one of Italy’s most important events for innovation, startups, and digital transformation. Although we didn’t have a booth, we immersed ourselves in the experience: exploring the venue, listening to pitches, and networking with professionals.",
+  "experience_period3_para2": "I attended presentations and discussions that introduced me to many emerging companies. It was enlightening to see how different businesses communicate their values, missions, and results: some rely on data, others on emotional storytelling, and some focus on social impact.",
+  "experience_period3_para3": "I took notes and gathered insights that helped me grow as both a professional and a designer. I realized how critical empathy is in product storytelling and how powerful design can be for strategic communication.",
+  "experience_period3_para4": "It was an intense, inspiring day—different from the routine. A moment to pause, look outward, gather inspiration, and return to work with a broader, more conscious perspective.",
 
   "review_section_sub_title": "Reflection",
   "review_section_main_title": "Final Thoughts",
-  "review_para1": "The experience at SYEEW gave me a concrete taste of how a digital product is born: from a blank page to a working demo. I appreciated the trust and freedom to experiment. At the same time, I experienced the fast pace of startups firsthand: some tasks, like API integration or usability testing, were left out due to time constraints.",
-  "review_para2": "One of the things that impressed me most was the CEO’s complete dedication to the project: every detail, screen, and strategy was handled with daily passion and care. It made me think about how fulfilling it must be to build something from scratch, see it grow, and improve it consistently. It’s an approach I dream of adopting myself one day—perhaps for my own project.",
+  "review_para1": "My time at SYEEW gave me a real taste of how a digital product is born—from a blank page to a working demo. I appreciated the trust and freedom to experiment. At the same time, I experienced the fast pace of startups: some tasks, like API integration or usability testing, were omitted due to time constraints.",
+  "review_para2": "What impressed me most was the CEO’s unwavering dedication: every detail, screen, and strategy was handled with daily passion and care. It made me realize how fulfilling it is to build something from scratch, watch it grow, and continuously improve it. It’s an approach I hope to adopt for my own projects someday.",
   "review_thanks_lead": "I want to sincerely thank every team member who made this experience possible. Thank you for your time, precise suggestions, life advice, ongoing feedback, and every single exchange of ideas.",
-  "review_thanks_para": "This experience also helped me clarify my future path: I realized I want to continue my studies in Interaction Design. It was here that I first began to think more deeply about how people interact with digital interfaces—starting with the first assignment—and I’ve been fascinated ever since.",
-  "review_final_thanks": "Thank you again for believing in me, giving me meaningful challenges, and providing the right tools to face what lies ahead with confidence.",
+  "review_thanks_para": "This experience also clarified my future path: I discovered that I want to continue studying Interaction Design. It was here that I first began to think deeply about how people interact with digital interfaces—starting with my first assignment—and I’ve been fascinated ever since.",
+  "review_final_thanks": "Thank you again for believing in me, challenging me with meaningful tasks, and providing the right tools to face whatever comes next with confidence.",
   "review_sign_off": "See you soon, SYEEW SOON!",
 
   "documents_section_sub_title": "Documentation",
-  "documents_section_main_title": "Browse the project documents",
+  "documents_section_main_title": "Browse the Project Documents",
   "documents_mockup_title": "App Mockup",
-  "documents_mockup_desc": "Mockup with wireframes and my interface redesign",
-  "documents_presentation_title": "Slide deck (EN)",
-  "documents_presentation_desc": "Project presentation, team overview, and my experience",
+  "documents_mockup_desc": "Wireframes and my redesigned interface mockup",
+  "documents_presentation_title": "Slide Deck (EN)",
+  "documents_presentation_desc": "Project presentation, team overview, and my personal experience",
   "documents_github_title": "Flutter App Project",
-  "documents_github_desc": "Repository with the app code",
+  "documents_github_desc": "Repository containing the app’s source code",
 
   "carousel_prev": "Previous",
   "carousel_next": "Next",
@@ -103,5 +103,5 @@
   "nav_contatti": "Contact",
 
   "footer_copyright": "© 2025 - All rights reserved",
-  "footer_credit": "Website created by Rinaldi Michele for the 2024/2025 final exam in IIS MARCONI PIERALISI"
+  "footer_credit": "Website created by Rinaldi Michele for the 2024/2025 final exam at IIS MARCONI PIERALISI"
 }
