@@ -1699,14 +1699,6 @@ p {
     }
 }
 
-.documents-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-  margin-top: 40px;
-}
-
 .doc-button {
   display: flex;
   align-items: center;
@@ -1725,7 +1717,8 @@ p {
 
 .doc-button:hover {
   border-width: 3px;
-  transform: translateY(-3px);
+  border-color: #0f62fe;
+  background: rgba(15, 98, 254, 0.05); /* leggermente sfumato */
   box-shadow: 0 6px 16px rgba(15, 98, 254, 0.2);
 }
 
