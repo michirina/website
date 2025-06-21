@@ -2,7 +2,6 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8">
-  <title>Contatti</title>
   <title data-i18n="page_title">Contatti</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Fogli di stile -->
@@ -12,7 +11,6 @@
     <link href="assets/css/default.css" rel="stylesheet" />
     <link href="assets/css/style.css" rel="stylesheet" />
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
-</head>
     <!-- SCRIPTS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
@@ -94,14 +92,11 @@
 </head>
 <body>
 
-<div class="alert alert-warning text-center mb-0 rounded-0" role="alert">
 <div class="alert alert-warning text-center mb-0 rounded-0" role="alert" data-i18n="work_in_progress_banner">
   🚧 Il sito è attualmente in fase di aggiornamento. Alcuni contenuti potrebbero cambiare! 🚧
 </div>
 
 <div class="contact-header">
-<h1 class="contact-title">Contattami</h1>
-<h5 class="sub_title">COMPILA IL FORM</h5>
 <h1 data-i18n="contact_title" class="contact-title">Contattami</h1>
 <h5 data-i18n="contact_sub_title" class="sub_title">COMPILA IL FORM</h5>
 
@@ -110,20 +105,12 @@
 <div class="contact-container">
         <div class="contact-wrapper" style="grid-template-columns: 1fr; max-width: 600px; justify-items: center;">
             <div class="contact-form">
-                <h2 class="form-title">Scrivimi</h2>
-                <p class="form-subtitle">
-                    Sono sempre aperto a nuove opportunità e collaborazioni interessanti. 
-                    Se hai un progetto in mente o vuoi semplicemente fare una chiacchierata, 
-                    non esitare a contattarmi.
-                </p>
-                <p class="form-subtitle">Di solito rispondo entro 24 ore</p>
                 <h2 data-i18n="form_heading" class="form-title">Scrivimi</h2>
                 <p class="form-subtitle" data-i18n="form_intro">Sono sempre aperto a nuove opportunità e collaborazioni interessanti. Se hai un progetto in mente o vuoi semplicemente fare una chiacchierata, non esitare a contattarmi.</p>
                 <p data-i18n="form_subtitle" class="form-subtitle">Di solito rispondo entro 24 ore</p>
                 
                 <form action="https://formspree.io/f/xovwnrjq" method="POST">
                     <div class="form-group">
-                        <label for="chi-sei" class="form-label">Chi sei?</label>
                         <label data-i18n="label_chi_sei" for="chi-sei" class="form-label">Chi sei?</label>
                         <input
                             type="text"
@@ -136,7 +123,6 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="messaggio" class="form-label">Cosa vuoi dirmi?</label>
                         <label data-i18n="label_messaggio" for="messaggio" class="form-label">Cosa vuoi dirmi?</label>
                         <textarea
                             id="messaggio"
@@ -148,7 +134,6 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="contatto" class="form-label">Dove vuoi essere ricontattato?</label>
                         <label data-i18n="label_contatto" for="contatto" class="form-label">Dove vuoi essere ricontattato?</label>
                         <input
                             type="text"
@@ -160,7 +145,6 @@
                         >
                     </div>
 
-                    <button type="submit" class="form-button">
                     <button data-i18n="submit_button" type="submit" class="form-button">
                         Invia messaggio
                     </button>
@@ -210,7 +194,6 @@
         <li data-page="contatti">
             <a href="contatti.html" class="active">
                 <i class="lni lni-envelope"></i>
-                <span>Contatti</span>
                 <span data-i18n="nav_contatti">Contatti</span>
             </a>
         </li>
@@ -221,11 +204,9 @@
   <footer class="footer_area gray-bg section">
     <div class="container text-center">
       <div class="copyright-container">
-        <span>© 2025 - Tutti i diritti riservati</span>
         <span data-i18n="footer_copyright">© 2025 - Tutti i diritti riservati</span>
         <img alt="Logo" src="assets/images/logo.png" width="36" />
       </div>
-      <p>Sito realizzato da Rinaldi Michele per l'esame di stato 2025</p>
       <p data-i18n="footer_credit">Sito realizzato da Rinaldi Michele per l'esame di stato 2025</p>
     </div>
   </footer>
