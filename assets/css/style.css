@@ -2299,17 +2299,17 @@ p {
 
 .panel-header {
     padding: 20px 24px;
-    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    background: linear-gradient(135deg, #224870 0%, #4CC1B0 100%);
     border-bottom: 1px solid #e5e7eb;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    transition: background-color 0.2s ease;
+    transition: background 0.2s ease;
 }
 
 .panel-header:hover {
-    background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+    background: linear-gradient(135deg, #1a3a5c 0%, #3da999 100%);
 }
 
 .panel-title {
@@ -2317,7 +2317,7 @@ p {
     margin: 0;
     font-size: 1.25rem;
     font-weight: 600;
-    color: #1e293b;
+    color: #ffffff;
     margin-right: 16px;
 }
 
@@ -2331,23 +2331,22 @@ p {
     display: flex;
     align-items: center;
     gap: 8px;
-    background: #ffffff;
-    padding: 8px 12px;
-    border-radius: 8px;
-    border: 1px solid #d1d5db;
     font-size: 0.875rem;
-    color: #6b7280;
+    color: #ffffff;
     min-width: 120px;
 }
 
 .panel-date i {
-    color: #3b82f6;
+    color: #ffffff;
+    font-size: 1rem;
+    transition: text-shadow 0.2s ease;
+}
+
+.panel-date i:hover {
+    text-shadow: 0 2px 8px rgba(255, 255, 255, 0.3);
 }
 
 .panel-toggle {
-    background: #ffffff;
-    border: 1px solid #d1d5db;
-    border-radius: 8px;
     width: 40px;
     height: 40px;
     display: flex;
@@ -2357,14 +2356,14 @@ p {
     transition: all 0.2s ease;
 }
 
-.panel-toggle:hover {
-    background: #f3f4f6;
-    border-color: #9ca3af;
+.panel-toggle i {
+    color: #ffffff;
+    font-size: 1.2rem;
+    transition: transform 0.3s ease, text-shadow 0.2s ease;
 }
 
-.panel-toggle i {
-    color: #6b7280;
-    transition: transform 0.3s ease;
+.panel-toggle:hover i {
+    text-shadow: 0 2px 8px rgba(255, 255, 255, 0.3);
 }
 
 .panel-toggle.expanded i {
