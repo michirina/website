@@ -2430,7 +2430,19 @@ p {
         padding: 20px;
     }
 
-    .cv-card {
+    .cv-container {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f8fafc;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .cv-card {
             width: 100%;
             max-width: 1200px;
             background: linear-gradient(135deg, #4CC1B0 0%, #3da999 100%);
@@ -2644,7 +2656,6 @@ p {
                 height: 80px;
             }
         }
-
 
 
 
