@@ -2429,8 +2429,9 @@ p {
     .panel-body {
         padding: 20px;
     }
+}
 
-    .cv-container {
+        .cv-container {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: #f8fafc;
             padding: 20px;
@@ -2656,9 +2657,3 @@ p {
                 height: 80px;
             }
         }
-
-
-
-
-
-}
