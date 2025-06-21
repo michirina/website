@@ -2809,7 +2809,7 @@ p {
         }
 
 
-        .header_hero {
+.header_hero {
             position: relative;
             min-height: 100vh;
             display: flex;
@@ -2829,6 +2829,11 @@ p {
             align-items: center;
             justify-content: space-between;
             min-height: 100vh;
+        }
+
+        .col-lg-6 {
+            flex: 1;
+            padding: 0 15px;
         }
 
         .header_hero_content {
@@ -2868,17 +2873,12 @@ p {
             height: 32px;
             margin-right: 12px;
             flex-shrink: 0;
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center;
         }
 
-        .school-logo.iismp {
-            background-image: url('assets/images/logo.iismp.png');
-        }
-
-        .school-logo.polimi {
-            background-image: url('assets/images/logo.polimi.png');
+        .school-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
         }
 
         .school-details h4 {
@@ -2907,6 +2907,40 @@ p {
             font-size: 14px;
             color: #34495e;
             font-weight: 500;
+        }
+
+        .header_hero_image_container {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-end;
+            padding-right: 40px;
+            padding-bottom: 40px;
+        }
+
+        .header_hero_image {
+            position: relative;
+            z-index: 5;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        .header_hero_image img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .header_hero_shape {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 45%;
+            height: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            z-index: 1;
         }
 
         /* Responsive */
