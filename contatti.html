@@ -2,7 +2,7 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8">
-  <title>Contatti – WIP</title>
+  <title>Contatti – TEST v2.1</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Fogli di stile -->
     <link href="assets/css/animate.css" rel="stylesheet" />
@@ -14,14 +14,76 @@
 </head>
 <body>
 
-  <div class="alert alert-warning text-center mb-0 rounded-0" role="alert">
-    🚧 Questa pagina è ancora in costruzione. Torna presto! 🚧
-  </div>
+<div class="alert alert-warning text-center mb-0 rounded-0" role="alert">
+  🚧 Il sito è attualmente in fase di aggiornamento. Alcuni contenuti potrebbero cambiare! 🚧
+</div>
 
-  <main class="container text-center my-5">
-    <h1 class="display-4">Contatti</h1>
-    <p class="lead">Contenuto in arrivo...</p>
-  </main>
+<div class="contact-header">
+<h1 class="contact-title">Contattami</h1>
+<p class="contact-subtitle">Hai un progetto in mente? Parliamone!</p>
+
+
+
+<h2 class="form-title">Scrivimi direttamente</h2>
+                <p class="form-subtitle">Compila il form e ti ricontatterò al più presto</p>
+                
+                <form action="mailto:michelerinaldi.info@gmail.com" method="post" enctype="text/plain">
+                    <div class="form-group">
+                        <label for="chi-sei" class="form-label">Chi sei?</label>
+                        <input 
+                            type="text" 
+                            id="chi-sei" 
+                            name="Chi sei" 
+                            class="form-input" 
+                            placeholder="Es. Sono Marco, un imprenditore di Milano..."
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="messaggio" class="form-label">Cosa vuoi dirmi?</label>
+                        <textarea 
+                            id="messaggio" 
+                            name="Messaggio" 
+                            class="form-textarea" 
+                            placeholder="Raccontami la tua idea, il tuo progetto, che hai in mente..."
+                            required
+                        ></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contatto" class="form-label">Dove vuoi essere ricontattato?</label>
+                        <input 
+                            type="text" 
+                            id="contatto" 
+                            name="Ricontattami a" 
+                            class="form-input" 
+                            placeholder="Email, telefono, LinkedIn..."
+                            required
+                        >
+                    </div>
+
+                    <button type="submit" class="form-button">
+                        Invia messaggio
+                    </button>
+                </form>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <!-- NAVBAR -->
 	<nav class="bottom-navbar-modern">
