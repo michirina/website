@@ -14,14 +14,118 @@
 </head>
 <body>
 
-  <div class="alert alert-warning text-center mb-0 rounded-0" role="alert">
-    🚧 Questa pagina è ancora in costruzione. Torna presto! 🚧
+<div class="alert alert-warning text-center mb-0 rounded-0" role="alert">
+  🚧 Il sito è attualmente in fase di aggiornamento. Alcuni contenuti potrebbero cambiare! 🚧
+</div>
+<div class="container">
+  <!-- Titolo pagina -->
+  <div class="section_title text-center pb-30">
+    <h5 class="sub_title" data-i18n="portfolio_section_sub_title">
+      Portfolio
+    </h5>
+    <h3 class="main_title" data-i18n="portfolio_section_main_title">
+      Raccolta dei miei progetti più significativi
+    </h3>
+    <ul class="line">
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
   </div>
+</div>
 
-  <main class="container text-center my-5">
-    <h1 class="display-4">Portfolio</h1>
-    <p class="lead">Contenuto in arrivo...</p>
-  </main>
+
+
+    <!--====== SERVICES (PORTFOLIO PREVIEW) START ======-->
+    <section class="services_area section" id="services">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="section_title text-center pb-30">
+                        <h5 class="sub_title" data-i18n="portfolio_subtitle">Portfolio</h5>
+                        <h3 class="main_title" data-i18n="portfolio_title">Di cosa mi occupo</h3>
+                        <ul class="line">
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </div> <!-- section title -->
+                </div>
+            </div> <!-- row -->
+            <div class="row justify-content-center">
+                <!-- Arte -->
+                <div class="col-lg-6 col-md-6">
+                    <div class="single_service mt-30">
+                        <div class="service_icon">
+                            <i class="lni lni-pencil-alt"></i>
+                        </div>
+                        <div class="service_content">
+                            <h4 class="service_title">
+                                <a data-i18n="cat_arte_title" href="portfolio.php#arte">Arte e Comunicazione</a>
+                            </h4>
+                            <p class="portfolio-description" data-i18n="cat_arte_desc">
+                                Progetti creativi ed espressivi che comunicano idee o messaggi sociali e raccontano storie attraverso il linguaggio visivo.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Branding -->
+                <div class="col-lg-6 col-md-6">
+                    <div class="single_service mt-30">
+                        <div class="service_icon">
+                            <i class="lni lni-briefcase"></i>
+                        </div>
+                        <div class="service_content">
+                            <h4 class="service_title">
+                                <a data-i18n="cat_branding_title" href="portfolio.php#branding">Branding e Identità Visiva</a>
+                            </h4>
+                            <p class="portfolio-description" data-i18n="cat_branding_desc">
+                                Sviluppo dell'immagine coordinata di aziende o progetti, con particolare attenzione a logo, palette, tipografia e coerenza comunicativa.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Industrial Design -->
+                <div class="col-lg-6 col-md-6">
+                    <div class="single_service mt-30">
+                        <div class="service_icon">
+                            <i class="lni lni-cog"></i>
+                        </div>
+                        <div class="service_content">
+                            <h4 class="service_title">
+                                <a data-i18n="cat_industrial_title" href="portfolio.php#industrial">Industrial Design</a>
+                            </h4>
+                            <p class="portfolio-description" data-i18n="cat_industrial_desc">
+                                Concept e redesign di oggetti d'uso quotidiano o elettronici, unendo estetica, ergonomia e funzionalità tramite modellazione 3D e prototipazione.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Grafica Pubblicitaria -->
+                <div class="col-lg-6 col-md-6">
+                    <div class="single_service mt-30">
+                        <div class="service_icon">
+                            <i class="lni lni-printer"></i>
+                        </div>
+                        <div class="service_content">
+                            <h4 class="service_title">
+                                <a data-i18n="cat_adv_title" href="portfolio.php#adv">Grafica Pubblicitaria</a>
+                            </h4>
+                            <p class="portfolio-description" data-i18n="cat_adv_desc">
+                                Manifesti, locandine ed elaborati promozionali pensati per eventi, aziende o iniziative culturali, con forte impatto visivo e comunicazione efficace.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+    </section>
+    <!--====== SERVICES (PORTFOLIO PREVIEW) ENDS ======-->
+
+
+
+
+
 
 <!-- NAVBAR -->
 	<nav class="bottom-navbar-modern">
@@ -70,6 +174,29 @@
         </li>
     </ul>
 </nav>
+
+
+
+
+
+
+
+    <a href="assets/docs/RinaldiMichele_CV_al20250525.pdf" target="_blank" class="cv-card">
+        <div class="cv-content">
+            <div class="cv-photo">
+                <!-- Sostituisci il src con il percorso della tua foto -->
+                <img src="assets/images/about_hero.png" alt="Foto profilo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="cv-photo-placeholder" style="display: none;">MR</div>
+            </div>
+            <div class="cv-text">
+                <h1 class="cv-title">Curriculum Vitae</h1>
+                <p class="cv-updated">Aggiornato al 27/05/2025</p>
+            </div>
+        </div>
+        <div class="cv-arrow">→</div>
+    </a>
+
+
 
   <!-- FOOTER -->
   <footer class="footer_area gray-bg section">
