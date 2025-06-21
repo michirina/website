@@ -42,28 +42,46 @@
     <!--====== HERO PART START ======-->
     <div class="header_hero" id="home">
         <div class="container">
-            <div class="row align-items-center justify-content-center justify-content-lg-between">
+            <div class="row">
                 <div class="col-lg-6">
-                    <div class="header_hero_content mt-45">
+                    <div class="header_hero_content">
                         <h5 class="header_sub_title" data-i18n="hero_subtitle">Benvenuto nel sito di</h5>
                         <h1 class="header_title" data-i18n="hero_title">Michele Rinaldi</h1>
-                        <span data-i18n="hero_span">Studente IIS Marconi Pieralisi | Informatica e Telecomunicazioni</span>
-                        <p data-i18n="hero_text">
-                            Mi appassiona tutto ciò che riguarda il mondo informatico: dalla programmazione allo sviluppo web,
-                            fino alla progettazione grafica. Allo stesso tempo, credo che anche le discipline umanistiche
-                            abbiano un ruolo fondamentale nella mia crescita.
-                        </p>
-                        <a class="main-btn" data-i18n="hero_button" href="#portfolio">Scopri i miei lavori</a>
-                    </div> <!-- header hero content -->
+                        
+                        <div class="schools-container">
+                            <div class="school-info">
+                                <div class="school-logo iismp"></div>
+                                <div class="school-details">
+                                    <h4 data-i18n="current_school_title">Maturando presso:</h4>
+                                    <div class="school-name">IIS Marconi Pieralisi</div>
+                                    <div class="school-address">Jesi</div>
+                                    <div class="school-field">Informatica e Telecomunicazioni</div>
+                                </div>
+                            </div>
+                        
+                            <div class="school-info">
+                                <div class="school-logo polimi"></div>
+                                <div class="school-details">
+                                    <h4 data-i18n="future_school_title">Futuro studente di:</h4>
+                                    <div class="school-name">Politecnico di Milano</div>
+                                    <div class="school-address">Lecco</div>
+                                    <div class="school-field">Interaction Design</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-lg-6 col-md-6 col-sm-7">
-                    <div class="header_hero_image mt-50">
-                        <img alt="Immagine Michele Rinaldi" src="assets/images/hero.png" />
-                    </div> <!-- header hero image -->
+                
+                <div class="col-lg-6">
+                    <div class="header_hero_image_container">
+                        <div class="header_hero_image">
+                            <img alt="Immagine Michele Rinaldi" src="assets/images/hero.png" />
+                        </div>
+                    </div>
                 </div>
-            </div> <!-- row -->
-        </div> <!-- container -->
-        <div class="header_hero_shape d-none d-lg-block"></div> <!-- shape -->
+            </div>
+        </div>
+        <div class="header_hero_shape"></div>
     </div>
     <!--====== HERO PART ENDS ======-->
     
@@ -86,7 +104,10 @@
                                 <li></li>
                                 <li></li>
                             </ul>
-                        </div> <!-- section title -->
+                        </div>
+                        
+                        
+                        <!-- section title -->
                         <p data-i18n="about_paragraph">
                             Da sempre ho una grande passione per il design, la grafica digitale e
                             l'interazione uomo-macchina. Mi piace unire l'aspetto tecnico della programmazione

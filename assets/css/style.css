@@ -2807,3 +2807,202 @@ p {
                 padding: 16px 28px;
             }
         }
+
+
+        .header_hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            width: 100%;
+        }
+
+        .row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 100vh;
+        }
+
+        .col-lg-6 {
+            flex: 1;
+            padding: 0 15px;
+        }
+
+        .header_hero_content {
+            max-width: 500px;
+            z-index: 10;
+            position: relative;
+        }
+
+        .header_sub_title {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 10px;
+            font-weight: 400;
+        }
+
+        .header_title {
+            font-size: 48px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 30px;
+            line-height: 1.2;
+        }
+
+        .schools-container {
+            margin-top: 25px;
+        }
+
+        .school-info {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            padding: 12px 0;
+        }
+
+        .school-logo {
+            width: 32px;
+            height: 32px;
+            margin-right: 12px;
+            flex-shrink: 0;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .school-logo.iismp {
+            background-image: url('assets/images/logo.iismp.png');
+        }
+
+        .school-logo.polimi {
+            background-image: url('assets/images/logo.polimi.png');
+        }
+
+        .school-details h4 {
+            font-size: 14px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .school-name {
+            font-size: 16px;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 2px;
+        }
+
+        .school-address {
+            font-size: 13px;
+            color: #7f8c8d;
+            font-weight: 400;
+        }
+
+        .school-field {
+            font-size: 14px;
+            color: #34495e;
+            font-weight: 500;
+        }
+
+        .header_hero_image_container {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        .header_hero_image {
+            position: relative;
+            z-index: 5;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        .header_hero_image img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .header_hero_shape {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 45%;
+            height: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            z-index: 1;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .row {
+                flex-direction: column;
+                text-align: center;
+                padding: 50px 0;
+                min-height: auto;
+            }
+
+            .header_hero_shape {
+                width: 100%;
+                height: 50%;
+                top: auto;
+                bottom: 0;
+            }
+
+            .header_title {
+                font-size: 36px;
+            }
+
+            .school-info {
+                justify-content: center;
+                text-align: left;
+                max-width: 400px;
+                margin: 15px auto;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header_title {
+                font-size: 28px;
+            }
+
+            .school-info {
+                padding: 8px 0;
+                margin-bottom: 15px;
+            }
+
+            .school-logo {
+                width: 28px;
+                height: 28px;
+                margin-right: 10px;
+            }
+
+            .school-details h4 {
+                font-size: 12px;
+            }
+
+            .school-name {
+                font-size: 14px;
+            }
+
+            .school-field {
+                font-size: 13px;
+            }
+
+            .school-address {
+                font-size: 12px;
+            }
+        }
