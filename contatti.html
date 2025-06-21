@@ -2,7 +2,7 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8">
-  <title>Contatti – TEST v2.1</title>
+  <title>Contatti – TEST v2.2</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Fogli di stile -->
     <link href="assets/css/animate.css" rel="stylesheet" />
@@ -24,17 +24,33 @@
 
 
 
-<h2 class="form-title">Scrivimi direttamente</h2>
+ <div class="contact-info">
+                <h2 class="info-title">Lavoriamo insieme</h2>
+                <p class="info-text">
+                    Sono sempre aperto a nuove opportunità e collaborazioni interessanti. 
+                    Se hai un progetto in mente o vuoi semplicemente fare una chiacchierata, 
+                    non esitare a contattarmi.
+                </p>
+                <div class="info-highlight">
+                    <p class="info-text">
+                        <strong>Rispondo entro 24 ore</strong> a tutti i messaggi ricevuti. 
+                        Parliamo di come posso aiutarti a realizzare le tue idee.
+                    </p>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <h2 class="form-title">Scrivimi direttamente</h2>
                 <p class="form-subtitle">Compila il form e ti ricontatterò al più presto</p>
                 
-                <form action="mailto:michelerinaldi.info@gmail.com" method="post" enctype="text/plain">
+                <form action="https://formspree.io/f/xovwnrjq" method="POST">
                     <div class="form-group">
                         <label for="chi-sei" class="form-label">Chi sei?</label>
-                        <input 
-                            type="text" 
-                            id="chi-sei" 
-                            name="Chi sei" 
-                            class="form-input" 
+                        <input
+                            type="text"
+                            id="chi-sei"
+                            name="chi-sei"
+                            class="form-input"
                             placeholder="Es. Sono Marco, un imprenditore di Milano..."
                             required
                         >
@@ -42,23 +58,23 @@
 
                     <div class="form-group">
                         <label for="messaggio" class="form-label">Cosa vuoi dirmi?</label>
-                        <textarea 
-                            id="messaggio" 
-                            name="Messaggio" 
-                            class="form-textarea" 
+                        <textarea
+                            id="messaggio"
+                            name="message"
+                            class="form-textarea"
                             placeholder="Raccontami la tua idea, il tuo progetto, che hai in mente..."
                             required
                         ></textarea>
                     </div>
 
                     <div class="form-group">
-                        <label for="contatto" class="form-label">Dove vuoi essere ricontattato?</label>
-                        <input 
-                            type="text" 
-                            id="contatto" 
-                            name="Ricontattami a" 
-                            class="form-input" 
-                            placeholder="Email, telefono, LinkedIn..."
+                        <label for="email" class="form-label">Dove vuoi essere ricontattato?</label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            class="form-input"
+                            placeholder="La tua email per essere ricontattato..."
                             required
                         >
                     </div>
@@ -69,15 +85,7 @@
                 </form>
             </div>
         </div>
-
-
-
-
-
-
-
-
-
+    </div>
 
 
 
