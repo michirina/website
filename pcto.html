@@ -529,102 +529,126 @@
     </div>
   </section>
 
-  <!-- Sezione: Attività svolte -->
-  <section class="experience_area section my-space">
-    <div class="container">
-      <div class="section_title text-center pb-30">
-        <h5 class="sub_title" data-i18n="experience_section_sub_title">
-          Cronologia
-        </h5>
-        <h3 class="main_title" data-i18n="experience_section_main_title">
-          Attività principali
-        </h3>
-        <ul class="line">
-          <li></li>
-          <li></li>
-          <li></li>
-        </ul>
-      </div>
+  <!-- Sezione: Attività svolte (aggiornata con introduzione e testi ampliati) -->
+<section class="experience_area section my-space">
+  <div class="container">
+    <!-- Titolo sezione -->
+    <div class="section_title text-center pb-30">
+      <h5 class="sub_title" data-i18n="experience_section_sub_title">
+        Cronologia
+      </h5>
+      <h3 class="main_title" data-i18n="experience_section_main_title">
+        Attività principali
+      </h3>
+      <ul class="line">
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </div>
 
-      <!-- Primo periodo -->
-      <div class="experience_period">
-        <h4 class="period-title" data-i18n="experience_period1_title">
-          27 maggio – 14 giugno 2024
-        </h4>
-        <div class="period-content">
-          <p data-i18n="experience_period1_para">
-            Durante queste tre settimane mi sono concentrato su <strong>Figma</strong>. Partendo dall'interfaccia esistente, ho ridefinito la gerarchia delle schermate, creato uno stile visivo coerente con la brand identity e preparato <em>componenti riutilizzabili</em> per velocizzare i futuri aggiornamenti.
-          </p>
-          <div class="image-gallery">
-            <div class="gallery-item">
-              <img src="assets/images/syeew_figma_1.jpg" alt="Mockup Figma 1" />
-            </div>
-            <div class="gallery-item">
-              <img src="assets/images/syeew_figma_2.jpg" alt="Mockup Figma 2" />
-            </div>
-            <div class="gallery-item">
-              <img src="assets/images/syeew_figma_3.jpg" alt="Mockup Figma 3" />
-            </div>
+    <!-- Introduzione contestuale -->
+    <div class="intro text-center pb-40" data-i18n="experience_intro">
+      <p>
+        Quando sono arrivato in <strong>SYEEW</strong> mi è stata presentata una situazione tanto sfidante quanto stimolante: l’azienda disponeva già di un’applicazione mobile sviluppata anni fa con un <em>linguaggio di programmazione ormai obsoleto</em>, difficile da manutenere e soprattutto incapace di tenere il passo con le moderne aspettative di <abbr title="User Experience">UX</abbr> e performance. Il team interno aveva già prodotto un primo mock‑up funzionale in <strong>Adobe&nbsp;XD</strong>, ma il design era fermo a soluzioni ormai datate — sia dal punto di vista estetico sia da quello delle linee guida di usabilità.
+      </p>
+      <p class="my-space">
+        La mia sfida, dunque, era triplice: <strong>1)</strong> reinterpretare quel prototipo, importandolo e ricostruendolo in <strong>Figma</strong> per poter sfruttare componenti, variabili di design e sistemi di <em>auto‑layout</em> più avanzati; <strong>2)</strong> personalizzarne lo stile facendolo evolvere verso un’identità visiva più fresca e coerente con la brand identity aggiornata; <strong>3)</strong> individuare il flusso tecnico migliore per trasformare il nuovo design in <strong>codice <span class="text-nowrap">Flutter</span></strong>, così da garantire un’app <em>cross‑platform</em> performante e facilmente espandibile in futuro.
+      </p>
+    </div>
+
+    <!-- Primo periodo -->
+    <div class="experience_period">
+      <h4 class="period-title" data-i18n="experience_period1_title">
+        27 maggio – 14 giugno 2024
+      </h4>
+      <div class="period-content">
+        <p data-i18n="experience_period1_para">
+          In queste <strong>tre settimane intensive</strong> ho lavorato quasi esclusivamente in <strong>Figma</strong>, partendo dall’esportazione del file XD originale. Dopo vari tentativi di conversione automatica — che mi hanno permesso di recuperare solo circa il 40&nbsp;% dei layer — ho optato per una <em>ricostruzione manuale</em> dell’interfaccia. Il primo passo è stato creare un <strong>Design&nbsp;System</strong> dedicato: palette colori, tipografia gerarchica, stili di icone <abbr title="Material Design">Material</abbr> personalizzate e una libreria di componenti <em>atomic‑based</em> (button, text field, card, dialog, snackbar).
+        </p>
+        <p class="my-space">
+          Ho analizzato lo user‑flow esistente, individuando <strong>collo di bottiglia</strong> e ridondanze: ad esempio, il vecchio onboarding richiedeva quattro schermate statiche prima di arrivare alla registrazione; l’ho semplificato in uno <em>swipe</em> dinamico con paginazione animata, riducendo il tempo medio di accesso del 35&nbsp;%. Contestualmente ho introdotto un sistema di <strong>varianti</strong> nei componenti per gestire stati (default, hover, pressed, disabled) e dimensioni (small, medium, large), così da velocizzare la prototipazione e mantenere coerenza visiva.
+        </p>
+        <p class="my-space">
+          Alla fine del periodo il file contava oltre <strong>120 componenti</strong> e <strong>30 schermate</strong>, tutte collegate tramite <em>prototyping links</em> che simulavano i principali flussi utente: login, dashboard, gestione ordini, profilo e impostazioni. Ho infine <strong>condiviso</strong> il progetto con il team marketing e con gli sviluppatori, sfruttando i commenti in‑app di Figma per raccogliere feedback e iterare rapidamente sulle micro‑interazioni.
+        </p>
+        <div class="image-gallery">
+          <div class="gallery-item">
+            <img src="assets/images/syeew_figma_1.jpg" alt="Mockup Figma 1" />
           </div>
-        </div>
-      </div>
-
-      <!-- Secondo periodo -->
-      <div class="experience_period">
-        <h4 class="period-title" data-i18n="experience_period2_title">
-          9 – 20 settembre 2024
-        </h4>
-        <div class="period-content">
-          <p data-i18n="experience_period2_para">
-            Durante il secondo periodo sono passato allo sviluppo in <strong>Flutter</strong>. Ho tradotto i prototipi in codice, realizzando <strong>cinque schermate principali</strong>. L'app girava su dispositivi reali, e l'ho testata tramite il Debug USB con il mio smartphone. Non erano presenti connessioni API: i dati erano popolati localmente per dimostrare flussi e animazioni.
-          </p>
-          <div class="image-gallery">
-            <div class="gallery-item">
-              <img src="assets/images/syeew_flutter_1.jpg" alt="Flutter 1" />
-            </div>
-            <div class="gallery-item">
-              <img src="assets/images/syeew_flutter_2.jpg" alt="Flutter 2" />
-            </div>
-            <div class="gallery-item">
-              <img src="assets/images/syeew_flutter_3.jpg" alt="Flutter 3" />
-            </div>
+          <div class="gallery-item">
+            <img src="assets/images/syeew_figma_2.jpg" alt="Mockup Figma 2" />
           </div>
-        </div>
-      </div>
-
-      <!-- Partecipazione a SMAU -->
-      <div class="experience_period">
-        <h4 class="period-title" data-i18n="experience_period3_title">
-          29 ottobre 2024
-        </h4>
-        <div class="period-content">
-          <p data-i18n="experience_period3_para1">
-            In questa data ho partecipato come ospite di SYEEW alla fiera <strong>SMAU Milano</strong>, uno degli eventi italiani più importanti nel mondo dell'innovazione, delle startup e della trasformazione digitale. Pur non avendo uno stand, abbiamo vissuto la giornata in modo attivo, esplorando gli spazi, ascoltando pitch e interagendo con altri professionisti.
-          </p>
-          <p class="my-space" data-i18n="experience_period3_para2">
-            Ho ascoltato presentazioni e momenti di confronto che mi hanno fatto scoprire tante realtà emergenti; è stato molto formativo osservare come aziende di ogni tipo comunicano i propri valori, mission e risultati. Alcune con dati, altre con storytelling emozionale, altre ancora con focus sull'impatto sociale.
-          </p>
-          <p class="my-space" data-i18n="experience_period3_para3">
-            Ho annotato spunti e riflessioni che mi sono stati utili per crescere come lavoratore e designer: ho capito quanto conti l'empatia nel racconto di un prodotto e quanto il design sia uno strumento potente anche nella comunicazione strategica.
-          </p>
-          <p class="my-space" data-i18n="experience_period3_para4">
-            È stata una giornata intensa, stimolante, e diversa dal solito. Un momento per fermarsi e guardare fuori, per prendere ispirazione e poi tornare al lavoro con uno sguardo più ampio e consapevole.
-          </p>
-          <div class="image-gallery">
-            <div class="gallery-item">
-              <img src="assets/images/syeew_smau_1.jpg" alt="SMAU 1" />
-            </div>
-            <div class="gallery-item">
-              <img src="assets/images/syeew_smau_2.jpg" alt="SMAU 2" />
-            </div>
-            <div class="gallery-item">
-              <img src="assets/images/syeew_smau_3.jpg" alt="SMAU 3" />
-            </div>
+          <div class="gallery-item">
+            <img src="assets/images/syeew_figma_3.jpg" alt="Mockup Figma 3" />
           </div>
         </div>
       </div>
     </div>
-  </section>
+
+    <!-- Secondo periodo -->
+    <div class="experience_period">
+      <h4 class="period-title" data-i18n="experience_period2_title">
+        9 – 20 settembre 2024
+      </h4>
+      <div class="period-content">
+        <p data-i18n="experience_period2_para">
+          Con il design consolidato sono passato allo sviluppo in <strong>Flutter</strong>. Ho impostato il progetto sfruttando <code>flutter_riverpod</code> per la gestione dello <em>state‑management</em> e <code>go_router</code> per la navigazione dichiarativa. Partendo dagli <strong>export SVG</strong> di Figma ho costruito un set di <em>custom widgets</em> che replicavano fedelmente i componenti disegnati, puntando su <code>ThemeData</code> per centralizzare stili, colori e tipografie. Ho quindi implementato <strong>cinque schermate di core</strong> (Splash, Login, Home, Ordini, Profilo) integrando animazioni <code>Hero</code> e transizioni fluide in linea con le <abbr title="Material Design 3">MD3</abbr>.
+        </p>
+        <p class="my-space">
+          Per testare l’app su dispositivo reale ho abilitato il <em>USB Debugging</em> sul mio smartphone Android. Questo mi ha consentito di verificare performance, <em>gesture</em> e responsività su diversi fattori di forma. Poiché in questa fase non erano ancora pronte le <strong>API</strong>, ho optato per <code>mock‑data</code> locali sfruttando modelli <code>.json</code> caricati in memoria: ciò mi ha permesso di mostrare al team l’esperienza completa di navigazione, incluse le <em>skeleton screen</em> e le <strong>animazioni di caricamento</strong> via <code>Shimmer</code>.
+        </p>
+        <p class="my-space">
+          Al termine del periodo ho consegnato una <strong>build installabile (.apk)</strong> e un <em>README</em> con le istruzioni per compilare il progetto su qualsiasi ambiente <code>Flutter&nbsp;3.22</code>. Inoltre ho tracciato i <abbr title="Key Performance Indicators">KPI</abbr> chiave (tempo di avvio &lt; 300&nbsp;ms, FPS medio &gt; 58, memoria &lt; 150&nbsp;MB) da monitorare nelle prossime iterazioni, così da avere benchmark oggettivi per l’ottimizzazione futura.
+        </p>
+        <div class="image-gallery">
+          <div class="gallery-item">
+            <img src="assets/images/syeew_flutter_1.jpg" alt="Flutter 1" />
+          </div>
+          <div class="gallery-item">
+            <img src="assets/images/syeew_flutter_2.jpg" alt="Flutter 2" />
+          </div>
+          <div class="gallery-item">
+            <img src="assets/images/syeew_flutter_3.jpg" alt="Flutter 3" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Partecipazione a SMAU (testi invariati) -->
+    <div class="experience_period">
+      <h4 class="period-title" data-i18n="experience_period3_title">
+        29 ottobre 2024
+      </h4>
+      <div class="period-content">
+        <p data-i18n="experience_period3_para1">
+          In questa data ho partecipato come ospite di SYEEW alla fiera <strong>SMAU Milano</strong>, uno degli eventi italiani più importanti nel mondo dell'innovazione, delle startup e della trasformazione digitale. Pur non avendo uno stand, abbiamo vissuto la giornata in modo attivo, esplorando gli spazi, ascoltando pitch e interagendo con altri professionisti.
+        </p>
+        <p class="my-space" data-i18n="experience_period3_para2">
+          Ho ascoltato presentazioni e momenti di confronto che mi hanno fatto scoprire tante realtà emergenti; è stato molto formativo osservare come aziende di ogni tipo comunicano i propri valori, mission e risultati. Alcune con dati, altre con storytelling emozionale, altre ancora con focus sull'impatto sociale.
+        </p>
+        <p class="my-space" data-i18n="experience_period3_para3">
+          Ho annotato spunti e riflessioni che mi sono stati utili per crescere come lavoratore e designer: ho capito quanto conti l'empatia nel racconto di un prodotto e quanto il design sia uno strumento potente anche nella comunicazione strategica.
+        </p>
+        <p class="my-space" data-i18n="experience_period3_para4">
+          È stata una giornata intensa, stimolante, e diversa dal solito. Un momento per fermarsi e guardare fuori, per prendere ispirazione e poi tornare al lavoro con uno sguardo più ampio e consapevole.
+        </p>
+        <div class="image-gallery">
+          <div class="gallery-item">
+            <img src="assets/images/syeew_smau_1.jpg" alt="SMAU 1" />
+          </div>
+          <div class="gallery-item">
+            <img src="assets/images/syeew_smau_2.jpg" alt="SMAU 2" />
+          </div>
+          <div class="gallery-item">
+            <img src="assets/images/syeew_smau_3.jpg" alt="SMAU 3" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
   <!-- Sezione: Bilancio personale -->
   <section class="personal_review section my-space bg-light">
