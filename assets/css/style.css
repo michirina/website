@@ -1975,14 +1975,17 @@ p {
     font-size: 1.1rem;
     color: #4b5563;
     margin-bottom: 16px;
-    line-height: 1.6
+    line-height: 1.6;
+    text-align: justify;
 }
 
 .panel-body p {
     color: #6b7280;
     line-height: 1.7;
-    margin-bottom: 16px
+    margin-bottom: 16px;
+    text-align: justify;
 }
+
 
 .iframe-container {
     margin: 20px 0;
