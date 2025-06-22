@@ -3004,3 +3004,197 @@ body {
     }
 }
 
+
+    /* Stili per Area Tecnica */
+    .tech-subject-navbar {
+        background: linear-gradient(135deg, #4CC1B0 0%, #224870 100%);
+        padding: 0;
+        margin-bottom: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(34, 72, 112, 0.15);
+        overflow: hidden;
+    }
+
+    .tech-subject-nav {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+
+    .tech-subject-item {
+        flex: 1;
+        min-width: 150px;
+    }
+
+    .tech-subject-link {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1.2rem 0.8rem;
+        color: white;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        border-right: 1px solid rgba(255, 255, 255, 0.1);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .tech-subject-item:last-child .tech-subject-link {
+        border-right: none;
+    }
+
+    .tech-subject-link:hover {
+        background: rgba(255, 255, 255, 0.1);
+        color: white;
+        transform: translateY(-2px);
+    }
+
+    .tech-subject-link.active {
+        background: rgba(255, 255, 255, 0.2);
+        color: white;
+    }
+
+    .tech-subject-link::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 3px;
+        background: white;
+        transition: all 0.3s ease;
+        transform: translateX(-50%);
+    }
+
+    .tech-subject-link.active::before,
+    .tech-subject-link:hover::before {
+        width: 80%;
+    }
+
+    .tech-subject-icon {
+        font-size: 1.8rem;
+        margin-bottom: 0.5rem;
+        opacity: 0.9;
+    }
+
+    .tech-subject-text {
+        font-size: 0.9rem;
+        font-weight: 500;
+        text-align: center;
+        opacity: 0.95;
+    }
+
+    /* Sezioni materie */
+    .tech-subject-section {
+        display: none;
+        animation: fadeInUp 0.5s ease forwards;
+    }
+
+    .tech-subject-section.active {
+        display: block;
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Titolo sezione */
+    .tech-section-title {
+        text-align: center;
+        margin-bottom: 3rem;
+        padding: 2rem 0;
+    }
+
+    .tech-main-title {
+        color: #4CC1B0;
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+    }
+
+    .tech-sub-title {
+        color: #224870;
+        font-size: 1.2rem;
+        font-weight: 400;
+        margin-bottom: 2rem;
+    }
+
+    .tech-title-line {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .tech-title-line li {
+        width: 60px;
+        height: 3px;
+        background: #4CC1B0;
+        margin: 0 10px;
+        border-radius: 2px;
+    }
+
+    .tech-title-line li:nth-child(2) {
+        background: #224870;
+        width: 80px;
+    }
+
+    /* Badge materia */
+    .tech-subject-badge {
+        display: inline-block;
+        background: linear-gradient(135deg, #4CC1B0 0%, #224870 100%);
+        color: white;
+        padding: 0.4rem 1rem;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 500;
+        margin-bottom: 1rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .tech-subject-nav {
+            flex-direction: column;
+        }
+        
+        .tech-subject-item {
+            width: 100%;
+            min-width: auto;
+        }
+        
+        .tech-subject-link {
+            flex-direction: row;
+            justify-content: center;
+            padding: 1rem;
+            border-right: none;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .tech-subject-item:last-child .tech-subject-link {
+            border-bottom: none;
+        }
+        
+        .tech-subject-icon {
+            margin-right: 0.8rem;
+            margin-bottom: 0;
+            font-size: 1.5rem;
+        }
+        
+        .tech-main-title {
+            font-size: 2rem;
+        }
+    }
+
