@@ -2255,7 +2255,7 @@ p {
     margin-bottom: 40px
 }
 
-.contact-title {
+.main-title {
     font-size: 3.5rem;
     font-weight: 700;
     color: #224870;
@@ -2443,7 +2443,7 @@ p {
         gap: 40px
     }
 
-    .contact-title {
+    .main-title {
         font-size: 2.5rem
     }
 
@@ -2457,7 +2457,7 @@ p {
 }
 
 @media (max-width:480px) {
-    .contact-title {
+    .main-title {
         font-size: 2rem
     }
 
