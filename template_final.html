@@ -1,0 +1,1345 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Area Tecnica</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Fogli di stile -->
+    <link href="assets/css/animate.css" rel="stylesheet" />
+    <link href="assets/css/lineicons.css" rel="stylesheet" />
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/css/default.css" rel="stylesheet" />
+    <link href="assets/css/style.css" rel="stylesheet" />
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- SCRIPT VENDOR RESTANTI -->
+    <script src="assets/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="assets/js/vendor/modernizr-3.7.1.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/jquery.appear.min.js"></script>
+    <script src="assets/js/jquery.easing.min.js"></script>
+    <script src="assets/js/scrolling-nav.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/document-opener.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+    
+    <style>
+    /* Stili per Area Tecnica */
+    .tech-subject-navbar {
+        background: linear-gradient(135deg, #4CC1B0 0%, #224870 100%);
+        padding: 0;
+        margin-bottom: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(34, 72, 112, 0.15);
+        overflow: hidden;
+    }
+
+    .tech-subject-nav {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+
+    .tech-subject-item {
+        flex: 1;
+        min-width: 150px;
+    }
+
+    .tech-subject-link {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1.2rem 0.8rem;
+        color: white;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        border-right: 1px solid rgba(255, 255, 255, 0.1);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .tech-subject-item:last-child .tech-subject-link {
+        border-right: none;
+    }
+
+    .tech-subject-link:hover {
+        background: rgba(255, 255, 255, 0.1);
+        color: white;
+        transform: translateY(-2px);
+    }
+
+    .tech-subject-link.active {
+        background: rgba(255, 255, 255, 0.2);
+        color: white;
+    }
+
+    .tech-subject-link::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 3px;
+        background: white;
+        transition: all 0.3s ease;
+        transform: translateX(-50%);
+    }
+
+    .tech-subject-link.active::before,
+    .tech-subject-link:hover::before {
+        width: 80%;
+    }
+
+    .tech-subject-icon {
+        font-size: 1.8rem;
+        margin-bottom: 0.5rem;
+        opacity: 0.9;
+    }
+
+    .tech-subject-text {
+        font-size: 0.9rem;
+        font-weight: 500;
+        text-align: center;
+        opacity: 0.95;
+    }
+
+    /* Sezioni materie */
+    .tech-subject-section {
+        display: none;
+        animation: fadeInUp 0.5s ease forwards;
+    }
+
+    .tech-subject-section.active {
+        display: block;
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Pannelli progetti */
+    .document-panel {
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        margin-bottom: 1.5rem;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        border: 1px solid #f0f0f0;
+    }
+
+    .document-panel:hover {
+        box-shadow: 0 8px 30px rgba(34, 72, 112, 0.12);
+        transform: translateY(-2px);
+    }
+
+    .panel-header {
+        background: linear-gradient(135deg, #4CC1B0 0%, #224870 100%);
+        color: white;
+        padding: 1.5rem;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .panel-header::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+        transition: left 0.5s ease;
+    }
+
+    .panel-header:hover::before {
+        left: 100%;
+    }
+
+    .panel-title {
+        margin: 0;
+        font-size: 1.3rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        position: relative;
+        z-index: 2;
+    }
+
+    .panel-meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        z-index: 2;
+    }
+
+    .panel-date {
+        display: flex;
+        align-items: center;
+        font-size: 0.9rem;
+        opacity: 0.9;
+    }
+
+    .panel-date i {
+        margin-right: 0.5rem;
+    }
+
+    .panel-toggle {
+        font-size: 1.2rem;
+        transition: transform 0.3s ease;
+    }
+
+    .document-panel.expanded .panel-toggle {
+        transform: rotate(180deg);
+    }
+
+    .panel-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease, padding 0.4s ease;
+    }
+
+    .document-panel.expanded .panel-content {
+        max-height: 2000px;
+        padding: 1.5rem;
+    }
+
+    .panel-body {
+        line-height: 1.6;
+    }
+
+    .panel-body .lead {
+        color: #224870;
+        font-weight: 500;
+        margin-bottom: 1.5rem;
+    }
+
+    .panel-body p {
+        color: #666;
+        margin-bottom: 1rem;
+    }
+
+    /* Titolo sezione */
+    .tech-section-title {
+        text-align: center;
+        margin-bottom: 3rem;
+        padding: 2rem 0;
+    }
+
+    .tech-main-title {
+        color: #4CC1B0;
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+    }
+
+    .tech-sub-title {
+        color: #224870;
+        font-size: 1.2rem;
+        font-weight: 400;
+        margin-bottom: 2rem;
+    }
+
+    .tech-title-line {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .tech-title-line li {
+        width: 60px;
+        height: 3px;
+        background: #4CC1B0;
+        margin: 0 10px;
+        border-radius: 2px;
+    }
+
+    .tech-title-line li:nth-child(2) {
+        background: #224870;
+        width: 80px;
+    }
+
+    /* Badge materia */
+    .tech-subject-badge {
+        display: inline-block;
+        background: linear-gradient(135deg, #4CC1B0 0%, #224870 100%);
+        color: white;
+        padding: 0.4rem 1rem;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 500;
+        margin-bottom: 1rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .tech-subject-nav {
+            flex-direction: column;
+        }
+        
+        .tech-subject-item {
+            width: 100%;
+            min-width: auto;
+        }
+        
+        .tech-subject-link {
+            flex-direction: row;
+            justify-content: center;
+            padding: 1rem;
+            border-right: none;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .tech-subject-item:last-child .tech-subject-link {
+            border-bottom: none;
+        }
+        
+        .tech-subject-icon {
+            margin-right: 0.8rem;
+            margin-bottom: 0;
+            font-size: 1.5rem;
+        }
+        
+        .tech-main-title {
+            font-size: 2rem;
+        }
+    }
+    </style>
+</head>
+<body>
+  <div class="alert alert-warning text-center mb-0 rounded-0" role="alert">
+    🚧 Il sito è attualmente in fase di aggiornamento. Alcuni contenuti potrebbero cambiare! 🚧
+  </div>
+
+<div class="container">
+  <!-- Titolo pagina -->
+  <div class="tech-section-title">
+    <h5 class="tech-main-title">Area Tecnica</h5>
+    <h3 class="tech-sub-title">INNOVAZIONE, TECNOLOGIA E SVILUPPO</h3>
+    <ul class="tech-title-line">
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </div>
+
+  <!-- Navbar materie -->
+  <div class="tech-subject-navbar">
+    <ul class="tech-subject-nav">
+      <li class="tech-subject-item">
+        <a href="#" class="tech-subject-link active" data-subject="informatica">
+          <i class="lni lni-code tech-subject-icon"></i>
+          <span class="tech-subject-text">Informatica</span>
+        </a>
+      </li>
+      <li class="tech-subject-item">
+        <a href="#" class="tech-subject-link" data-subject="sistemi">
+          <i class="lni lni-network tech-subject-icon"></i>
+          <span class="tech-subject-text">Sistemi e Reti</span>
+        </a>
+      </li>
+      <li class="tech-subject-item">
+        <a href="#" class="tech-subject-link" data-subject="tpsit">
+          <i class="lni lni-server tech-subject-icon"></i>
+          <span class="tech-subject-text">TPSIT</span>
+        </a>
+      </li>
+      <li class="tech-subject-item">
+        <a href="#" class="tech-subject-link" data-subject="ia">
+          <i class="lni lni-brain tech-subject-icon"></i>
+          <span class="tech-subject-text">IA</span>
+        </a>
+      </li>
+      <li class="tech-subject-item">
+        <a href="#" class="tech-subject-link" data-subject="matematica">
+          <i class="lni lni-calculator tech-subject-icon"></i>
+          <span class="tech-subject-text">Matematica</span>
+        </a>
+      </li>
+      <li class="tech-subject-item">
+        <a href="#" class="tech-subject-link" data-subject="gpoi">
+          <i class="lni lni-chart-bar tech-subject-icon"></i>
+          <span class="tech-subject-text">GPOI</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="container mt-4">
+  <!-- Sezione Informatica -->
+  <div class="tech-subject-section active" id="informatica">
+    <div class="tech-subject-badge">
+      <i class="lni lni-code"></i> Informatica
+    </div>
+    
+    <!-- Progetto 1 -->
+    <div class="document-panel">
+      <div class="panel-header" onclick="toggleTechPanel(this)">
+        <h4 class="panel-title">TITOLO PROGETTO INFORMATICA 1</h4>
+        <div class="panel-meta">
+          <div class="panel-date">
+            <i class="lni lni-calendar"></i>
+            <span>Mese Anno</span>
+          </div>
+          <div class="panel-toggle">
+            <i class="lni lni-chevron-down"></i>
+          </div>
+        </div>
+      </div>
+      <div class="panel-content">
+        <div class="panel-body">
+          <p class="lead">
+            Descrizione breve del progetto di informatica numero 1.
+          </p>
+          <p>
+            Descrizione dettagliata del progetto, metodologie utilizzate, obiettivi raggiunti e competenze acquisite durante lo sviluppo del progetto di informatica.
+          </p>
+          <div class="documents-buttons d-flex justify-content-center flex-wrap">
+            <a href="#" class="doc-button m-2" target="_blank" rel="noopener">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg" alt="Documento" />
+              <div class="doc-text">
+                <h4>Nome Documento</h4>
+                <p>Descrizione del documento</p>
+              </div>
+              <i class="lni lni-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Progetto 2 -->
+    <div class="document-panel">
+      <div class="panel-header" onclick="toggleTechPanel(this)">
+        <h4 class="panel-title">TITOLO PROGETTO INFORMATICA 2</h4>
+        <div class="panel-meta">
+          <div class="panel-date">
+            <i class="lni lni-calendar"></i>
+            <span>Mese Anno</span>
+          </div>
+          <div class="panel-toggle">
+            <i class="lni lni-chevron-down"></i>
+          </div>
+        </div>
+      </div>
+      <div class="panel-content">
+        <div class="panel-body">
+          <p class="lead">
+            Descrizione breve del progetto di informatica numero 2.
+          </p>
+          <p>
+            Descrizione dettagliata del progetto, metodologie utilizzate, obiettivi raggiunti e competenze acquisite durante lo sviluppo del progetto di informatica.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Progetto 3 -->
+    <div class="document-panel">
+      <div class="panel-header" onclick="toggleTechPanel(this)">
+        <h4 class="panel-title">TITOLO PROGETTO INFORMATICA 3</h4>
+        <div class="panel-meta">
+          <div class="panel-date">
+            <i class="lni lni-calendar"></i>
+            <span>Mese Anno</span>
+          </div>
+          <div class="panel-toggle">
+            <i class="lni lni-chevron-down"></i>
+          </div>
+        </div>
+      </div>
+      <div class="panel-content">
+        <div class="panel-body">
+          <p class="lead">
+            Descrizione breve del progetto di informatica numero 3.
+          </p>
+          <p>
+            Descrizione dettagliata del progetto, metodologie utilizzate, obiettivi raggiunti e competenze acquisite durante lo sviluppo del progetto di informatica.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Progetto 4 -->
+    <div class="document-panel">
+      <div class="panel-header" onclick="toggleTechPanel(this)">
+        <h4 class="panel-title">TITOLO PROGETTO INFORMATICA 4</h4>
+        <div class="panel-meta">
+          <div class="panel-date">
+            <i class="lni lni-calendar"></i>
+            <span>Mese Anno</span>
+          </div>
+          <div class="panel-toggle">
+            <i class="lni lni-chevron-down"></i>
+          </div>
+        </div>
+      </div>
+      <div class="panel-content">
+        <div class="panel-body">
+          <p class="lead">
+            Descrizione breve del progetto di informatica numero 4.
+          </p>
+          <p>
+            Descrizione dettagliata del progetto, metodologie utilizzate, obiettivi raggiunti e competenze acquisite durante lo sviluppo del progetto di informatica.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sezione Sistemi e Reti -->
+  <div class="tech-subject-section" id="sistemi">
+    <div class="tech-subject-badge">
+      <i class="lni lni-network"></i> Sistemi e Reti
+    </div>
+    
+    <!-- Progetto 1 -->
+    <div class="document-panel">
+      <div class="panel-header" onclick="toggleTechPanel(this)">
+        <h4 class="panel-title">TITOLO PROGETTO SISTEMI E RETI 1</h4>
+        <div class="panel-meta">
+          <div class="panel-date">
+            <i class="lni lni-calendar"></i>
+            <span>Mese Anno</span>
+          </div>
+          <div class="panel-toggle">
+            <i class="lni lni-chevron-down"></i>
+          </div>
+        </div>
+      </div>
+      <div class="panel-content">
+        <div class="panel-body">
+          <p class="lead">
+            Descrizione breve del progetto di sistemi e reti numero 1.
+          </p>
+          <p>
+            Descrizione dettagliata del progetto, metodologie utilizzate, obiettivi raggiunti e competenze acquisite durante lo sviluppo del progetto di sistemi e reti.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Progetto 2 -->
+    <div class="document-panel">
+      <div class="panel-header" onclick="toggleTechPanel(this)">
+        <h4 class="panel-title">TITOLO PROGETTO SISTEMI E RETI 2</h4>
+        <div class="panel-meta">
+          <div class="panel-date">
+            <i class="lni lni-calendar"></i>
+            <span>Mese Anno</span>
+          </div>
+          <div class="panel-toggle">
+            <i class="lni lni-chevron-down"></i>
+          </div>
+        </div>
+      </div>
+      <div class="panel-content">
+        <div class="panel-body">
+          <p class="lead">
+            Descrizione breve del progetto di sistemi e reti numero 2.
+          </p>
+          <p>
+            Descrizione dettagliata del progetto, metodologie utilizzate, obiettivi raggiunti e competenze acquisite durante lo sviluppo del progetto di sistemi e reti.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Progetto 3 -->
+    <div class="document-panel">
+      <div class="panel-header" onclick="toggleTechPanel(this)">
+        <h4 class="panel-title">TITOLO PROGETTO SISTEMI E RETI 3</h4>
+        <div class="panel-meta">
+          <div class="panel-date">
+            <i class="lni lni-calendar"></i>
+            <span>Mese Anno</span>
+          </div>
+          <div class="panel-toggle">
+            <i class="lni lni-chevron-down"></i>
+          </div>
+        </div>
+      </div>
+      <div class="panel-content">
+        <div class="panel-body">
+          <p class="lead">
+            Descrizione breve del progetto di sistemi e reti numero 3.
+          </p>
+          <p>
+            Descrizione dettagliata del progetto, metodologie utilizzate, obiettivi raggiunti e competenze acquisite durante lo sviluppo del progetto di sistemi e reti.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sezione TPSIT -->
+  <div class="tech-subject-section" id="tpsit">
+    <div class="tech-subject-badge">
+      <i class="lni lni-server"></i> TPSIT
+    </div>
+    
+    <!-- Progetto 1 -->
+    <div class="document-panel">
+      <div class="panel-header" onclick="toggleTechPanel(this)">
+        <h4 class="panel-title">TITOLO PROGETTO TPSIT 1</h4>
+        <div class="panel-meta">
+          <div class="panel-date">
+            <i class="lni lni-calendar"></i>
+            <span>Mese Anno</span>
+          </div>
+          <div class="panel-toggle">
+            <i class="lni lni-chevron-down"></i>
+          </div>
+        </div>
+      </div>
+      <div class="panel-content">
+        <div class="panel-body">
+          <p class="lead">
+            Descrizione breve del progetto di TPSIT numero 1.
+          </p>
+          <p>
+            Descrizione dettagliata del progetto, metodologie utilizzate, obiettivi raggiunti e competenze acquisite durante lo sviluppo del progetto di TPSIT.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Progetto 2 -->
+    <div class="document-panel">
+      <div class="panel-header" onclick="toggleTechPanel(this)">
+        <h4 class="panel-title">TITOLO PROGETTO TPSIT 2</h4>
+        <div class="panel-meta">
+          <div class="panel-date">
+            <i class="lni lni-calendar"></i>
+            <span>Mese Anno</span>
+          </div>
+          <div class="panel-toggle">
+            <i class="lni lni-chevron-down"></i>
+          </div>
+        </div>
+      </div>
+      <div class="panel-content">
+        <div class="panel-body">
+          <p class="lead">
+            Descrizione breve del progetto di TPSIT numero 2.
+          </p>
+          <p>
+            Descrizione dettagliata del progetto, metodologie utilizzate, obiettivi raggiunti e competenze acquisite durante lo sviluppo del progetto di TPSIT.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Progetto 3 -->
+    <div class="document-panel">
+      <div class="panel-header" onclick="toggleTechPanel(this)">
+        <h4 class="panel-title">TITOLO PROGETTO TPSIT 3</h4>
+        <div class="panel-meta">
+          <div class="panel-date">
+            <i class="lni lni-calendar"></i>
+            <span>Mese Anno</span>
+          </div>
+          <div class="panel-toggle">
+            <i class="lni lni-chevron-down"></i>
+          </div>
+        </div>
+      </div>
+      <div class="panel-content">
+        <div class="panel-body">
+          <p class="lead">
+            Descrizione breve del progetto di TPSIT numero 3.
+          </p>
+          <p>
+            Descrizione dettagliata del progetto, metodologie utilizzate, obiettivi raggiunti e competenze acquisite durante lo sviluppo del progetto di TPSIT.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Progetto 4 -->
+    <div class="document-panel">
+      <div class="panel-header" onclick="toggleTechPanel(this)">
+        <h4 class="panel-title">TITOLO PROGETTO TPSIT 4</h4>
+        <div class="panel-meta">
+          <div class="panel-date">
+            <i class="lni lni-calendar"></i>
+            <span>Mese Anno</span>
+          </div>
+          <div class="panel-toggle">
+            <i class="lni lni-chevron-down"></i>
+          </div>
+        </div>
+      </div>
+      <div class="panel-content">
+        <div class="panel-body">
+          <p class="lead">
+            Descrizione breve del progetto di TPSIT numero 4.
+          </p>
+          <p>
+            Descrizione dettagliata del progetto, metodologie utilizzate, obiettivi raggiunti e competenze acquisite durante lo sviluppo del progetto di TPSIT.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sezione IA -->
+  <div class="tech-subject-section" id="ia">
+    <div class="tech-subject-badge">
+      <i class="lni lni-brain"></i> IA
+    </div>
+    
+    <!-- Progetto 1 -->
+    <div class="document-panel">
+      <div class="panel-header" onclick="toggleTechPanel(this)">
+        <h4 class="panel-title">TITOLO PROGETTO IA 1</h4>
+        <div class="panel-meta">
+          <div class="panel-date">
+            <i class="lni lni-calendar"></i>
+            <span>Mese Anno</span>
+          </div>
+          <div class="panel-toggle">
+            <i class="lni lni-chevron-down"></i>
+          </div>
+        </div>
+      </div>
+      <div class="panel-content">
+        <div class="panel-body">
+          <p class="lead">
+            Descrizione breve del progetto di intelligenza artificiale numero 1.
+          </p>
+          <p>
+            Descrizione dettagliata del progetto, metodologie utilizzate, obiettivi raggiunti e competenze acquisite durante lo sviluppo del progetto di IA.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Progetto 2 -->
+    <div class="document-panel">
+      <div class="panel-header" onclick="toggleTechPanel(this)">
+        <h4 class="panel-title">TITOLO PROGETTO IA 2</h4>
+        <div class="panel-meta">
+          <div class="panel-date">
+            <i class="lni lni-calendar"></i>
+            <span>Mese Anno</span>
+          </div>
+          <div class="panel-toggle">
+            <i class="lni lni-chevron-down"></i>
+          </div>
+        </div>
+      </div>
+      <div class="panel-content">
+        <div class="panel-body">
+          <p class="lead">
+            Descrizione breve del progetto di intelligenza artificiale numero 2.
+          </p>
+          <p>
+            Descrizione dettagliata del progetto, metodologie utilizzate, obiettivi raggiunti e competenze acquisite durante lo sviluppo del progetto di IA.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Progetto 3 -->
+    <div class="document-panel">
+      <div class="panel-header" onclick="toggleTechPanel(this)">
+        <h4 class="panel-title">TITOLO PROGETTO IA 3</h4>
+        <div class="panel-meta">
+          <div class="panel-date">
+            <i class="lni lni-calendar"></i>
+            <span>Mese Anno</span>
+          </div>
+          <div class="panel-toggle">
+            <i class="lni lni-chevron-down"></i>
+          </div>
+        </div>
+      </div>
+      <div class="panel-content">
+        <div class="panel-body">
+          <p class="lead">
+            Descrizione breve del progetto di intelligenza artificiale numero 3.
+          </p>
+          <p>
+            Descrizione dettagliata del progetto, metodologie utilizzate, obiettivi raggiunti e competenze acquisite durante lo sviluppo del progetto di IA.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sezione Matematica -->
+  <div class="tech-subject-section" id="matematica">
+    <div class="tech-subject-badge">
+      <i class="lni lni-calculator"></i> Matematica
+    </div>
+    
+    <!-- Progetto 1 -->
+    <div class="document-panel">
+      <div class="panel-header" onclick="toggleTechPanel(this)">
+        <h4 class="panel-title">TITOLO PROGETTO MATEMATICA 1</h4>
+        <div class="panel-meta">
+          <div class="panel-date">
+            <i class="lni lni-calendar"></i>
+            <span>Mese Anno</span>
+          </div>
+          <div class="panel-toggle">
+            <i class="lni lni-chevron-down"></i>
+          </div>
+        </div>
+      </div>
+      <div class="panel-content">
+        <div class="panel-body">
+          <p class="lead">
+            Descrizione breve del progetto di matematica numero 1.
+          </p>
+          <p>
+            Descrizione dettagliata del progetto, metodologie utilizzate, obiettivi raggiunti e competenze acquisite durante lo sviluppo del progetto di matematica.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Progetto 2 -->
+    <div class="document-panel">
+      <div class="panel-header" onclick="toggleTechPanel(this)">
+        <h4 class="panel-title">TITOLO PROGETTO MATEMATICA 2</h4>
+        <div class="panel-meta">
+          <div class="panel-date">
+            <i class="lni lni-calendar"></i>
+            <span>Mese Anno</span>
+          </div>
+          <div class="panel-toggle">
+            <i class="lni lni-chevron-down"></i>
+          </div>
+        </div>
+      </div>
+      <div class="panel-content">
+        <div class="panel-body">
+          <p class="lead">
+            Descrizione breve del progetto di matematica numero 2.
+          </p>
+          <p>
+            Descrizione dettagliata del progetto, metodologie utilizzate, obiettivi raggiunti e competenze acquisite durante lo sviluppo del progetto di matematica.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Progetto 3 -->
+    <div class="document-panel">
+      <div class="panel-header" onclick="toggleTechPanel(this)">
+        <h4 class="panel-title">TITOLO PROGETTO MATEMATICA 3</h4>
+        <div class="panel-meta">
+          <div class="panel-date">
+            <i class="lni lni-calendar"></i>
+            <span>Mese Anno</span>
+          </div>
+          <div class="panel-toggle">
+            <i class="lni lni-chevron-down"></i>
+          </div>
+        </div>
+      </div>
+      <div class="panel-content">
+        <div class="panel-body">
+          <p class="lead">
+            Descrizione breve del progetto di matematica numero 3.
+          </p>
+          <p>
+            Descrizione dettagliata del progetto, metodologie utilizzate, obiettivi raggiunti e competenze acquisite durante lo sviluppo del progetto di matematica.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sezione GPOI -->
+  <div class="tech-subject-section" id="gpoi">
+    <div class="tech-subject-badge">
+      <i class="lni lni-chart-bar"></i> GPOI
+    </div>
+    
+    <!-- Progetto 1 -->
+    <div class="document-panel">
+      <div class="panel-header" onclick="toggleTechPanel(this)">
+        <h4 class="panel-title">TITOLO PROGETTO GPOI 1</h4>
+        <div class="panel-meta">
+          <div class="panel-date">
+            <i class="lni lni-calendar"></i>
+            <span>Mese Anno</span>
+          </div>
+          <div class="panel-toggle">
+            <i class="lni lni-chevron-down"></i>
+          </div>
+        </div>
+      </div>
+      <div class="panel-content">
+        <div class="panel-body">
+          <p class="lead">
+            Descrizione breve del progetto di GPOI numero 1.
+          </p>
+          <p>
+            Descrizione dettagliata del progetto, metodologie utilizzate, obiettivi raggiunti e competenze acquisite durante lo sviluppo del progetto di GPOI.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Progetto 2 -->
+    <div class="document-panel">
+      <div class="panel-header" onclick="toggleTechPanel(this)">
+        <h4 class="panel-title">TITOLO PROGETTO GPOI 2</h4>
+        <div class="panel-meta">
+          <div class="panel-date">
+            <i class="lni lni-calendar"></i>
+            <span>Mese Anno</span>
+          </div>
+          <div class="panel-toggle">
+            <i class="lni lni-chevron-down"></i>
+          </div>
+        </div>
+      </div>
+      <div class="panel-content">
+        <div class="panel-body">
+          <p class="lead">
+            Descrizione breve del progetto di GPOI numero 2.
+          </p>
+          <p>
+            Descrizione dettagliata del progetto, metodologie utilizzate, obiettivi raggiunti e competenze acquisite durante lo sviluppo del progetto di GPOI.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Progetto 3 -->
+    <div class="document-panel">
+      <div class="panel-header" onclick="toggleTechPanel(this)">
+        <h4 class="panel-title">TITOLO PROGETTO GPOI 3</h4>
+        <div class="panel-meta">
+          <div class="panel-date">
+            <i class="lni lni-calendar"></i>
+            <span>Mese Anno</span>
+          </div>
+          <div class="panel-toggle">
+            <i class="lni lni-chevron-down"></i>
+          </div>
+        </div>
+      </div>
+      <div class="panel-content">
+        <div class="panel-body">
+          <p class="lead">
+            Descrizione breve del progetto di GPOI numero 3.
+          </p>
+          <p>
+            Descrizione dettagliata del progetto, metodologie utilizzate, obiettivi raggiunti e competenze acquisite durante lo sviluppo del progetto di GPOI.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Progetto 4 -->
+    <div class="document-panel">
+      <div class="panel-header" onclick="toggleTechPanel(this)">
+        <h4 class="panel-title">TITOLO PROGETTO GPOI 4</h4>
+        <div class="panel-meta">
+          <div class="panel-date">
+            <i class="lni lni-calendar"></i>
+            <span>Mese Anno</span>
+          </div>
+          <div class="panel-toggle">
+            <i class="lni lni-chevron-down"></i>
+          </div>
+        </div>
+      </div>
+      <div class="panel-content">
+        <div class="panel-body">
+          <p class="lead">
+            Descrizione breve del progetto di GPOI numero 4.
+          </p>
+          <p>
+            Descrizione dettagliata del progetto, metodologie utilizzate, obiettivi raggiunti e competenze acquisite durante lo sviluppo del progetto di GPOI.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div> e JavaScript vanilla, con focus su responsive design e user experience.
+          </p>
+          <p>
+            Il progetto ha coinvolto la creazione di un'interfaccia utente moderna e intuitiva, implementando funzionalità dinamiche attraverso JavaScript e garantendo la compatibilità cross-browser. Particolare attenzione è stata dedicata all'ottimizzazione delle performance e all'accessibilità.
+          </p>
+          <div class="documents-buttons d-flex justify-content-center flex-wrap">
+            <a href="#" class="doc-button m-2" target="_blank" rel="noopener">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg" alt="Documento" />
+              <div class="doc-text">
+                <h4>Codice Sorgente</h4>
+                <p>Repository GitHub del progetto</p>
+              </div>
+              <i class="lni lni-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Progetto 2 -->
+    <div class="document-panel">
+      <div class="panel-header" onclick="toggleTechPanel(this)">
+        <h4 class="panel-title">Database Management System</h4>
+        <div class="panel-meta">
+          <div class="panel-date">
+            <i class="lni lni-calendar"></i>
+            <span>Febbraio 2025</span>
+          </div>
+          <div class="panel-toggle">
+            <i class="lni lni-chevron-down"></i>
+          </div>
+        </div>
+      </div>
+      <div class="panel-content">
+        <div class="panel-body">
+          <p class="lead">
+            Progettazione e implementazione di un sistema di gestione database relazionale per un'applicazione di e-commerce.
+          </p>
+          <p>
+            Il progetto ha incluso la modellazione concettuale, logica e fisica del database, l'implementazione delle stored procedures e trigger, oltre all'ottimizzazione delle query per migliorare le performance del sistema.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Progetto 3 -->
+    <div class="document-panel">
+      <div class="panel-header" onclick="toggleTechPanel(this)">
+        <h4 class="panel-title">Algoritmi di Ordinamento</h4>
+        <div class="panel-meta">
+          <div class="panel-date">
+            <i class="lni lni-calendar"></i>
+            <span>Gennaio 2025</span>
+          </div>
+          <div class="panel-toggle">
+            <i class="lni lni-chevron-down"></i>
+          </div>
+        </div>
+      </div>
+      <div class="panel-content">
+        <div class="panel-body">
+          <p class="lead">
+            Implementazione e analisi comparativa di diversi algoritmi di ordinamento con valutazione della complessità computazionale.
+          </p>
+          <p>
+            Studio approfondito di algoritmi come Quick Sort, Merge Sort, Heap Sort e Bubble Sort, con implementazione in linguaggio C++ e analisi delle performance su dataset di diverse dimensioni.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sezione Sistemi -->
+  <div class="tech-subject-section" id="sistemi">
+    <div class="tech-subject-badge">
+      <i class="lni lni-network"></i> Sistemi e Reti
+    </div>
+    
+    <!-- Progetto 1 -->
+    <div class="document-panel">
+      <div class="panel-header" onclick="toggleTechPanel(this)">
+        <h4 class="panel-title">Configurazione Rete Aziendale</h4>
+        <div class="panel-meta">
+          <div class="panel-date">
+            <i class="lni lni-calendar"></i>
+            <span>Aprile 2025</span>
+          </div>
+          <div class="panel-toggle">
+            <i class="lni lni-chevron-down"></i>
+          </div>
+        </div>
+      </div>
+      <div class="panel-content">
+        <div class="panel-body">
+          <p class="lead">
+            Progettazione e implementazione di un'infrastruttura di rete per una piccola azienda, includendo segmentazione VLAN e politiche di sicurezza.
+          </p>
+          <p>
+            Il progetto ha coinvolto la configurazione di switch e router Cisco, l'implementazione di VLAN per la segmentazione del traffico, la configurazione di firewall e l'impostazione di politiche di Quality of Service (QoS).
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Progetto 2 -->
+    <div class="document-panel">
+      <div class="panel-header" onclick="toggleTechPanel(this)">
+        <h4 class="panel-title">Server Virtualizzazione</h4>
+        <div class="panel-meta">
+          <div class="panel-date">
+            <i class="lni lni-calendar"></i>
+            <span>Marzo 2025</span>
+          </div>
+          <div class="panel-toggle">
+            <i class="lni lni-chevron-down"></i>
+          </div>
+        </div>
+      </div>
+      <div class="panel-content">
+        <div class="panel-body">
+          <p class="lead">
+            Implementazione di un ambiente virtualizzato utilizzando VMware vSphere per ottimizzare l'utilizzo delle risorse hardware.
+          </p>
+          <p>
+            Configurazione di hypervisor, creazione e gestione di macchine virtuali, implementazione di backup automatizzati e monitoraggio delle performance del sistema virtualizzato.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Progetto 3 -->
+    <div class="document-panel">
+      <div class="panel-header" onclick="toggleTechPanel(this)">
+        <h4 class="panel-title">Analisi Sicurezza Informatica</h4>
+        <div class="panel-meta">
+          <div class="panel-date">
+            <i class="lni lni-calendar"></i>
+            <span>Febbraio 2025</span>
+          </div>
+          <div class="panel-toggle">
+            <i class="lni lni-chevron-down"></i>
+          </div>
+        </div>
+      </div>
+      <div class="panel-content">
+        <div class="panel-body">
+          <p class="lead">
+            Audit di sicurezza di un'infrastruttura IT aziendale con identificazione di vulnerabilità e proposte di mitigazione.
+          </p>
+          <p>
+            Utilizzo di strumenti come Nmap, Wireshark e Metasploit per l'analisi delle vulnerabilità, valutazione dei rischi di sicurezza e sviluppo di piani di remediation per migliorare la postura di sicurezza dell'organizzazione.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sezione Telecomunicazioni -->
+  <div class="tech-subject-section" id="telecomunicazioni">
+    <div class="tech-subject-badge">
+      <i class="lni lni-radio"></i> Telecomunicazioni
+    </div>
+    
+    <!-- Progetto 1 -->
+    <div class="document-panel">
+      <div class="panel-header" onclick="toggleTechPanel(this)">
+        <h4 class="panel-title">Progetto Fibra Ottica</h4>
+        <div class="panel-meta">
+          <div class="panel-date">
+            <i class="lni lni-calendar"></i>
+            <span>Maggio 2025</span>
+          </div>
+          <div class="panel-toggle">
+            <i class="lni lni-chevron-down"></i>
+          </div>
+        </div>
+      </div>
+      <div class="panel-content">
+        <div class="panel-body">
+          <p class="lead">
+            Progettazione di un collegamento in fibra ottica per la connessione ad alta velocità tra due edifici aziendali.
+          </p>
+          <p>
+            Studio della propagazione ottica, calcolo del budget di potenza, selezione dei componenti ottici e progettazione della rete di distribuzione interna con focus su prestazioni e affidabilità.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Progetto 2 -->
+    <div class="document-panel">
+      <div class="panel-header" onclick="toggleTechPanel(this)">
+        <h4 class="panel-title">Sistema di Comunicazione Wireless</h4>
+        <div class="panel-meta">
+          <div class="panel-date">
+            <i class="lni lni-calendar"></i>
+            <span>Aprile 2025</span>
+          </div>
+          <div class="panel-toggle">
+            <i class="lni lni-chevron-down"></i>
+          </div>
+        </div>
+      </div>
+      <div class="panel-content">
+        <div class="panel-body">
+          <p class="lead">
+            Implementazione di una rete wireless aziendale con tecnologia Wi-Fi 6 per garantire copertura ottimale e alta velocità.
+          </p>
+          <p>
+            Analisi del site survey, progettazione della copertura radio, configurazione degli access point e implementazione di protocolli di sicurezza WPA3 per garantire connettività sicura e performante.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Progetto 3 -->
+    <div class="document-panel">
+      <div class="panel-header" onclick="toggleTechPanel(this)">
+        <h4 class="panel-title">Analisi Spettro Radiofrequenze</h4>
+        <div class="panel-meta">
+          <div class="panel-date">
+            <i class="lni lni-calendar"></i>
+            <span>Marzo 2025</span>
+          </div>
+          <div class="panel-toggle">
+            <i class="lni lni-chevron-down"></i>
+          </div>
+        </div>
+      </div>
+      <div class="panel-content">
+        <div class="panel-body">
+          <p class="lead">
+            Studio e analisi dello spettro radiofrequenze per l'ottimizzazione delle comunicazioni wireless in ambiente urbano.
+          </p>
+          <p>
+            Utilizzo di analizzatori di spettro per la misura delle interferenze, studio della propagazione in ambiente urbano e ottimizzazione dei parametri di trasmissione per massimizzare l'efficienza spettrale.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sezione Matematica -->
+  <div class="tech-subject-section" id="matematica">
+    <div class="tech-subject-badge">
+      <i class="lni lni-calculator"></i> Matematica
+    </div>
+    
+    <!-- Progetto 1 -->
+    <div class="document-panel">
+      <div class="panel-header" onclick="toggleTechPanel(this)">
+        <h4 class="panel-title">Modellazione Matematica</h4>
+        <div class="panel-meta">
+          <div class="panel-date">
+            <i class="lni lni-calendar"></i>
+            <span>Maggio 2025</span>
+          </div>
+          <div class="panel-toggle">
+            <i class="lni lni-chevron-down"></i>
+          </div>
+        </div>
+      </div>
+      <div class="panel-content">
+        <div class="panel-body">
+          <p class="lead">
+            Sviluppo di modelli matematici per l'analisi e la previsione di fenomeni reali attraverso equazioni differenziali.
+          </p>
+          <p>
+            Studio di sistemi dinamici, modellazione della crescita demografica e analisi di stabilità dei punti di equilibrio utilizzando strumenti di calcolo differenziale e integrale.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Progetto 2 -->
+    <div class="document-panel">
+      <div class="panel-header" onclick="toggleTechPanel(this)">
+        <h4 class="panel-title">Analisi Statistica Avanzata</h4>
+        <div class="panel-meta">
+          <div class="panel-date">
+            <i class="lni lni-calendar"></i>
+            <span>Aprile 2025</span>
+          </div>
+          <div class="panel-toggle">
+            <i class="lni lni-chevron-down"></i>
+          </div>
+        </div>
+      </div>
+      <div class="panel-content">
+        <div class="panel-body">
+          <p class="lead">
+            Applicazione di metodi statistici avanzati per l'analisi di dataset complessi e la validazione di ipotesi scientifiche.
+          </p>
+          <p>
+            Utilizzo di tecniche di regressione multipla, analisi della varianza (ANOVA) e test di significatività per l'interpretazione di dati sperimentali e la formulazione di conclusioni statisticamente rilevanti.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Progetto 3 -->
+    <div class="document-panel">
+      <div class="panel-header" onclick="toggleTechPanel(this)">
+        <h4 class="panel-title">Algoritmi di Ottimizzazione</h4>
+        <div class="panel-meta">
+          <div class="panel-date">
+            <i class="lni lni-calendar"></i>
+            <span>Marzo 2025</span>
+          </div>
+          <div class="panel-toggle">
+            <i class="lni lni-chevron-down"></i>
+          </div>
+        </div>
+      </div>
+      <div class="panel-content">
+        <div class="panel-body">
+          <p class="lead">
+            Implementazione di algoritmi di ottimizzazione per la risoluzione di problemi di programmazione lineare e non lineare.
+          </p>
+          <p>
+            Studio del metodo del simplesso, algoritmi genetici e simulated annealing per la risoluzione di problemi di ottimizzazione in contesti industriali e di ricerca operativa.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="bottom-navbar-modern">
+  <ul class="navbar-items">
+    <li data-page="umanistica">
+      <a href="areaumanistica.html">
+        <i class="lni lni-pencil-alt"></i>
+        <span data-i18n="nav_umanistica">Umanistica</span>
+      </a>
+    </li>
+    <li data-page="tecnica">
+      <a href="areatecnica.html" class="active">
+        <i class="lni lni-cog"></i>
+        <span data-i18n="nav_tecnica">Tecnica</span>
+      </a>
+    </li>
+    <li data-page="civica">
+      <a href="educazionecivica.html">
+        <i class="lni lni-graduation"></i>
+        <span data-i18n="nav_civica">Civica</span>
+      </a>
+    </li>
+    <li data-page="home">
+      <a href="index.html">
+        <i class="lni lni-home"></i>
+        <span data-i18n="nav_home">Home</span>
+      </a>
+    </li>
+    <li data-page="pcto">
+      <a href="pcto.html">
+        <i class="lni lni-briefcase"></i>
+        <span data-i18n="nav_pcto">PCTO</span>
+      </a>
+    </li>
+    <li data-page="portfolio">
+      <a href="portfolio.html">
+        <i class="lni lni-layout"></i>
+        <span data-i18n="nav_portfolio
