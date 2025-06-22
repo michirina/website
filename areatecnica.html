@@ -4,25 +4,47 @@
   <meta charset="UTF-8">
   <title>Area Tecnica</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Fogli di stile -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet">
-  <link href="assets/css/style.css" rel="stylesheet">
+    <!-- Fogli di stile -->
+    <link href="assets/css/animate.css" rel="stylesheet" />
+    <link href="assets/css/lineicons.css" rel="stylesheet" />
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/css/default.css" rel="stylesheet" />
+    <link href="assets/css/style.css" rel="stylesheet" />
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- SCRIPT VENDOR RESTANTI -->
+    <script src="assets/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="assets/js/vendor/modernizr-3.7.1.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/jquery.appear.min.js"></script>
+    <script src="assets/js/jquery.easing.min.js"></script>
+    <script src="assets/js/scrolling-nav.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/document-opener.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+
 </head>
 <body>
   <div class="alert alert-warning text-center mb-0 rounded-0" role="alert">
     🚧 Il sito è attualmente in fase di aggiornamento. Alcuni contenuti potrebbero cambiare! 🚧
   </div>
 
-  <div class="container">
-      <h5 class="main-title">Area Tecnica</h5>
-      <h3 class="tech-sub-title">PROGETTI DELLE DISCIPLINE DI INDIRIZZO</h3>
-      <ul class="tech-title-line">
-        <li></li>
-        <li></li>
-        <li></li>
-      </ul>
-    </div>
+<div class="container">
+      <!-- Titolo pagina -->
+      <div class="section_title text-center pb-30">
+        <h5 class="main-title" data-i18n="portfolio_section_main_title">
+          Area tecnica
+        </h5>
+        <h3 class="sub_title" data-i18n="pcto_section_sub_title">
+          PROGETTI DELLE MATERIE DI INDIRIZZO
+        </h3>
+        <ul class="line">
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
 
     <!-- Navbar materie -->
     <div class="tech-subject-navbar">
@@ -376,99 +398,87 @@
     </div>
   </div>
 
-  <!-- NAVBAR -->
+    <!-- NAVBAR -->
   <nav class="bottom-navbar-modern">
     <ul class="navbar-items">
       <li data-page="umanistica">
         <a href="areaumanistica.html">
           <i class="lni lni-pencil-alt"></i>
-          <span>Umanistica</span>
+          <span data-i18n="nav_umanistica">Umanistica</span>
         </a>
       </li>
       <li data-page="tecnica">
-        <a href="areatecnica.html" class="active">
+        <a href="areatecnica.html"  class="active">
           <i class="lni lni-cog"></i>
-          <span>Tecnica</span>
+          <span data-i18n="nav_tecnica">Tecnica</span>
         </a>
       </li>
       <li data-page="civica">
         <a href="educazionecivica.html">
           <i class="lni lni-graduation"></i>
-          <span>Civica</span>
+          <span data-i18n="nav_civica">Civica</span>
         </a>
       </li>
       <li data-page="home">
         <a href="index.html">
           <i class="lni lni-home"></i>
-          <span>Home</span>
+          <span data-i18n="nav_home">Home</span>
         </a>
       </li>
       <li data-page="pcto">
         <a href="pcto.html">
           <i class="lni lni-briefcase"></i>
-          <span>PCTO</span>
+          <span data-i18n="nav_pcto">PCTO</span>
         </a>
       </li>
       <li data-page="portfolio">
         <a href="portfolio.html">
           <i class="lni lni-layout"></i>
-          <span>Portfolio</span>
+          <span data-i18n="nav_portfolio">Portfolio</span>
+        </a>
+      </li>
+      <li data-page="contatti">
+        <a href="contatti.html">
+          <i class="lni lni-envelope"></i>
+          <span data-i18n="nav_contatti">Contatti</span>
         </a>
       </li>
     </ul>
   </nav>
 
-  <script>
-    // Funzione per attivare/disattivare i pannelli
-    function togglePanel(header) {
-      const panel = header.closest('.document-panel');
-      panel.classList.toggle('expanded');
+  <div class="language-switcher">
+  <button class="lang-btn active" data-lang="it">
+    <img src="assets/images/flag-it.png" alt="Italiano" class="flag-icon">
+  </button>
+  <button class="lang-btn" data-lang="en">
+    <img src="assets/images/flag-en.png" alt="English" class="flag-icon">
+  </button>
+</div>
+
+  <!-- FOOTER -->
+  <footer class="footer_area gray-bg section" id="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">  
+          <div class="footer_content text-center">
+            <div class="copyright-container">
+              <span class="copyright-text" data-i18n="footer_copyright">
+                © 2025 - Tutti i diritti riservati
+              </span>
+              <img alt="Logo" src="assets/images/logo.png" width="36" />
+            </div>
+            <p class="exam-text" data-i18n="footer_credit">
+              Sito realizzato da Rinaldi Michele per l'esame di Stato 2024/2025 presso l'IIS MARCONI PIERALISI
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+<div style="height: 120px;"></div>
       
-      // Chiudi tutti gli altri pannelli
-      document.querySelectorAll('.document-panel').forEach(p => {
-        if (p !== panel) {
-          p.classList.remove('expanded');
-        }
-      });
-    }
-    
-    // Aggiungi event listener ai pannelli
-    document.querySelectorAll('.panel-header').forEach(header => {
-      header.addEventListener('click', () => togglePanel(header));
-    });
-    
-    // Gestione cambio materia
-    document.querySelectorAll('.tech-subject-link').forEach(link => {
-      link.addEventListener('click', function(e) {
-        e.preventDefault();
-        
-        // Rimuovi classe active da tutti i link
-        document.querySelectorAll('.tech-subject-link').forEach(l => {
-          l.classList.remove('active');
-        });
-        
-        // Aggiungi classe active al link cliccato
-        this.classList.add('active');
-        
-        // Ottieni la materia selezionata
-        const subject = this.getAttribute('data-subject');
-        
-        // Nascondi tutte le sezioni
-        document.querySelectorAll('.tech-subject-section').forEach(section => {
-          section.classList.remove('active');
-        });
-        
-        // Mostra la sezione della materia selezionata
-        document.getElementById(subject).classList.add('active');
-      });
-    });
-    
-    // Chiudi tutti i pannelli al caricamento della pagina
-    window.addEventListener('load', () => {
-      document.querySelectorAll('.document-panel').forEach(panel => {
-        panel.classList.remove('expanded');
-      });
-    });
-  </script>
+      
+</footer>
+
+
 </body>
 </html>
