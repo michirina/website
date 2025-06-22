@@ -1161,13 +1161,12 @@ p {
     bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
-    background: rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
+    background: linear-gradient(135deg, rgba(34, 72, 112, 0.8) 0%, rgba(30, 63, 95, 0.8) 100%);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border-radius: 40px;
     padding: 1em 1.5em;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 15px 35px rgba(34,72,112,.3), 0 5px 15px rgba(0,0,0,.1), inset 0 1px 0 rgba(255,255,255,.1);
     width: 90%;
     max-width: 650px;
     z-index: 1000;
@@ -1176,7 +1175,7 @@ p {
 
 .bottom-navbar-modern:hover {
     transform: translateX(-50%) translateY(-2px);
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 20px 40px rgba(34,72,112,.4),0 8px 25px rgba(0,0,0,.15),inset 0 1px 0 rgba(255,255,255,.15)
 }
 
 .bottom-navbar-modern .navbar-items {
@@ -1187,13 +1186,13 @@ p {
     margin: 0;
     padding: 0;
     width: 100%;
-    gap: .5em;
+    gap: .5em
 }
 
 .bottom-navbar-modern .navbar-items li {
     flex: 1;
     display: flex;
-    justify-content: center;
+    justify-content: center
 }
 
 .bottom-navbar-modern .navbar-items a {
@@ -1203,7 +1202,7 @@ p {
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    color: #224870;
+    color: rgba(255,255,255,.85);
     font-size: 1em;
     padding: .8em .5em;
     min-height: 60px;
@@ -1211,7 +1210,7 @@ p {
     transition: all .4s cubic-bezier(.4,0,.2,1);
     overflow: hidden;
     width: 100%;
-    max-width: 70px;
+    max-width: 70px
 }
 
 .bottom-navbar-modern .navbar-items a::before {
@@ -1221,10 +1220,10 @@ p {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(76, 193, 176, 0.2), rgba(255, 255, 255, 0.05));
+    background: linear-gradient(135deg,rgba(255,255,255,.15),rgba(255,255,255,.08));
     border-radius: 25px;
     opacity: 0;
-    transition: opacity .3s ease;
+    transition: opacity .3s ease
 }
 
 .bottom-navbar-modern .navbar-items a i {
@@ -1232,8 +1231,7 @@ p {
     margin-bottom: .3em;
     transition: all .3s ease;
     z-index: 2;
-    position: relative;
-    color: inherit;
+    position: relative
 }
 
 .bottom-navbar-modern .navbar-items a span {
@@ -1243,109 +1241,106 @@ p {
     transition: all .3s ease;
     z-index: 2;
     position: relative;
-    text-align: center;
-    color: inherit;
+    text-align: center
 }
 
 .bottom-navbar-modern .navbar-items a.active {
-    color: #4CC1B0;
-    background: rgba(76, 193, 176, 0.2);
-    border: 1px solid rgba(76, 193, 176, 0.5);
+    color: #fff;
+    background: linear-gradient(135deg,rgba(255,255,255,.25),rgba(255,255,255,.15));
+    border: 1px solid rgba(255,255,255,.3);
     transform: scale(1.05);
-    box-shadow: 0 6px 20px rgba(76, 193, 176, 0.3);
+    box-shadow: 0 8px 25px rgba(34,72,112,.3),0 4px 15px rgba(255,255,255,.1)
 }
 
 .bottom-navbar-modern .navbar-items a.active::before {
-    opacity: 1;
+    opacity: 1
 }
 
 .bottom-navbar-modern .navbar-items a.active i {
     transform: scale(1.1);
-    text-shadow: 0 2px 6px rgba(76, 193, 176, 0.4);
+    text-shadow: 0 2px 8px rgba(255,255,255,.3)
 }
 
 .bottom-navbar-modern .navbar-items a:hover:not(.active) {
-    color: #4CC1B0;
+    color: #fff;
     transform: translateY(-2px) scale(1.02);
-    background: rgba(76, 193, 176, 0.15);
-    box-shadow: 0 4px 12px rgba(76, 193, 176, 0.2);
+    background: rgba(255,255,255,.1);
+    box-shadow: 0 5px 15px rgba(34,72,112,.2)
 }
 
 .bottom-navbar-modern .navbar-items a:hover:not(.active)::before {
-    opacity: 0.3;
+    opacity: .5
 }
 
 .bottom-navbar-modern .navbar-items a:hover i {
     transform: scale(1.1);
-    text-shadow: 0 2px 6px rgba(76, 193, 176, 0.4);
+    text-shadow: 0 2px 8px rgba(255,255,255,.5)
 }
 
-/* Optional: aggiorna anche le flag se le usi */
 .flag-icon {
     margin-bottom: .3em;
-    border: 2px solid rgba(76, 193, 176, 0.3);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border: 2px solid rgba(255,255,255,.2);
+    box-shadow: 0 2px 8px rgba(0,0,0,.1)
 }
 
-.bottom-navbar-modern .navbar-items a.active .flag-icon,
-.bottom-navbar-modern .navbar-items a:hover .flag-icon {
-    border-color: rgba(76, 193, 176, 0.6);
+.bottom-navbar-modern .navbar-items a.active .flag-icon,.bottom-navbar-modern .navbar-items a:hover .flag-icon {
+    border-color: rgba(255,255,255,.4);
     transform: scale(1.1);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 12px rgba(0,0,0,.2)
 }
 
-/* Media queries restano identiche */
 @media (max-width:768px) {
     .bottom-navbar-modern {
         width: 95%;
-        padding: .8em 1em;
+        padding: .8em 1em
     }
 
     .bottom-navbar-modern .navbar-items a {
         min-height: 55px;
         max-width: 60px;
-        padding: .6em .3em;
+        padding: .6em .3em
     }
 
     .bottom-navbar-modern .navbar-items a i {
-        font-size: 1.2em;
+        font-size: 1.2em
     }
 
     .bottom-navbar-modern .navbar-items a span {
-        font-size: .65em;
+        font-size: .65em
     }
 
     .flag-icon {
         width: 1.2em;
-        height: 1.2em;
+        height: 1.2em
     }
 }
 
 @media (max-width:480px) {
     .bottom-navbar-modern .navbar-items a span {
-        font-size: .6em;
+        font-size: .6em
     }
 
     .bottom-navbar-modern .navbar-items a {
-        max-width: 50px;
+        max-width: 50px
     }
 
     .content {
         padding: 2em;
         text-align: center;
         color: #fff;
-        margin-bottom: 120px;
+        margin-bottom: 120px
     }
 
     .bottom-navbar-modern {
+        position: fixed;
         bottom: 20px;
         left: 50%;
         transform: translateX(-50%);
         z-index: 9999;
-        background: rgba(255, 255, 255, 0.1);
+        background: rgba(34,72,112,.85);
         backdrop-filter: blur(15px);
         -webkit-backdrop-filter: blur(15px);
-        border-radius: 50px;
+        border-radius: 50px
     }
 }
 
