@@ -550,10 +550,9 @@
     <!-- Introduzione contestuale -->
     <div class="intro text-center pb-40" data-i18n="experience_intro">
       <p>
-        Quando sono arrivato in <strong>SYEEW</strong> mi è stata presentata una situazione tanto sfidante quanto stimolante: l’azienda disponeva già di un’applicazione mobile sviluppata anni fa con un <em>linguaggio di programmazione ormai obsoleto</em>, difficile da manutenere e soprattutto incapace di tenere il passo con le moderne aspettative di <abbr title="User Experience">UX</abbr> e performance. Il team interno aveva già prodotto un primo mock‑up funzionale in <strong>Adobe&nbsp;XD</strong>, ma il design era fermo a soluzioni ormai datate — sia dal punto di vista estetico sia da quello delle linee guida di usabilità.
-      </p>
-      <p class="my-space">
-        La mia sfida, dunque, era triplice: <strong>1)</strong> reinterpretare quel prototipo, importandolo e ricostruendolo in <strong>Figma</strong> per poter sfruttare componenti, variabili di design e sistemi di <em>auto‑layout</em> più avanzati; <strong>2)</strong> personalizzarne lo stile facendolo evolvere verso un’identità visiva più fresca e coerente con la brand identity aggiornata; <strong>3)</strong> individuare il flusso tecnico migliore per trasformare il nuovo design in <strong>codice <span class="text-nowrap">Flutter</span></strong>, così da garantire un’app <em>cross‑platform</em> performante e facilmente espandibile in futuro.
+        Quando sono arrivato in SYEEW mi è stata presentata una situazione tanto sfidante quanto stimolante: l’azienda disponeva già di un’applicazione mobile sviluppata anni fa con un linguaggio di programmazione ormai obsoleto, difficile da manutenere e soprattutto incapace di tenere il passo con le moderne aspettative di UX e performance. Il team disponeva già di un primo mock‑up funzionale in Adobe XD, ma il design era fermo a soluzioni un po' datate, sia dal punto di vista estetico sia da quello delle linee guida di usabilità.
+<br> <br>
+        La mia sfida, dunque, era triplice: reinterpretare quel prototipo, importandolo e ricostruendolo in Figma per poter sfruttare componenti, variabili di design e sistemi di auto‑layout più avanzati; personalizzarne lo stile facendolo evolvere verso un’identità visiva più fresca e coerente con la brand identity aggiornata; individuare il flusso tecnico migliore per trasformare il nuovo design in codice Flutter, così da garantire un’app cross‑platform performante e facilmente scalabile in futuro.
       </p>
     </div>
 
@@ -564,13 +563,11 @@
       </h4>
       <div class="period-content">
         <p data-i18n="experience_period1_para">
-          In queste <strong>tre settimane intensive</strong> ho lavorato quasi esclusivamente in <strong>Figma</strong>, partendo dall’esportazione del file XD originale. Dopo vari tentativi di conversione automatica — che mi hanno permesso di recuperare solo circa il 40&nbsp;% dei layer — ho optato per una <em>ricostruzione manuale</em> dell’interfaccia. Il primo passo è stato creare un <strong>Design&nbsp;System</strong> dedicato: palette colori, tipografia gerarchica, stili di icone <abbr title="Material Design">Material</abbr> personalizzate e una libreria di componenti <em>atomic‑based</em> (button, text field, card, dialog, snackbar).
+          In queste tre settimane ho lavorato quasi esclusivamente in Figma, partendo dall’esportazione del file XD originale. Dopo vari tentativi di conversione automatica (che mi hanno permesso di recuperare solo circa il 40% dei layer) ho optato per una ricostruzione manuale dell’interfaccia. Il primo passo è stato creare un Design System dedicato: palette colori, tipografia gerarchica, stili di icone e una libreria di componenti (button, text field, card, dialog, snackbar).
         </p>
         <p class="my-space">
-          Ho analizzato lo user‑flow esistente, individuando <strong>collo di bottiglia</strong> e ridondanze: ad esempio, il vecchio onboarding richiedeva quattro schermate statiche prima di arrivare alla registrazione; l’ho semplificato in uno <em>swipe</em> dinamico con paginazione animata, riducendo il tempo medio di accesso del 35&nbsp;%. Contestualmente ho introdotto un sistema di <strong>varianti</strong> nei componenti per gestire stati (default, hover, pressed, disabled) e dimensioni (small, medium, large), così da velocizzare la prototipazione e mantenere coerenza visiva.
-        </p>
         <p class="my-space">
-          Alla fine del periodo il file contava oltre <strong>120 componenti</strong> e <strong>30 schermate</strong>, tutte collegate tramite <em>prototyping links</em> che simulavano i principali flussi utente: login, dashboard, gestione ordini, profilo e impostazioni. Ho infine <strong>condiviso</strong> il progetto con il team marketing e con gli sviluppatori, sfruttando i commenti in‑app di Figma per raccogliere feedback e iterare rapidamente sulle micro‑interazioni.
+          Alla fine del periodo il file contava oltre 20 componenti e 11 schermate, tutte collegate tramite prototyping links che simulavano i principali flussi utente: login, dashboard, modalità di visualizzazione, profilo e impostazioni. Ho infine condiviso il progetto con il team e con il team esterno di design, sfruttando i commenti in‑app di Figma per raccogliere feedback.
         </p>
         <div class="image-gallery">
           <div class="gallery-item">
@@ -593,13 +590,17 @@
       </h4>
       <div class="period-content">
         <p data-i18n="experience_period2_para">
-          Con il design consolidato sono passato allo sviluppo in <strong>Flutter</strong>. Ho impostato il progetto sfruttando <code>flutter_riverpod</code> per la gestione dello <em>state‑management</em> e <code>go_router</code> per la navigazione dichiarativa. Partendo dagli <strong>export SVG</strong> di Figma ho costruito un set di <em>custom widgets</em> che replicavano fedelmente i componenti disegnati, puntando su <code>ThemeData</code> per centralizzare stili, colori e tipografie. Ho quindi implementato <strong>cinque schermate di core</strong> (Splash, Login, Home, Ordini, Profilo) integrando animazioni <code>Hero</code> e transizioni fluide in linea con le <abbr title="Material Design 3">MD3</abbr>.
-        </p>
-        <p class="my-space">
-          Per testare l’app su dispositivo reale ho abilitato il <em>USB Debugging</em> sul mio smartphone Android. Questo mi ha consentito di verificare performance, <em>gesture</em> e responsività su diversi fattori di forma. Poiché in questa fase non erano ancora pronte le <strong>API</strong>, ho optato per <code>mock‑data</code> locali sfruttando modelli <code>.json</code> caricati in memoria: ciò mi ha permesso di mostrare al team l’esperienza completa di navigazione, incluse le <em>skeleton screen</em> e le <strong>animazioni di caricamento</strong> via <code>Shimmer</code>.
-        </p>
-        <p class="my-space">
-          Al termine del periodo ho consegnato una <strong>build installabile (.apk)</strong> e un <em>README</em> con le istruzioni per compilare il progetto su qualsiasi ambiente <code>Flutter&nbsp;3.22</code>. Inoltre ho tracciato i <abbr title="Key Performance Indicators">KPI</abbr> chiave (tempo di avvio &lt; 300&nbsp;ms, FPS medio &gt; 58, memoria &lt; 150&nbsp;MB) da monitorare nelle prossime iterazioni, così da avere benchmark oggettivi per l’ottimizzazione futura.
+        In queste due settimane ho tradotto il design in una struttura Flutter ben organizzata e modulare. Tutto il codice si trova nella cartella principale "lib", dove ho separato con cura le schermate, i modelli dati e i componenti riutilizzabili. Le varie pagine, come Login, ProfiloMaster e le sezioni tematiche dell’app (Indaffarato, Curioso, Minuzioso e Predittivo), sono raccolte nella sottocartella "pages". I modelli, come quelli relativi ad aziende, ASA e profili, sono gestiti in "model", mentre i widget comuni sono centralizzati in un unico file, che include elementi come la barra di navigazione inferiore, grafici circolari, riepiloghi e indicatori.
+
+            <br>
+        Il file di partenza, main.dart, inizializza un set di dati dimostrativi attraverso una funzione di popolamento, imposta il tema generale dell’interfaccia e avvia l’app partendo dalla schermata di login. Da lì, l’utente accede al proprio profilo, che funge da dashboard iniziale e mostra l’elenco delle aziende disponibili. Ogni voce conduce a uno spazio dedicato, all’interno del quale è presente una barra di navigazione inferiore persistente. Questa consente di esplorare quattro diverse modalità di analisi, ciascuna progettata per rappresentare un diverso tipo di utente aziendale.
+<br>
+        La sezione attualmente più sviluppata è quella denominata "Indaffarato". In essa vengono mostrati, per ciascuna ASA aziendale, un grafico di avanzamento animato e un riepilogo sotto forma di progress bar circolari. Le altre sezioni, pur presenti, sono al momento delle strutture vuote pronte per essere ampliate in futuro.
+            <br><br>
+
+        Per permettere la visualizzazione fluida dell’app senza connessioni reali, ho caricato i dati da file JSON locali. Questo ha reso possibile simulare l’esperienza completa dell’utente, comprese le animazioni di caricamento e le transizioni tra schermate. Ho testato il progetto direttamente su un dispositivo fisico, attivando la modalità debug via USB e mantenendo prestazioni elevate: più di 58 fotogrammi al secondo e tempi di risposta reattivi.
+<br>
+        Al termine del lavoro ho generato un file APK installabile, accompagnato da un documento di istruzioni per la compilazione compatibile con Flutter nella versione 3.22. Questo ha permesso al team di testare l’app e iniziare a valutare l’integrazione con funzionalità future, come le API o il login avanzato.
         </p>
         <div class="image-gallery">
           <div class="gallery-item">
@@ -622,7 +623,7 @@
       </h4>
       <div class="period-content">
         <p data-i18n="experience_period3_para1">
-          In questa data ho partecipato come ospite di SYEEW alla fiera <strong>SMAU Milano</strong>, uno degli eventi italiani più importanti nel mondo dell'innovazione, delle startup e della trasformazione digitale. Pur non avendo uno stand, abbiamo vissuto la giornata in modo attivo, esplorando gli spazi, ascoltando pitch e interagendo con altri professionisti.
+          In questa data ho partecipato come ospite di SYEEW alla fiera SMAU Milano, uno degli eventi italiani più importanti nel mondo dell'innovazione, delle startup e della trasformazione digitale. Pur non avendo uno stand, abbiamo vissuto la giornata in modo attivo, esplorando gli spazi, ascoltando pitch e interagendo con altri professionisti.
         </p>
         <p class="my-space" data-i18n="experience_period3_para2">
           Ho ascoltato presentazioni e momenti di confronto che mi hanno fatto scoprire tante realtà emergenti; è stato molto formativo osservare come aziende di ogni tipo comunicano i propri valori, mission e risultati. Alcune con dati, altre con storytelling emozionale, altre ancora con focus sull'impatto sociale.
