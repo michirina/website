@@ -3284,3 +3284,83 @@ body {
       max-width: 100%;
     }
   }
+
+/* --------- SMARTPHONE ENHANCEMENTS --------- */
+@media (max-width: 575.98px) {
+  /* Hero section layout */
+  .hero-section {
+    height: auto;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-right {
+    margin-top: 2rem;
+    justify-content: center;
+  }
+
+  .hero-photo {
+    width: 80%;
+    max-width: 250px;
+    height: auto;
+  }
+
+  .schools-container {
+    gap: 1.5rem;
+  }
+
+  .school-info {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .school-logo {
+    width: 60px;
+    height: 60px;
+  }
+
+  .school-logo img {
+    width: 45px;
+    height: 45px;
+  }
+
+  .chi-sono-content,
+  .passioni-content,
+  .progetti-content {
+    grid-template-columns: 1fr;
+  }
+
+  .chi-sono-text h2,
+  .futuro-text h2,
+  .passioni-text h2,
+  .progetti-text h2 {
+    font-size: 1.8rem;
+  }
+
+  .chi-sono-text p,
+  .futuro-text p,
+  .passioni-text p,
+  .progetti-text p {
+    font-size: 1rem;
+  }
+
+  .bottom-navbar-modern {
+    width: 95%;
+    padding: 0.6em 0.8em;
+  }
+
+  .bottom-navbar-modern .navbar-items a {
+    min-height: 50px;
+    max-width: 45px;
+  }
+
+  .bottom-navbar-modern .navbar-items a span {
+    font-size: 0.55em;
+  }
+}
