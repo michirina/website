@@ -3196,3 +3196,90 @@ body {
         }
     }
 
+ /* --- BRANDING --- */
+  #branding {
+    padding: 2rem 0;
+  }
+
+  #branding .container {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  #branding img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+
+  #branding img:hover {
+    transform: scale(1.03);
+  }
+
+  /* --- MANIFESTI --- */
+  #manifesti {
+    padding: 2rem 0;
+  }
+
+  #manifesti img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1.41;
+    object-fit: cover;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+
+  #manifesti img:hover {
+    transform: scale(1.02);
+  }
+
+  /* Overlay Lightbox fix */
+  .lightboxOverlay {
+    z-index: 9999 !important;
+  }
+
+  .lightbox {
+    z-index: 10000 !important;
+  }
+
+  /* --- RESPONSIVE --- */
+  @media (max-width: 768px) {
+    #branding img {
+      width: 100px;
+      height: 100px;
+    }
+
+    #manifesti .row > div {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+
+    #manifesti img {
+      max-width: 80%;
+      margin: 0 auto;
+      display: block;
+    }
+  }
+
+  @media (max-width: 480px) {
+    #branding .container {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    #branding img {
+      width: 90px;
+      height: 90px;
+    }
+
+    #manifesti img {
+      max-width: 100%;
+    }
+  }
