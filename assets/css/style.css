@@ -3208,18 +3208,19 @@ body {
     flex-wrap: wrap;
   }
 
-  #branding img {
-    width: 150px;
-    height: 150px;
+    #branding img {
+    width: 20vw;              /* 20% della larghezza dello schermo */
+    height: 20vw;             /* quadrato: stessa misura in altezza */
     object-fit: cover;
     border-radius: 0.75rem;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
-  }
+    }
 
-  #branding img:hover {
+    #branding img:hover {
     transform: scale(1.03);
-  }
+}
+
 
   /* --- MANIFESTI --- */
   #manifesti {
