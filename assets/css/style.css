@@ -787,12 +787,12 @@ p {
 }
 
 .services_area {
-    background-color: #f9f9f9
+    background-color: #ffffff
 }
 
 .single_service {
     padding: 30px;
-    border-radius: 5px;
+    border-radius: 20px;
     -webkit-box-shadow: 0 0 10px 0#c4c4c44d;
     -moz-box-shadow: 0 0 10px 0#c4c4c44d;
     box-shadow: 0 0 10px 0#c4c4c44d;
@@ -801,7 +801,7 @@ p {
     -ms-transition: all .3s ease-out 0s;
     -o-transition: all .3s ease-out 0s;
     transition: all .3s ease-out 0s;
-    background-color: #fff
+    background-color: #dee8e8
 }
 
 @media only screen and (min-width:576px) and (max-width:767px) {
