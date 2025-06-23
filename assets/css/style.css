@@ -3364,3 +3364,29 @@ body {
     font-size: 0.55em;
   }
 }
+
+
+/* 1) Impedisci il drag nativo delle immagini */
+img {
+  -webkit-user-drag: none;
+  user-drag: none;
+}
+
+/* 2) Disabilita la selezione/copia del contenuto */
+img {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* 3) Disabilita il “tieni premuto” / callout sui dispositivi touch WebKit */
+img {
+  -webkit-touch-callout: none;
+}
+
+/* 4) Assicurati che l’evento click passi comunque all’anchor che avvia il lightbox */
+.lightbox-trigger,
+.lightbox-trigger img {
+  pointer-events: auto;
+}
