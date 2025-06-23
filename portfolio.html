@@ -13,8 +13,26 @@
     <link href="assets/css/style.css" rel="stylesheet" />
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet" />
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.js"></script>
+<script>
+  // Inizializza la gallery
+  window.addEventListener('DOMContentLoaded', () => {
+    baguetteBox.run('.gallery', {
+      animation: 'fadeIn',
+      buttons: false,
+      overlayBackgroundColor: 'rgba(0,0,0,0.85)',
+      noScrollbars: true
+    });
+
+    // Blocca drag e download immagini
+    document.querySelectorAll('.gallery img').forEach(img => {
+      img.setAttribute('draggable', 'false');
+      img.addEventListener('contextmenu', e => e.preventDefault());
+    });
+  });
+</script>
+
 
 </head>
 <body>
@@ -111,6 +129,11 @@
     </section>
 
     <section id="arte" class="portfolio-preview-section my-5">
+        <div class="text-center my-5">
+        <h2 class="main_title">Arte e Comunicazione</h2>
+        </div>
+
+
         <div class="container">
             <!-- Progetto: Pax Optima Rerum -->
             <div class="row align-items-center mb-5">
@@ -164,21 +187,29 @@
 
 
     <section id="branding" class="w-full py-5">
-    <div class="container d-flex justify-content-between gap-3 flex-wrap">
-        <a href="assets/images/brands/brand_1.jpg" data-lightbox="brands">
-        <img src="assets/images/brands/brand_1.jpg" alt="Brand 1" />
-        </a>
-        <a href="assets/images/brands/brand_2.jpg" data-lightbox="brands">
-        <img src="assets/images/brands/brand_2.jpg" alt="Brand 2" />
-        </a>
-        <a href="assets/images/brands/brand_3.jpg" data-lightbox="brands">
-        <img src="assets/images/brands/brand_3.jpg" alt="Brand 3" />
-        </a>
+        <div class="text-center my-5">
+    <h2 class="main_title">Branding e Identità Visiva</h2>
     </div>
+    <div class="container d-flex justify-content-between gap-3 flex-wrap gallery">
+    <a href="assets/images/brands/brand_1.jpg">
+      <img src="assets/images/brands/brand_1.jpg" alt="Brand 1" />
+    </a>
+    <a href="assets/images/brands/brand_2.jpg">
+      <img src="assets/images/brands/brand_2.jpg" alt="Brand 2" />
+    </a>
+    <a href="assets/images/brands/brand_3.jpg">
+      <img src="assets/images/brands/brand_3.jpg" alt="Brand 3" />
+    </a>
+  </div>
     </section>
 
 
     <section id="manifesti" class="w-full py-5">
+
+        <div class="text-center my-5">
+        <h2 class="main_title">Grafica Pubblicitaria</h2>
+        </div>
+
     <div class="container">
         <div class="row g-4">
         <div class="col-md-4">
