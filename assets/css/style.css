@@ -3390,3 +3390,12 @@ img {
 .lightbox-trigger img {
   pointer-events: auto;
 }
+
+
+
+.progetti-image img,
+.passioni-image img {
+  width: 500px !important;
+  height: auto !important;
+  object-fit: cover !important;
+}
